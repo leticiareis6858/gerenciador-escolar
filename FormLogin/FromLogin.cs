@@ -1,4 +1,5 @@
-﻿using System;
+﻿using GerenciadorDeTurmas.FormsDisciplinas;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,9 +13,12 @@ namespace GerenciadorEscolar
 {
     public partial class form_login : Form
     {
+        private Database db;
         public form_login()
         {
             InitializeComponent();
+            db = new Database();
+            db.CreateTables(); 
         }
 
         private void label1_Click(object sender, EventArgs e)

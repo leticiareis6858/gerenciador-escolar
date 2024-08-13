@@ -44,17 +44,14 @@ public class Database
         {
             conn.Open();
 
-            // Criar o banco de dados se não existir
             string createDatabaseQuery = "CREATE DATABASE IF NOT EXISTS escola;";
             MySqlCommand cmdCreateDb = new MySqlCommand(createDatabaseQuery, conn);
             cmdCreateDb.ExecuteNonQuery();
 
-            // Usar o banco de dados "escola"
             string useDatabaseQuery = "USE escola;";
             MySqlCommand cmdUseDb = new MySqlCommand(useDatabaseQuery, conn);
             cmdUseDb.ExecuteNonQuery();
 
-            // Criar as tabelas
             string createTablesQuery = @"
                 CREATE TABLE IF NOT EXISTS tb_aluno (
                     matricula_aluno int NOT NULL AUTO_INCREMENT,
@@ -119,6 +116,20 @@ public class Database
 
             MySqlCommand cmdCreateTables = new MySqlCommand(createTablesQuery, conn);
             cmdCreateTables.ExecuteNonQuery();
+        }
+    }
+
+    public DataTable GetDisciplinas()
+    {
+        using (MySqlConnection conn = GetConnection())
+        {
+            conn.Open();
+            string query = "SELECT * FROM tb_disciplina";
+            MySqlCommand cmd = new MySqlCommand(query, conn);
+            MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
+            DataTable dt = new DataTable();
+            adapter.Fill(dt);
+            return dt;
         }
     }
 }

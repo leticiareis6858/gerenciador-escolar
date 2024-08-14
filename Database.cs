@@ -116,6 +116,8 @@ public class Database
 
             MySqlCommand cmdCreateTables = new MySqlCommand(createTablesQuery, conn);
             cmdCreateTables.ExecuteNonQuery();
+
+            conn.Close();
         }
     }
 
@@ -129,7 +131,11 @@ public class Database
             MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
             DataTable dt = new DataTable();
             adapter.Fill(dt);
+
+            conn.Close();
+
             return dt;
+   
         }
     }
 }

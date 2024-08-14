@@ -105,10 +105,10 @@
     <Compile Include="FormsAluno\FormCadastroAluno.Designer.cs">
       <DependentUpon>FormCadastroAluno.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormCadastro.cs">
+    <Compile Include="FormCadastro\FormCadastro.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormCadastro.Designer.cs">
+    <Compile Include="FormCadastro\FormCadastro.Designer.cs">
       <DependentUpon>FormCadastro.cs</DependentUpon>
     </Compile>
     <Compile Include="FormsCursos\FormCadastroCurso.cs">
@@ -177,10 +177,10 @@
     <Compile Include="FormsProfessor\FormCadastroProfessor.Designer.cs">
       <DependentUpon>FormCadastroProfessor.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormRecuperarSenha.cs">
+    <Compile Include="FormRecuperarSenha\FormRecuperarSenha.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormRecuperarSenha.Designer.cs">
+    <Compile Include="FormRecuperarSenha\FormRecuperarSenha.Designer.cs">
       <DependentUpon>FormRecuperarSenha.cs</DependentUpon>
     </Compile>
     <Compile Include="FormsAluno\FormTelaInicialAluno.cs">
@@ -195,10 +195,10 @@
     <Compile Include="FormsProfessor\FormTelaInicialProfessor.Designer.cs">
       <DependentUpon>FormTelaInicialProfessor.cs</DependentUpon>
     </Compile>
-    <Compile Include="FromLogin.cs">
+    <Compile Include="FormLogin\FromLogin.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FromLogin.Designer.cs">
+    <Compile Include="FormLogin\FromLogin.Designer.cs">
       <DependentUpon>FromLogin.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
@@ -206,7 +206,7 @@
     <EmbeddedResource Include="FormsAluno\FormCadastroAluno.resx">
       <DependentUpon>FormCadastroAluno.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormCadastro.resx">
+    <EmbeddedResource Include="FormCadastro\FormCadastro.resx">
       <DependentUpon>FormCadastro.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormsAluno\FormsOpcoesDisciplinasAlunos.resx">
@@ -230,7 +230,7 @@
     <EmbeddedResource Include="FormsProfessor\FormCadastroProfessor.resx">
       <DependentUpon>FormCadastroProfessor.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormRecuperarSenha.resx">
+    <EmbeddedResource Include="FormRecuperarSenha\FormRecuperarSenha.resx">
       <DependentUpon>FormRecuperarSenha.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormsProfessor\FormOpcoesDisciplinasProfessores.resx">
@@ -239,7 +239,7 @@
     <EmbeddedResource Include="FormsProfessor\FormTelaInicialProfessor.resx">
       <DependentUpon>FormTelaInicialProfessor.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FromLogin.resx">
+    <EmbeddedResource Include="FormLogin\FromLogin.resx">
       <DependentUpon>FromLogin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">

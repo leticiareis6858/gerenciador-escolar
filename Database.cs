@@ -135,7 +135,26 @@ public class Database
             conn.Close();
 
             return dt;
-   
+
+        }
+    }
+
+    public DataTable BuscarDisciplinaPorId(int id)
+    {
+        using (MySqlConnection conn = GetConnection())
+        {
+            conn.Open();
+            string query = "SELECT * FROM tb_disciplina WHERE id_disciplina = @id_disciplina";
+            MySqlCommand cmd = new MySqlCommand(query, conn);
+            cmd.Parameters.AddWithValue("@id_disciplina", id);
+
+            MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
+            DataTable dt = new DataTable();
+            adapter.Fill(dt);
+
+            conn.Close();
+
+            return dt;
         }
     }
 }

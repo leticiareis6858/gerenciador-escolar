@@ -157,4 +157,21 @@ public class Database
             return dt;
         }
     }
+    public DataTable BuscarDisciplinaPorNome(String nome)
+    {
+        using (MySqlConnection conn = GetConnection()) {
+            conn.Open();
+            string query = "SELECT * FROM tb_disciplina WHERE disciplina ILIKE = @nome_disciplina";
+            MySqlCommand cmd= new MySqlCommand(query, conn);
+            cmd.Parameters.AddWithValue("@nome_disciplina", nome);
+
+            MySqlDataAdapter adapter= new MySqlDataAdapter(cmd);
+            DataTable dt = new DataTable();
+            adapter.Fill(dt);
+
+            conn.Close();
+
+            return dt;
+        }
+    }
 }

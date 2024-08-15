@@ -450,4 +450,36 @@ public class Database
             cmd.ExecuteNonQuery();
         }
     }
+
+    public void InscreverSeCurso(int idAluno, int idCurso)
+    {
+        using (MySqlConnection conn = GetConnection())
+        {
+            conn.Open();
+            string query = "INSERT INTO tb_curso_aluno (id_curso, matricula_aluno) VALUES (@idCurso, @idAluno)";
+            MySqlCommand cmd = new MySqlCommand(query, conn);
+            cmd.Parameters.AddWithValue("@idCurso", idCurso);
+            cmd.Parameters.AddWithValue("@idAluno", idAluno);
+
+            cmd.ExecuteNonQuery();
+        }
+    }
+
+    public DataTable BuscarCursos()
+    {
+        using (MySqlConnection conn = GetConnection())
+        {
+            conn.Open();
+            string query = "SELECT * FROM tb_curso";
+            MySqlCommand cmd = new MySqlCommand(query, conn);
+            MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
+            DataTable dt = new DataTable();
+            adapter.Fill(dt);
+
+            conn.Close();
+
+            return dt;
+
+        }
+    }
 }

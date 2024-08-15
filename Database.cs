@@ -1,5 +1,6 @@
 ﻿using MySql.Data.MySqlClient;
 using System;
+using System.Collections.Generic;
 using System.Data;
 
 public class Database
@@ -121,7 +122,7 @@ public class Database
         }
     }
 
-    public DataTable GetDisciplinas()
+    public DataTable BuscarDisciplinas()
     {
         using (MySqlConnection conn = GetConnection())
         {
@@ -365,5 +366,27 @@ public class Database
 
             conn.Close();
         }
+    }
+
+    public List<String> BuscarNomeDisciplinas()
+    {
+        List<string> disciplinas = new List<string>();
+
+        using (MySqlConnection conn = GetConnection())
+        {
+            conn.Open();
+            string query = "SELECT disciplina FROM tb_disciplina";
+            MySqlCommand cmd = new MySqlCommand(query, conn);
+
+            using (MySqlDataReader reader = cmd.ExecuteReader())
+            {
+                while (reader.Read())
+                {
+                    disciplinas.Add(reader["disciplina"].ToString());
+                }
+            }
+        }
+
+        return disciplinas;
     }
 }

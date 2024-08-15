@@ -286,4 +286,44 @@ public class Database
             return count > 0;
         }
     }
+
+    public bool mudarSenhaAluno(String email, string novaSenha)
+    {
+        using (MySqlConnection conn = GetConnection())
+        {
+            conn.Open();
+
+            string query = "UPDATE tb_aluno SET senha_aluno = @novaSenha WHERE email_aluno = @email";
+
+            using (MySqlCommand cmd = new MySqlCommand(query, conn))
+            {
+                cmd.Parameters.AddWithValue("@novaSenha", novaSenha);
+                cmd.Parameters.AddWithValue("@email", email);
+
+                int resultado = cmd.ExecuteNonQuery();
+
+                return resultado > 0;
+            }
+        }
+    }
+
+    public bool mudarSenhaProfessor(String email, string novaSenha)
+    {
+        using (MySqlConnection conn = GetConnection())
+        {
+            conn.Open();
+
+            string query = "UPDATE tb_professor SET senha_professor = @novaSenha WHERE email_professor = @email";
+
+            using (MySqlCommand cmd = new MySqlCommand(query, conn))
+            {
+                cmd.Parameters.AddWithValue("@novaSenha", novaSenha);
+                cmd.Parameters.AddWithValue("@email", email);
+
+                int resultado = cmd.ExecuteNonQuery();
+
+                return resultado > 0;
+            }
+        }
+    }
 }

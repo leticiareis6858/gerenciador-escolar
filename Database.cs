@@ -251,5 +251,39 @@ public class Database
         }
     }
 
+    public bool verificarNomeEmailAluno(string usuario, string email)
+    {
+        using (MySqlConnection conn = GetConnection())
+        {
+            conn.Open();
+            string query = "SELECT COUNT(*) FROM tb_aluno WHERE nome_aluno = @usuario AND email_aluno = @email";
+            MySqlCommand cmd = new MySqlCommand(query, conn);
+            cmd.Parameters.AddWithValue("@usuario", usuario);
+            cmd.Parameters.AddWithValue("@email", email);
 
+            int count = Convert.ToInt32(cmd.ExecuteScalar());
+
+            conn.Close();
+
+            return count > 0;
+        }
+    }
+
+    public bool verificarNomeEmailProfessor(string usuario, string email)
+    {
+        using (MySqlConnection conn = GetConnection())
+        {
+            conn.Open();
+            string query = "SELECT COUNT(*) FROM tb_professor WHERE nome_professor = @usuario AND email_professor = @email";
+            MySqlCommand cmd = new MySqlCommand(query, conn);
+            cmd.Parameters.AddWithValue("@usuario", usuario);
+            cmd.Parameters.AddWithValue("@email", email);
+
+            int count = Convert.ToInt32(cmd.ExecuteScalar());
+
+            conn.Close();
+
+            return count > 0;
+        }
+    }
 }

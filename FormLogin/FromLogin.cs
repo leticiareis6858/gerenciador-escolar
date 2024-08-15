@@ -1,4 +1,5 @@
-﻿using GerenciadorDeTurmas.FormsDisciplinas;
+﻿using GerenciadorDeTurmas;
+using GerenciadorDeTurmas.FormsDisciplinas;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -21,14 +22,38 @@ namespace GerenciadorEscolar
             db.CreateTables(); 
         }
 
-        private void label1_Click(object sender, EventArgs e)
+        private void btn_entrar_Click(object sender, EventArgs e)
         {
+            if (txt_usuario.Text == null)
+            {
+                MessageBox.Show("Informe um nome de usuário");
+            }
+            else if (txt_senha.Text == null) {
+                MessageBox.Show("Informe uma senha");
+            }
 
-        }
+            string usuario = txt_usuario.Text.Trim();
+            string senha = txt_senha.Text.Trim();
 
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
+            bool alunoValido = db.verificarLoginAluno(usuario, senha);
+            bool professorValido = db.verificarLoginProfessor(usuario, senha);
 
+            if (alunoValido)
+            {
+                FormTelaInicialAluno formTelaInicialAluno = new FormTelaInicialAluno();
+                formTelaInicialAluno.Show();
+                this.Close();
+
+            } else if (professorValido)
+            {
+                FormTelaInicialProfessor formTelaInicialProfessor = new FormTelaInicialProfessor();
+                formTelaInicialProfessor.Show();
+                this.Close();
+            }
+            else
+            {
+                MessageBox.Show("Senha ou usuário inválidos!");
+            }
         }
     }
 }

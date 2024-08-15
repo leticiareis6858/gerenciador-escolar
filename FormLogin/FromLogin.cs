@@ -1,5 +1,4 @@
-﻿using GerenciadorDeTurmas;
-using GerenciadorDeTurmas.FormsDisciplinas;
+﻿using GerenciadorEscolar;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -54,6 +53,13 @@ namespace GerenciadorEscolar
             {
                 MessageBox.Show("Senha ou usuário inválidos!");
             }
+        }
+
+        private void link_cadastrar_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            FormCadastro formCadastro = new FormCadastro();
+            formCadastro.Show();
+            this.Close();
         }
     }
 }

@@ -106,6 +106,7 @@
             this.link_cadastrar.TabIndex = 6;
             this.link_cadastrar.TabStop = true;
             this.link_cadastrar.Text = "Novo usuário? Clique aqui";
+            this.link_cadastrar.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.link_cadastrar_LinkClicked);
             // 
             // pictureBox1
             // 

@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.label1 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.btn_proximo = new System.Windows.Forms.Button();
+            this.btn_voltar = new System.Windows.Forms.Button();
+            this.txt_escolha = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // label1
@@ -44,45 +44,47 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "O que deseja cadastrar?";
             // 
-            // button1
+            // btn_proximo
             // 
-            this.button1.Location = new System.Drawing.Point(141, 127);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 3;
-            this.button1.Text = "Próximo";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btn_proximo.Location = new System.Drawing.Point(141, 127);
+            this.btn_proximo.Name = "btn_proximo";
+            this.btn_proximo.Size = new System.Drawing.Size(75, 23);
+            this.btn_proximo.TabIndex = 3;
+            this.btn_proximo.Text = "Próximo";
+            this.btn_proximo.UseVisualStyleBackColor = true;
+            this.btn_proximo.Click += new System.EventHandler(this.btn_proximo_Click);
             // 
-            // button2
+            // btn_voltar
             // 
-            this.button2.Location = new System.Drawing.Point(260, 12);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 4;
-            this.button2.Text = "Voltar";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btn_voltar.Location = new System.Drawing.Point(260, 12);
+            this.btn_voltar.Name = "btn_voltar";
+            this.btn_voltar.Size = new System.Drawing.Size(75, 23);
+            this.btn_voltar.TabIndex = 4;
+            this.btn_voltar.Text = "Voltar";
+            this.btn_voltar.UseVisualStyleBackColor = true;
+            this.btn_voltar.Click += new System.EventHandler(this.btn_voltar_Click);
             // 
-            // comboBox1
+            // txt_escolha
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
+            this.txt_escolha.FormattingEnabled = true;
+            this.txt_escolha.Items.AddRange(new object[] {
             "professor",
             "aluno",
             "disciplina",
             "curso"});
-            this.comboBox1.Location = new System.Drawing.Point(95, 88);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(173, 21);
-            this.comboBox1.TabIndex = 5;
+            this.txt_escolha.Location = new System.Drawing.Point(95, 88);
+            this.txt_escolha.Name = "txt_escolha";
+            this.txt_escolha.Size = new System.Drawing.Size(173, 21);
+            this.txt_escolha.TabIndex = 5;
             // 
             // FormCadastro
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(357, 168);
-            this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.txt_escolha);
+            this.Controls.Add(this.btn_voltar);
+            this.Controls.Add(this.btn_proximo);
             this.Controls.Add(this.label1);
             this.Name = "FormCadastro";
             this.Text = "Tela de cadastro";
@@ -94,8 +96,8 @@
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.Button btn_proximo;
+        private System.Windows.Forms.Button btn_voltar;
+        private System.Windows.Forms.ComboBox txt_escolha;
     }
 }

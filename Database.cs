@@ -347,4 +347,23 @@ public class Database
             conn.Close();
         }
     }
+
+    public void cadastrarProfessor(String nome, String email, String senha, String formacao, String titulacao)
+    {
+        using (MySqlConnection conn = GetConnection())
+        {
+            conn.Open();
+
+            String query = "INSERT INTO tb_professor (nome_professor, email_professor, senha_professor, formacao, titulacao) VALUES (@nome, @email, @senha, @formacao, @titulacao)";
+            MySqlCommand cmd = new MySqlCommand(query, conn);
+            cmd.Parameters.AddWithValue("@nome", nome);
+            cmd.Parameters.AddWithValue("@email", email);
+            cmd.Parameters.AddWithValue("@senha", senha);
+            cmd.Parameters.AddWithValue("@formacao", formacao);
+            cmd.Parameters.AddWithValue("@titulacao", titulacao);
+            cmd.ExecuteNonQuery();
+
+            conn.Close();
+        }
+    }
 }

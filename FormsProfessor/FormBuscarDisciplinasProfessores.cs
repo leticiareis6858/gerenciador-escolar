@@ -25,7 +25,7 @@ namespace GerenciadorEscolar.FormsProfessor
         }
         private void LoadData()
         {
-            DataTable dt = db.GetDisciplinas();
+            DataTable dt = db.BuscarDisciplinas();
             dataGridView_disciplinas.DataSource = dt;
         }
 
@@ -75,14 +75,14 @@ namespace GerenciadorEscolar.FormsProfessor
             txt_disciplina.Text = string.Empty;
             txt_habilidades.Text = string.Empty;
 
-            DataTable dt = db.GetDisciplinas();
+            DataTable dt = db.BuscarDisciplinas();
             dataGridView_disciplinas.DataSource = dt;
         }
 
         private void btn_voltar_Click(object sender, EventArgs e)
         {
-            FormOpcoesDisciplinasProfessores formOpcoes = new FormOpcoesDisciplinasProfessores();
-            formOpcoes.Show();
+            FormTelaInicialProfessor telaInicial=new FormTelaInicialProfessor();
+            telaInicial.Show();
             this.Close();
         }
 

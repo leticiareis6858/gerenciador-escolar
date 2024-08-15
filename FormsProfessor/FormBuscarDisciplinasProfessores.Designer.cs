@@ -87,9 +87,9 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(36, 167);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(122, 13);
+            this.label1.Size = new System.Drawing.Size(119, 13);
             this.label1.TabIndex = 3;
-            this.label1.Text = "Disciplinas Cadastradas:";
+            this.label1.Text = "Disciplinas Disponíveis:";
             // 
             // label2
             // 
@@ -181,7 +181,7 @@
             this.txt_habilidades.Size = new System.Drawing.Size(132, 69);
             this.txt_habilidades.TabIndex = 13;
             // 
-            // FormBuscarDisciplinasProfessores
+            // FormBuscarDisciplinas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -198,8 +198,8 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dataGridView_disciplinas);
-            this.Name = "FormBuscarDisciplinasProfessores";
-            this.Text = "Buscar disciplinas - Professores";
+            this.Name = "FormBuscarDisciplinas";
+            this.Text = "Buscar disciplinas - Professores ";
             this.contextMenuStrip1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_disciplinas)).EndInit();
             this.ResumeLayout(false);

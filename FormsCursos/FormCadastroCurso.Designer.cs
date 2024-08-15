@@ -29,13 +29,13 @@
         private void InitializeComponent()
         {
             this.btn_voltar = new System.Windows.Forms.Button();
-            this.txt_habilidades = new System.Windows.Forms.TextBox();
-            this.txt_nome_disciplina = new System.Windows.Forms.TextBox();
+            this.txt_semestres = new System.Windows.Forms.TextBox();
+            this.txt_nome_curso = new System.Windows.Forms.TextBox();
             this.btn_cadastrar = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.listBox1 = new System.Windows.Forms.ListBox();
+            this.list_disciplinas = new System.Windows.Forms.ListBox();
             this.SuspendLayout();
             // 
             // btn_voltar
@@ -47,20 +47,21 @@
             this.btn_voltar.TabIndex = 54;
             this.btn_voltar.Text = "Voltar";
             this.btn_voltar.UseVisualStyleBackColor = true;
+            this.btn_voltar.Click += new System.EventHandler(this.btn_voltar_Click);
             // 
-            // txt_habilidades
+            // txt_semestres
             // 
-            this.txt_habilidades.Location = new System.Drawing.Point(47, 147);
-            this.txt_habilidades.Name = "txt_habilidades";
-            this.txt_habilidades.Size = new System.Drawing.Size(235, 20);
-            this.txt_habilidades.TabIndex = 53;
+            this.txt_semestres.Location = new System.Drawing.Point(47, 147);
+            this.txt_semestres.Name = "txt_semestres";
+            this.txt_semestres.Size = new System.Drawing.Size(235, 20);
+            this.txt_semestres.TabIndex = 53;
             // 
-            // txt_nome_disciplina
+            // txt_nome_curso
             // 
-            this.txt_nome_disciplina.Location = new System.Drawing.Point(47, 87);
-            this.txt_nome_disciplina.Name = "txt_nome_disciplina";
-            this.txt_nome_disciplina.Size = new System.Drawing.Size(235, 20);
-            this.txt_nome_disciplina.TabIndex = 52;
+            this.txt_nome_curso.Location = new System.Drawing.Point(47, 87);
+            this.txt_nome_curso.Name = "txt_nome_curso";
+            this.txt_nome_curso.Size = new System.Drawing.Size(235, 20);
+            this.txt_nome_curso.TabIndex = 52;
             // 
             // btn_cadastrar
             // 
@@ -71,6 +72,7 @@
             this.btn_cadastrar.TabIndex = 51;
             this.btn_cadastrar.Text = "Cadastrar";
             this.btn_cadastrar.UseVisualStyleBackColor = true;
+            this.btn_cadastrar.Click += new System.EventHandler(this.btn_cadastrar_Click);
             // 
             // label4
             // 
@@ -102,24 +104,24 @@
             this.label1.TabIndex = 55;
             this.label1.Text = "Disciplinas:";
             // 
-            // listBox1
+            // list_disciplinas
             // 
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.Location = new System.Drawing.Point(47, 205);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(235, 95);
-            this.listBox1.TabIndex = 57;
+            this.list_disciplinas.FormattingEnabled = true;
+            this.list_disciplinas.Location = new System.Drawing.Point(47, 205);
+            this.list_disciplinas.Name = "list_disciplinas";
+            this.list_disciplinas.Size = new System.Drawing.Size(235, 95);
+            this.list_disciplinas.TabIndex = 57;
             // 
             // FormCadastroCurso
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(350, 386);
-            this.Controls.Add(this.listBox1);
+            this.Controls.Add(this.list_disciplinas);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btn_voltar);
-            this.Controls.Add(this.txt_habilidades);
-            this.Controls.Add(this.txt_nome_disciplina);
+            this.Controls.Add(this.txt_semestres);
+            this.Controls.Add(this.txt_nome_curso);
             this.Controls.Add(this.btn_cadastrar);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label2);
@@ -133,12 +135,12 @@
         #endregion
 
         private System.Windows.Forms.Button btn_voltar;
-        private System.Windows.Forms.TextBox txt_habilidades;
-        private System.Windows.Forms.TextBox txt_nome_disciplina;
+        private System.Windows.Forms.TextBox txt_semestres;
+        private System.Windows.Forms.TextBox txt_nome_curso;
         private System.Windows.Forms.Button btn_cadastrar;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ListBox listBox1;
+        private System.Windows.Forms.ListBox list_disciplinas;
     }
 }

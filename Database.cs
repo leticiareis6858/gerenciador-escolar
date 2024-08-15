@@ -368,25 +368,45 @@ public class Database
         }
     }
 
-    public List<String> BuscarNomeDisciplinas()
+    public List<string> BuscarNomeIdDisciplinas()
     {
         List<string> disciplinas = new List<string>();
 
         using (MySqlConnection conn = GetConnection())
         {
             conn.Open();
-            string query = "SELECT disciplina FROM tb_disciplina";
+            string query = "SELECT id_disciplina, disciplina FROM tb_disciplina";
             MySqlCommand cmd = new MySqlCommand(query, conn);
 
             using (MySqlDataReader reader = cmd.ExecuteReader())
             {
                 while (reader.Read())
                 {
-                    disciplinas.Add(reader["disciplina"].ToString());
+                    int id = reader.GetInt32("id_disciplina");
+                    string nome = reader.GetString("disciplina");
+                    disciplinas.Add($"id: {id}, disciplina: {nome}");
                 }
             }
+
+            conn.Close();
         }
 
         return disciplinas;
     }
+
+    public void CadastrarCurso(string nomeCurso, int duracao)
+    {
+        using (MySqlConnection conn = GetConnection())
+        {
+            conn.Open();
+            string query = "INSERT INTO tb_curso (nome_curso, duracao) VALUES (@nomeCurso, @duracao)";
+            MySqlCommand cmd = new MySqlCommand(query, conn);
+            cmd.Parameters.AddWithValue("@nomeCurso", nomeCurso);
+            cmd.Parameters.AddWithValue("@duracao", duracao);
+
+            cmd.ExecuteNonQuery();
+        }
+    }
+
+  
 }

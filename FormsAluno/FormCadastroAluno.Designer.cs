@@ -126,6 +126,7 @@
             this.btn_cadastrar.TabIndex = 8;
             this.btn_cadastrar.Text = "Cadastrar";
             this.btn_cadastrar.UseVisualStyleBackColor = true;
+            this.btn_cadastrar.Click += new System.EventHandler(this.btn_cadastrar_Click);
             // 
             // btn_voltar
             // 
@@ -136,6 +137,7 @@
             this.btn_voltar.TabIndex = 9;
             this.btn_voltar.Text = "Voltar";
             this.btn_voltar.UseVisualStyleBackColor = true;
+            this.btn_voltar.Click += new System.EventHandler(this.btn_voltar_Click);
             // 
             // data_nascimento
             // 
@@ -196,6 +198,7 @@
             this.btn_limpar.TabIndex = 18;
             this.btn_limpar.Text = "Limpar";
             this.btn_limpar.UseVisualStyleBackColor = true;
+            this.btn_limpar.Click += new System.EventHandler(this.btn_limpar_Click);
             // 
             // FormCadastroAluno
             // 

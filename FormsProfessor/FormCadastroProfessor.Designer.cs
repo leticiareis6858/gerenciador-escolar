@@ -38,8 +38,9 @@
             this.txt_nome = new System.Windows.Forms.TextBox();
             this.txt_email = new System.Windows.Forms.TextBox();
             this.txt_formacao = new System.Windows.Forms.TextBox();
-            this.box_titulacao = new System.Windows.Forms.ComboBox();
+            this.txt_titulacao = new System.Windows.Forms.ComboBox();
             this.btn_voltar = new System.Windows.Forms.Button();
+            this.btn_limpar = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // txt_senha
@@ -108,6 +109,7 @@
             this.btn_cadastrar.TabIndex = 26;
             this.btn_cadastrar.Text = "Cadastrar";
             this.btn_cadastrar.UseVisualStyleBackColor = true;
+            this.btn_cadastrar.Click += new System.EventHandler(this.btn_cadastrar_Click);
             // 
             // txt_nome
             // 
@@ -130,10 +132,10 @@
             this.txt_formacao.Size = new System.Drawing.Size(223, 20);
             this.txt_formacao.TabIndex = 31;
             // 
-            // box_titulacao
+            // txt_titulacao
             // 
-            this.box_titulacao.FormattingEnabled = true;
-            this.box_titulacao.Items.AddRange(new object[] {
+            this.txt_titulacao.FormattingEnabled = true;
+            this.txt_titulacao.Items.AddRange(new object[] {
             "Técnico(a)",
             "Bacharel",
             "Especialista",
@@ -144,10 +146,10 @@
             "Professor(a) Titular",
             "Professor(a) Associado(a)",
             "Professor(a) Assistente"});
-            this.box_titulacao.Location = new System.Drawing.Point(47, 187);
-            this.box_titulacao.Name = "box_titulacao";
-            this.box_titulacao.Size = new System.Drawing.Size(223, 21);
-            this.box_titulacao.TabIndex = 35;
+            this.txt_titulacao.Location = new System.Drawing.Point(47, 187);
+            this.txt_titulacao.Name = "txt_titulacao";
+            this.txt_titulacao.Size = new System.Drawing.Size(223, 21);
+            this.txt_titulacao.TabIndex = 35;
             // 
             // btn_voltar
             // 
@@ -158,14 +160,27 @@
             this.btn_voltar.TabIndex = 36;
             this.btn_voltar.Text = "Voltar";
             this.btn_voltar.UseVisualStyleBackColor = true;
+            this.btn_voltar.Click += new System.EventHandler(this.btn_voltar_Click);
+            // 
+            // btn_limpar
+            // 
+            this.btn_limpar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_limpar.Location = new System.Drawing.Point(413, 178);
+            this.btn_limpar.Name = "btn_limpar";
+            this.btn_limpar.Size = new System.Drawing.Size(78, 30);
+            this.btn_limpar.TabIndex = 37;
+            this.btn_limpar.Text = "Limpar";
+            this.btn_limpar.UseVisualStyleBackColor = true;
+            this.btn_limpar.Click += new System.EventHandler(this.btn_limpar_Click);
             // 
             // FormCadastroProfessor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(617, 294);
+            this.Controls.Add(this.btn_limpar);
             this.Controls.Add(this.btn_voltar);
-            this.Controls.Add(this.box_titulacao);
+            this.Controls.Add(this.txt_titulacao);
             this.Controls.Add(this.txt_senha);
             this.Controls.Add(this.txt_formacao);
             this.Controls.Add(this.txt_email);
@@ -195,7 +210,8 @@
         private System.Windows.Forms.TextBox txt_nome;
         private System.Windows.Forms.TextBox txt_email;
         private System.Windows.Forms.TextBox txt_formacao;
-        private System.Windows.Forms.ComboBox box_titulacao;
+        private System.Windows.Forms.ComboBox txt_titulacao;
         private System.Windows.Forms.Button btn_voltar;
+        private System.Windows.Forms.Button btn_limpar;
     }
 }

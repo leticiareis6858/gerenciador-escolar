@@ -214,4 +214,39 @@ public class Database
             return dt;
         }
     }
+
+    public bool verificarNomeAluno(string usuario)
+    {
+        using (MySqlConnection conn = GetConnection())
+        {
+            conn.Open();
+            string query = "SELECT COUNT(*) FROM tb_aluno WHERE nome_aluno = @usuario";
+            MySqlCommand cmd = new MySqlCommand(query, conn);
+            cmd.Parameters.AddWithValue("@usuario", usuario);
+
+            int count = Convert.ToInt32(cmd.ExecuteScalar());
+
+            conn.Close();
+
+            return count > 0;
+        }
+    }
+
+    public bool verificarNomeProfessor(string usuario)
+    {
+        using (MySqlConnection conn = GetConnection())
+        {
+            conn.Open();
+            string query = "SELECT COUNT(*) FROM tb_professor WHERE nome_professor = @usuario";
+            MySqlCommand cmd = new MySqlCommand(query, conn);
+            cmd.Parameters.AddWithValue("@usuario", usuario);
+
+            int count = Convert.ToInt32(cmd.ExecuteScalar());
+
+            conn.Close();
+
+            return count > 0;
+        }
+    }
+
 }

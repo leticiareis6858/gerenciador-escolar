@@ -408,5 +408,35 @@ public class Database
         }
     }
 
-  
+    public int BuscarIdCurso(string nomeCurso)
+    {
+        using (MySqlConnection conn = GetConnection())
+        {
+            conn.Open();
+            string query = "SELECT id_curso FROM tb_curso WHERE nome_curso = @nomeCurso";
+            MySqlCommand cmd = new MySqlCommand(query, conn);
+            cmd.Parameters.AddWithValue("@nomeCurso", nomeCurso);
+
+            object result = cmd.ExecuteScalar();
+      
+            return Convert.ToInt32(result);
+        }
+    }
+
+    public void AtrelarDisciplinasAoCurso(int idCurso, List<int> idsDisciplinas)
+    {
+        using (MySqlConnection conn = GetConnection())
+        {
+            conn.Open();
+            foreach (int idDisciplina in idsDisciplinas)
+            {
+                string query = "INSERT INTO tb_curso_disciplina (id_curso, id_disciplina) VALUES (@idCurso, @idDisciplina)";
+                MySqlCommand cmd = new MySqlCommand(query, conn);
+                cmd.Parameters.AddWithValue("@idCurso", idCurso);
+                cmd.Parameters.AddWithValue("@idDisciplina", idDisciplina);
+
+                cmd.ExecuteNonQuery();
+            }
+        }
+    }
 }

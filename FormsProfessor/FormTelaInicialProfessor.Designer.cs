@@ -156,13 +156,13 @@
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label txt_titulacao;
-        private System.Windows.Forms.Label txt_nome;
         private System.Windows.Forms.Button btn_cursos;
         private System.Windows.Forms.Button btn_disciplinas;
         private System.Windows.Forms.Button btn_verificar;
         private System.Windows.Forms.Button btn_atualizar;
         private System.Windows.Forms.Button btn_sair;
         private System.Windows.Forms.GroupBox groupBox1;
+        public System.Windows.Forms.Label txt_nome;
+        public System.Windows.Forms.Label txt_titulacao;
     }
 }

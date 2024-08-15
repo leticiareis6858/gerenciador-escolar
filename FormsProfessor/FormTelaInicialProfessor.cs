@@ -15,9 +15,12 @@ namespace GerenciadorEscolar
 {
     public partial class FormTelaInicialProfessor : Form
     {
+        private Database db;
         public FormTelaInicialProfessor()
         {
             InitializeComponent();
+            db=new Database();
+            txt_titulacao.Text=db.ObterTitulacaoPorNome(txt_nome.Text);
         }
 
         private void btn_disciplinas_Click(object sender, EventArgs e)
@@ -37,6 +40,8 @@ namespace GerenciadorEscolar
         private void btn_verificar_Click(object sender, EventArgs e)
         {
             FormVerificarAtrelamentosProfessores formVerificar= new FormVerificarAtrelamentosProfessores();
+            formVerificar.txt_nome.Text = txt_nome.Text;
+            formVerificar.txt_titulacao.Text = txt_titulacao.Text;
             formVerificar.ShowDialog();
             this.Close();
         }

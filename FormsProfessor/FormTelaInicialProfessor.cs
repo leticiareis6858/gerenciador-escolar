@@ -1,4 +1,7 @@
-﻿using System;
+﻿using GerenciadorDeTurmas.FormsCursos;
+using GerenciadorDeTurmas.FormsProfessor;
+using GerenciadorEscolar.FormsProfessor;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -17,34 +20,39 @@ namespace GerenciadorEscolar
             InitializeComponent();
         }
 
-        private void FormTelaInicialProfessor_Load(object sender, EventArgs e)
+        private void btn_disciplinas_Click(object sender, EventArgs e)
         {
-
+            FormBuscarDisciplinasProfessores formDisciplinas = new FormBuscarDisciplinasProfessores();
+            formDisciplinas.ShowDialog();
+            this.Close();
         }
 
-        private void groupBox1_Enter(object sender, EventArgs e)
+        private void btn_cursos_Click(object sender, EventArgs e)
         {
-
+            FormBuscarCursosProfessores formCursos = new FormBuscarCursosProfessores();
+            formCursos.ShowDialog();
+            this.Close();
         }
 
-        private void button7_Click(object sender, EventArgs e)
+        private void btn_verificar_Click(object sender, EventArgs e)
         {
-
+            FormVerificarAtrelamentosProfessores formVerificar= new FormVerificarAtrelamentosProfessores();
+            formVerificar.ShowDialog();
+            this.Close();
         }
 
-        private void txt_nome_Click(object sender, EventArgs e)
+        private void btn_atualizar_Click(object sender, EventArgs e)
         {
-
+            FormAtualizarCadastroProfessores formAtualizar= new FormAtualizarCadastroProfessores();
+            formAtualizar.ShowDialog();
+            this.Close();
         }
 
-        private void txt_titulacao_Click(object sender, EventArgs e)
+        private void btn_sair_Click(object sender, EventArgs e)
         {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
+            form_login formLogin=new form_login();
+            formLogin.ShowDialog();
+            this.Close();
         }
     }
 }

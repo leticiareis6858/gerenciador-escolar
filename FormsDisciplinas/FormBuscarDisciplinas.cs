@@ -29,29 +29,32 @@ namespace GerenciadorDeTurmas.FormsDisciplinas
 
         private void btn_buscar_Click(object sender, EventArgs e)
         {
-            if(txt_id_disciplina!=null)
+            if (txt_id_disciplina != null)
             {
                 int id = int.Parse(txt_id_disciplina.Text);
                 DataTable resultado = db.BuscarDisciplinaPorId(id);
 
                 dataGridView_disciplinas.DataSource = resultado;
-            } else if(txt_disciplina!=null)
+            }
+            else if (txt_disciplina != null)
             {
-                String nome=txt_disciplina.Text;
+                String nome = txt_disciplina.Text;
                 DataTable resultado = db.BuscarDisciplinaPorNome(nome);
 
-                dataGridView_disciplinas.DataSource= resultado;
-            } else if(txt_habilidades!=null)
+                dataGridView_disciplinas.DataSource = resultado;
+            }
+            else if (txt_habilidades != null)
             {
-                String habilidade=txt_habilidades.Text;
+                String habilidade = txt_habilidades.Text;
                 DataTable resultado = db.BuscarDisciplinaPorHabilidade(habilidade);
 
                 dataGridView_disciplinas.DataSource = resultado;
-            } else if(txt_id_disciplina!=null && txt_disciplina!=null && txt_habilidades!=null)
+            }
+            else if (txt_id_disciplina != null && txt_disciplina != null && txt_habilidades != null)
             {
                 int id = int.Parse(txt_id_disciplina.Text);
                 String nome = txt_disciplina.Text;
-                String habilidade=txt_habilidades.Text;
+                String habilidade = txt_habilidades.Text;
 
                 DataTable resultado = db.BuscarDisciplina(nome, id, habilidade);
 
@@ -61,12 +64,17 @@ namespace GerenciadorDeTurmas.FormsDisciplinas
             {
                 MessageBox.Show("Por favor, preencha ao menos um dos campos para buscar por uma disciplina.");
             }
-            
+
         }
 
         private void btn_limpar_Click(object sender, EventArgs e)
         {
+            txt_id_disciplina.Text = string.Empty;
+            txt_disciplina.Text = string.Empty;
+            txt_habilidades.Text = string.Empty;
 
+            DataTable dt = db.GetDisciplinas();
+            dataGridView_disciplinas.DataSource = dt;
         }
     }
 }

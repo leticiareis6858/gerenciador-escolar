@@ -482,4 +482,82 @@ public class Database
 
         }
     }
+
+    public DataTable BuscarCursoPorId(int id)
+    {
+        using (MySqlConnection conn = GetConnection())
+        {
+            conn.Open();
+            string query = "SELECT * FROM tb_curso WHERE id_curso = @id_curso";
+            MySqlCommand cmd = new MySqlCommand(query, conn);
+            cmd.Parameters.AddWithValue("@id_curso", id);
+
+            MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
+            DataTable dt = new DataTable();
+            adapter.Fill(dt);
+
+            conn.Close();
+
+            return dt;
+        }
+    }
+
+    public DataTable BuscarCursoPorNome(String nome)
+    {
+        using (MySqlConnection conn = GetConnection())
+        {
+            conn.Open();
+            string query = "SELECT * FROM tb_curso WHERE nome_curso LIKE @nome_curso";
+            MySqlCommand cmd = new MySqlCommand(query, conn);
+            cmd.Parameters.AddWithValue("@nome_curso", "%" + nome + "%");
+
+            MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
+            DataTable dt = new DataTable();
+            adapter.Fill(dt);
+
+            conn.Close();
+
+            return dt;
+        }
+    }
+
+    public DataTable BuscarCursoPorDisciplina(String disciplina)
+    {
+        using (MySqlConnection conn = GetConnection())
+        {
+            conn.Open();
+            string query = "SELECT * FROM tb_curso WHERE disciplina LIKE @disciplina";
+            MySqlCommand cmd = new MySqlCommand(query, conn);
+            cmd.Parameters.AddWithValue("@disciplina", "%" + disciplina + "%");
+
+            MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
+            DataTable dt = new DataTable();
+            adapter.Fill(dt);
+
+            conn.Close();
+
+            return dt;
+        }
+    }
+
+    public DataTable BuscarCurso(String nome, int id, String disciplina)
+    {
+        using (MySqlConnection conn = GetConnection())
+        {
+            conn.Open();
+            string query = "SELECT * FROM tb_curso WHERE id = @id_curso AND nome_curso LIKE @nome_curso AND disciplina ILIKE @disciplina";
+            MySqlCommand cmd = new MySqlCommand(query, conn);
+            cmd.Parameters.AddWithValue("@id_curso", id);
+            cmd.Parameters.AddWithValue("@nome_curso", nome);
+            cmd.Parameters.AddWithValue("@disciplina", "%" + disciplina + "%");
+
+            MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
+            DataTable dt = new DataTable();
+            adapter.Fill(dt);
+
+            conn.Close();
+
+            return dt;
+        }
+    }
 }

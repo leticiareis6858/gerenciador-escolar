@@ -95,6 +95,7 @@
             this.link_mudar_senha.TabIndex = 5;
             this.link_mudar_senha.TabStop = true;
             this.link_mudar_senha.Text = "Esqueceu a senha? Clique aqui";
+            this.link_mudar_senha.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.link_mudar_senha_LinkClicked);
             // 
             // link_cadastrar
             // 

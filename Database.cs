@@ -560,4 +560,68 @@ public class Database
             return dt;
         }
     }
+
+    public int BuscarIdProfessorPorNome(String nome)
+    {
+        using (MySqlConnection conn = GetConnection())
+        {
+            conn.Open();
+            string query = "SELECT id_professor FROM tb_professor WHERE nome_professor = @nome_professor";
+            MySqlCommand cmd = new MySqlCommand(query, conn);
+            cmd.Parameters.AddWithValue("@nome_professor", nome);
+
+            object result = cmd.ExecuteScalar();
+
+            return Convert.ToInt32(result);
+        }
+    }
+
+    public DataTable BuscarDisciplinasProfessorPorId(int id)
+    {
+        using (MySqlConnection conn = GetConnection())
+        {
+            conn.Open();
+            string query = @"
+            SELECT d.id_disciplina, d.nome_disciplina
+            FROM tb_curso_disciplina cd
+            JOIN tb_disciplina d ON cd.id_disciplina = d.id_disciplina
+            JOIN tb_curso_professor cp ON cd.id_curso = cp.id_curso
+            WHERE cp.id_professor = @id_professor";
+
+            MySqlCommand cmd = new MySqlCommand(query, conn);
+            cmd.Parameters.AddWithValue("@id_professor", id);
+
+            MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
+            DataTable dt = new DataTable();
+            adapter.Fill(dt);
+
+            conn.Close();
+
+            return dt;
+        }
+    }
+
+    public DataTable BuscarCursosProfessorPorId(int id)
+    {
+        using (MySqlConnection conn = GetConnection())
+        {
+            conn.Open();
+            string query = @"
+            SELECT c.id_curso, c.nome_curso
+            FROM tb_curso_professor cp
+            JOIN tb_curso c ON cp.id_curso = c.id_curso
+            WHERE cp.id_professor = @id_professor";
+
+            MySqlCommand cmd = new MySqlCommand(query, conn);
+            cmd.Parameters.AddWithValue("@id_professor", id);
+
+            MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
+            DataTable dt = new DataTable();
+            adapter.Fill(dt);
+
+            conn.Close();
+
+            return dt;
+        }
+    }
 }

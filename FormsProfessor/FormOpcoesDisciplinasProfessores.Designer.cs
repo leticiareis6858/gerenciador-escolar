@@ -1,4 +1,4 @@
-﻿namespace GerenciadorDeTurmas.FormsDisciplinas
+﻿namespace GerenciadorEscolar.FormsDisciplinas
 {
     partial class FormOpcoesDisciplinasProfessores
     {
@@ -28,19 +28,20 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.button6 = new System.Windows.Forms.Button();
+            this.btn_voltar = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.btn_pesquisar = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // button6
+            // btn_voltar
             // 
-            this.button6.Location = new System.Drawing.Point(195, 12);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(75, 23);
-            this.button6.TabIndex = 8;
-            this.button6.Text = "Voltar";
-            this.button6.UseVisualStyleBackColor = true;
+            this.btn_voltar.Location = new System.Drawing.Point(195, 12);
+            this.btn_voltar.Name = "btn_voltar";
+            this.btn_voltar.Size = new System.Drawing.Size(75, 23);
+            this.btn_voltar.TabIndex = 8;
+            this.btn_voltar.Text = "Voltar";
+            this.btn_voltar.UseVisualStyleBackColor = true;
+            this.btn_voltar.Click += new System.EventHandler(this.btn_voltar_Click);
             // 
             // button4
             // 
@@ -66,7 +67,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(292, 232);
-            this.Controls.Add(this.button6);
+            this.Controls.Add(this.btn_voltar);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.btn_pesquisar);
             this.Name = "FormOpcoesDisciplinasProfessores";
@@ -77,7 +78,7 @@
 
         #endregion
 
-        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Button btn_voltar;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button btn_pesquisar;
     }

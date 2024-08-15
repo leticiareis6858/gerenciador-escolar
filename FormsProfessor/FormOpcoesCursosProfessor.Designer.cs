@@ -1,4 +1,4 @@
-﻿namespace GerenciadorDeTurmas.FormsProfessor
+﻿namespace GerenciadorEscolar.FormsProfessor
 {
     partial class FormOpcoesCursosProfessor
     {

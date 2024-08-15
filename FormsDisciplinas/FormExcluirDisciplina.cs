@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace GerenciadorDeTurmas.FormsDisciplinas
+namespace GerenciadorEscolar.FormsDisciplinas
 {
     public partial class FormExcluirDisciplina : Form
     {

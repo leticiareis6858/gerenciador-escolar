@@ -1,6 +1,6 @@
 ﻿namespace GerenciadorEscolar
 {
-    partial class Form3
+    partial class FormCadastro
     {
         /// <summary>
         /// Required designer variable.
@@ -75,7 +75,7 @@
             this.comboBox1.Size = new System.Drawing.Size(173, 21);
             this.comboBox1.TabIndex = 5;
             // 
-            // Form3
+            // FormCadastro
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -84,7 +84,7 @@
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label1);
-            this.Name = "Form3";
+            this.Name = "FormCadastro";
             this.Text = "Tela de cadastro";
             this.ResumeLayout(false);
             this.PerformLayout();

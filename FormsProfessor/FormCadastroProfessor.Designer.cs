@@ -1,4 +1,4 @@
-﻿namespace GerenciadorDeTurmas
+﻿namespace GerenciadorEscolar
 {
     partial class FormCadastroProfessor
     {

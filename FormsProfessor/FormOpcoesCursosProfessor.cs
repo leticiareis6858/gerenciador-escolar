@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace GerenciadorDeTurmas.FormsProfessor
+namespace GerenciadorEscolar.FormsProfessor
 {
     public partial class FormOpcoesCursosProfessor : Form
     {

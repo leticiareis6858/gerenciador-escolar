@@ -1,4 +1,5 @@
 ﻿using System;
+using GerenciadorEscolar;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -10,11 +11,12 @@ using System.Windows.Forms;
 
 namespace GerenciadorEscolar
 {
-    public partial class Form3 : Form
+    public partial class FormCadastro : Form
     {
-        public Form3()
+        public FormCadastro()
         {
             InitializeComponent();
         }
+
     }
 }

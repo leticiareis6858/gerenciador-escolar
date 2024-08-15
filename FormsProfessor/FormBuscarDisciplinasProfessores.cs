@@ -1,4 +1,4 @@
-﻿using GerenciadorDeTurmas.FormsDisciplinas;
+﻿using GerenciadorEscolar.FormsDisciplinas;
 using GerenciadorEscolar;
 using MySql.Data.MySqlClient;
 using System;
@@ -11,7 +11,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace GerenciadorDeTurmas.FormsProfessor
+namespace GerenciadorEscolar.FormsProfessor
 {
     public partial class FormBuscarDisciplinasProfessores : Form
     {

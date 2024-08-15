@@ -1,4 +1,4 @@
-﻿namespace GerenciadorDeTurmas.FormsDisciplinas
+﻿namespace GerenciadorEscolar.FormsDisciplinas
 {
     partial class FormsOpcoesDisciplinasAlunos
     {

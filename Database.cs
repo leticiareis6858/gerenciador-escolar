@@ -436,4 +436,18 @@ public class Database
             cmd.ExecuteNonQuery();
         }
     }
+
+    public void CadastrarDisciplina(String disciplina, String habilidades)
+    {
+        using (MySqlConnection conn = GetConnection())
+        {
+            conn.Open();
+            string query = "INSERT INTO tb_disciplina (disciplina, habilidades) VALUES (@disciplina, @habilidades)";
+            MySqlCommand cmd = new MySqlCommand(query, conn);
+            cmd.Parameters.AddWithValue("@disciplina", disciplina);
+            cmd.Parameters.AddWithValue("@hbailidades", habilidades);
+
+            cmd.ExecuteNonQuery();
+        }
+    }
 }

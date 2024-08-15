@@ -161,11 +161,51 @@ public class Database
     {
         using (MySqlConnection conn = GetConnection()) {
             conn.Open();
-            string query = "SELECT * FROM tb_disciplina WHERE disciplina ILIKE = @nome_disciplina";
+            string query = "SELECT * FROM tb_disciplina WHERE disciplina LIKE @nome_disciplina";
             MySqlCommand cmd= new MySqlCommand(query, conn);
-            cmd.Parameters.AddWithValue("@nome_disciplina", nome);
+            cmd.Parameters.AddWithValue("@nome_disciplina", "%" + nome + "%");
 
             MySqlDataAdapter adapter= new MySqlDataAdapter(cmd);
+            DataTable dt = new DataTable();
+            adapter.Fill(dt);
+
+            conn.Close();
+
+            return dt;
+        }
+    }
+
+    public DataTable BuscarDisciplinaPorHabilidade(String habilidade)
+    {
+        using (MySqlConnection conn = GetConnection())
+        {
+            conn.Open();
+            string query = "SELECT * FROM tb_disciplina WHERE habilidades LIKE @habilidade";
+            MySqlCommand cmd = new MySqlCommand(query, conn);
+            cmd.Parameters.AddWithValue("@habilidade", "%" + habilidade + "%");
+
+            MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
+            DataTable dt = new DataTable();
+            adapter.Fill(dt);
+
+            conn.Close();
+
+            return dt;
+        }
+    }
+
+    public DataTable BuscarDisciplina(String nome, int id, String habilidade)
+    {
+        using (MySqlConnection conn = GetConnection())
+        {
+            conn.Open();
+            string query = "SELECT * FROM tb_disciplina WHERE id = @id_disciplina AND disciplina LIKE @nome_disciplina AND habilidades ILIKE @habilidade";
+            MySqlCommand cmd = new MySqlCommand(query, conn);
+            cmd.Parameters.AddWithValue("@id_disciplina", id);
+            cmd.Parameters.AddWithValue("@nome_disciplina", nome);
+            cmd.Parameters.AddWithValue("@habilidade", "%" + habilidade + "%");
+
+            MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
             DataTable dt = new DataTable();
             adapter.Fill(dt);
 

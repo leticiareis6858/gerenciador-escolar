@@ -1,4 +1,5 @@
-﻿using System;
+﻿using GerenciadorDeTurmas.FormsProfessor;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +16,13 @@ namespace GerenciadorDeTurmas.FormsDisciplinas
         public FormOpcoesDisciplinasProfessores()
         {
             InitializeComponent();
+        }
+
+        private void btn_pesquisar_Click(object sender, EventArgs e)
+        {
+            FormBuscarDisciplinasProfessores formBuscarDisciplinas = new FormBuscarDisciplinasProfessores();
+            formBuscarDisciplinas.Show();
+            this.Close();
         }
     }
 }

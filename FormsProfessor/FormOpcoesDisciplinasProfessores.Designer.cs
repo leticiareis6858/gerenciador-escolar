@@ -30,7 +30,7 @@
         {
             this.button6 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btn_pesquisar = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // button6
@@ -51,14 +51,15 @@
             this.button4.Text = "Atrelar-se";
             this.button4.UseVisualStyleBackColor = true;
             // 
-            // button1
+            // btn_pesquisar
             // 
-            this.button1.Location = new System.Drawing.Point(73, 57);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(146, 46);
-            this.button1.TabIndex = 6;
-            this.button1.Text = "Pesquisar";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btn_pesquisar.Location = new System.Drawing.Point(73, 57);
+            this.btn_pesquisar.Name = "btn_pesquisar";
+            this.btn_pesquisar.Size = new System.Drawing.Size(146, 46);
+            this.btn_pesquisar.TabIndex = 6;
+            this.btn_pesquisar.Text = "Pesquisar";
+            this.btn_pesquisar.UseVisualStyleBackColor = true;
+            this.btn_pesquisar.Click += new System.EventHandler(this.btn_pesquisar_Click);
             // 
             // FormOpcoesDisciplinasProfessores
             // 
@@ -67,7 +68,7 @@
             this.ClientSize = new System.Drawing.Size(292, 232);
             this.Controls.Add(this.button6);
             this.Controls.Add(this.button4);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btn_pesquisar);
             this.Name = "FormOpcoesDisciplinasProfessores";
             this.Text = "Opções - Disciplinas";
             this.ResumeLayout(false);
@@ -78,6 +79,6 @@
 
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btn_pesquisar;
     }
 }

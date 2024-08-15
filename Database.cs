@@ -394,7 +394,7 @@ public class Database
         return disciplinas;
     }
 
-    public void CadastrarCurso(string nomeCurso, int duracao)
+    public void CadastrarCurso(string nomeCurso, String duracao)
     {
         using (MySqlConnection conn = GetConnection())
         {
@@ -408,7 +408,7 @@ public class Database
         }
     }
 
-    public int BuscarIdCurso(string nomeCurso)
+    public int BuscarIdCursoPorNome(string nomeCurso)
     {
         using (MySqlConnection conn = GetConnection())
         {
@@ -423,20 +423,17 @@ public class Database
         }
     }
 
-    public void AtrelarDisciplinasAoCurso(int idCurso, List<int> idsDisciplinas)
+    public void AtrelarDisciplinasAoCurso(int idCurso, int idDisciplina)
     {
         using (MySqlConnection conn = GetConnection())
         {
             conn.Open();
-            foreach (int idDisciplina in idsDisciplinas)
-            {
-                string query = "INSERT INTO tb_curso_disciplina (id_curso, id_disciplina) VALUES (@idCurso, @idDisciplina)";
-                MySqlCommand cmd = new MySqlCommand(query, conn);
-                cmd.Parameters.AddWithValue("@idCurso", idCurso);
-                cmd.Parameters.AddWithValue("@idDisciplina", idDisciplina);
+            string query = "INSERT INTO tb_curso_disciplina (id_curso, id_disciplina) VALUES (@idCurso, @idDisciplina)";
+            MySqlCommand cmd = new MySqlCommand(query, conn);
+            cmd.Parameters.AddWithValue("@idCurso", idCurso);
+            cmd.Parameters.AddWithValue("@idDisciplina", idDisciplina);
 
-                cmd.ExecuteNonQuery();
-            }
+            cmd.ExecuteNonQuery();
         }
     }
 }

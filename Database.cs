@@ -624,4 +624,19 @@ public class Database
             return dt;
         }
     }
+
+    public String ObterTitulacaoPorNome(String nome)
+    {
+        using (MySqlConnection conn = GetConnection())
+        {
+            conn.Open();
+            string query = "SELECT titulacao FROM tb_professor WHERE nome_professor = @nome_professor";
+            MySqlCommand cmd = new MySqlCommand(query, conn);
+            cmd.Parameters.AddWithValue("@nome_professor", nome);
+
+            object result = cmd.ExecuteScalar();
+
+            return result.ToString();
+        }
+    }
 }

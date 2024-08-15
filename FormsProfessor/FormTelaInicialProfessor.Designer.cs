@@ -49,6 +49,7 @@
             this.label1.Size = new System.Drawing.Size(168, 24);
             this.label1.TabIndex = 0;
             this.label1.Text = "Seja bem vindo(a),";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // txt_titulacao
             // 
@@ -59,6 +60,7 @@
             this.txt_titulacao.Size = new System.Drawing.Size(86, 24);
             this.txt_titulacao.TabIndex = 1;
             this.txt_titulacao.Text = "Titulação";
+            this.txt_titulacao.Click += new System.EventHandler(this.txt_titulacao_Click);
             // 
             // txt_nome
             // 
@@ -70,37 +72,38 @@
             this.txt_nome.Size = new System.Drawing.Size(62, 24);
             this.txt_nome.TabIndex = 2;
             this.txt_nome.Text = "Nome";
+            this.txt_nome.Click += new System.EventHandler(this.txt_nome_Click);
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(263, 42);
+            this.button1.Location = new System.Drawing.Point(36, 135);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(159, 66);
+            this.button1.Size = new System.Drawing.Size(159, 84);
             this.button1.TabIndex = 3;
-            this.button1.Text = "Gerenciar cursos";
+            this.button1.Text = "Buscar cursos";
             this.button1.UseVisualStyleBackColor = true;
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(36, 42);
+            this.button2.Location = new System.Drawing.Point(36, 34);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(159, 66);
+            this.button2.Size = new System.Drawing.Size(159, 84);
             this.button2.TabIndex = 4;
-            this.button2.Text = "Gerenciar disciplinas";
+            this.button2.Text = "Buscar disciplinas";
             this.button2.UseVisualStyleBackColor = true;
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(36, 139);
+            this.button3.Location = new System.Drawing.Point(263, 135);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(159, 66);
+            this.button3.Size = new System.Drawing.Size(159, 84);
             this.button3.TabIndex = 5;
-            this.button3.Text = "Gerenciar alunos";
+            this.button3.Text = "Verificar cursos e disciplinas atrelados a si";
             this.button3.UseVisualStyleBackColor = true;
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(263, 121);
+            this.button4.Location = new System.Drawing.Point(263, 34);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(159, 84);
             this.button4.TabIndex = 6;
@@ -115,6 +118,7 @@
             this.button7.TabIndex = 9;
             this.button7.Text = "Sair";
             this.button7.UseVisualStyleBackColor = true;
+            this.button7.Click += new System.EventHandler(this.button7_Click);
             // 
             // groupBox1
             // 
@@ -129,6 +133,7 @@
             this.groupBox1.TabIndex = 10;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "O que deseja fazer?";
+            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
             // FormTelaInicialProfessor
             // 
@@ -141,7 +146,8 @@
             this.Controls.Add(this.txt_titulacao);
             this.Controls.Add(this.label1);
             this.Name = "FormTelaInicialProfessor";
-            this.Text = "FormTelaInicialProfessor";
+            this.Text = "Tela incial - Professor";
+            this.Load += new System.EventHandler(this.FormTelaInicialProfessor_Load);
             this.groupBox1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();

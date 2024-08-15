@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace GerenciadorEscolar
 {
-    public partial class form_senha : Form
+    public partial class FormRecuperarSenha : Form
     {
-        public form_senha()
+        public FormRecuperarSenha()
         {
             InitializeComponent();
         }

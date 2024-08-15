@@ -1,6 +1,6 @@
 ﻿namespace GerenciadorEscolar
 {
-    partial class form_senha
+    partial class FormRecuperarSenha
     {
         /// <summary>
         /// Required designer variable.
@@ -132,7 +132,7 @@
             this.btn_voltar.Text = "Voltar";
             this.btn_voltar.UseVisualStyleBackColor = true;
             // 
-            // form_senha
+            // FormRecuperarSenha
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -147,7 +147,7 @@
             this.Controls.Add(this.btn_mudar);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label1);
-            this.Name = "form_senha";
+            this.Name = "FormRecuperarSenha";
             this.Text = "Tela de recuperação de senha";
             this.ResumeLayout(false);
             this.PerformLayout();

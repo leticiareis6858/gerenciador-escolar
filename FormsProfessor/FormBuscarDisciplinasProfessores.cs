@@ -1,4 +1,5 @@
 ﻿using GerenciadorDeTurmas.FormsDisciplinas;
+using GerenciadorEscolar;
 using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
@@ -83,6 +84,18 @@ namespace GerenciadorDeTurmas.FormsProfessor
             FormOpcoesDisciplinasProfessores formOpcoes = new FormOpcoesDisciplinasProfessores();
             formOpcoes.Show();
             this.Close();
+        }
+
+        private void btn_sair_Click(object sender, EventArgs e)
+        {
+            DialogResult result = MessageBox.Show("Você realmente deseja sair?", "Confirmação", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            if (result == DialogResult.Yes)
+            {
+                form_login form_login = new form_login();
+                form_login.Show();
+                this.Close();
+            }
         }
     }
 }

@@ -755,4 +755,21 @@ public class Database
             cmd.ExecuteNonQuery();
         }
     }
+
+    public void AtualizarProfessor(String nome, String email, String senha, String formacao, String titulacao)
+    {
+        using (MySqlConnection conn = GetConnection())
+        {
+            conn.Open();
+            string query = "UPDATE tb_professor SET email_professor = @email, senha_professor = @senha, formacao = @formacao, titulacao = @titulacao WHERE nome_professor = @nome";
+            MySqlCommand cmd = new MySqlCommand(query, conn);
+            cmd.Parameters.AddWithValue("@email", email);
+            cmd.Parameters.AddWithValue("@senha", senha);
+            cmd.Parameters.AddWithValue("@formacao", formacao);
+            cmd.Parameters.AddWithValue("@titulacao", titulacao);
+            cmd.Parameters.AddWithValue("@nome", nome);
+
+            cmd.ExecuteNonQuery();
+        }
+    }
 }

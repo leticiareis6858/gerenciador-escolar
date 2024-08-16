@@ -699,4 +699,60 @@ public class Database
             return result.ToString();
         }
     }
+
+    public void AtualizarEmailProfessor(String nome, String email)
+    {
+        using (MySqlConnection conn = GetConnection())
+        {
+            conn.Open();
+            string query = "UPDATE tb_professor SET email_professor = @email WHERE nome_professor = @nome";
+            MySqlCommand cmd = new MySqlCommand(query, conn);
+            cmd.Parameters.AddWithValue("@email", email);
+            cmd.Parameters.AddWithValue("@nome", nome);
+
+            cmd.ExecuteNonQuery();
+        }
+    }
+
+    public void AtualizarSenhaProfessor(String nome, String senha)
+    {
+        using (MySqlConnection conn = GetConnection())
+        {
+            conn.Open();
+            string query = "UPDATE tb_professor SET senha_professor = @senha WHERE nome_professor = @nome";
+            MySqlCommand cmd = new MySqlCommand(query, conn);
+            cmd.Parameters.AddWithValue("@senha", senha);
+            cmd.Parameters.AddWithValue("@nome", nome);
+
+            cmd.ExecuteNonQuery();
+        }
+    }
+
+    public void AtualizarFormacaoProfessor(String nome, String formacao)
+    {
+        using (MySqlConnection conn = GetConnection())
+        {
+            conn.Open();
+            string query = "UPDATE tb_professor SET formacao = @formacao WHERE nome_professor = @nome";
+            MySqlCommand cmd = new MySqlCommand(query, conn);
+            cmd.Parameters.AddWithValue("@formacao", formacao);
+            cmd.Parameters.AddWithValue("@nome", nome);
+
+            cmd.ExecuteNonQuery();
+        }
+    }
+
+    public void AtualizarTitulacaoProfessor(String nome, String titulacao)
+    {
+        using (MySqlConnection conn = GetConnection())
+        {
+            conn.Open();
+            string query = "UPDATE tb_professor SET titulacao = @titulacao WHERE nome_professor = @nome";
+            MySqlCommand cmd = new MySqlCommand(query, conn);
+            cmd.Parameters.AddWithValue("@titulacao", titulacao);
+            cmd.Parameters.AddWithValue("@nome", nome);
+
+            cmd.ExecuteNonQuery();
+        }
+    }
 }

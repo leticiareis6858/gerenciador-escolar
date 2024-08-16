@@ -49,6 +49,7 @@ namespace GerenciadorEscolar
         private void btn_atualizar_Click(object sender, EventArgs e)
         {
             FormAtualizarCadastroProfessores formAtualizar= new FormAtualizarCadastroProfessores();
+            formAtualizar.txt_nome.Text = txt_nome.Text;
             formAtualizar.ShowDialog();
             this.Close();
         }

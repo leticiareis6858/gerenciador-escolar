@@ -639,4 +639,64 @@ public class Database
             return result.ToString();
         }
     }
+
+    public String BuscarEmailProfessorPorNome(String nome)
+    {
+        using (MySqlConnection conn = GetConnection())
+        {
+            conn.Open();
+            string query = "SELECT email_professor FROM tb_professor WHERE nome_professor = @nome_professor";
+            MySqlCommand cmd = new MySqlCommand(query, conn);
+            cmd.Parameters.AddWithValue("@nome_professor", nome);
+
+            object result = cmd.ExecuteScalar();
+
+            return result.ToString();
+        }
+    }
+
+    public String BuscarFormacaoProfessorPorNome(String nome)
+    {
+        using (MySqlConnection conn = GetConnection())
+        {
+            conn.Open();
+            string query = "SELECT formacao FROM tb_professor WHERE nome_professor = @nome_professor";
+            MySqlCommand cmd = new MySqlCommand(query, conn);
+            cmd.Parameters.AddWithValue("@nome_professor", nome);
+
+            object result = cmd.ExecuteScalar();
+
+            return result.ToString();
+        }
+    }
+
+    public String BuscarSenhaProfessorPorNome(String nome)
+    {
+        using (MySqlConnection conn = GetConnection())
+        {
+            conn.Open();
+            string query = "SELECT senha_professor FROM tb_professor WHERE nome_professor = @nome_professor";
+            MySqlCommand cmd = new MySqlCommand(query, conn);
+            cmd.Parameters.AddWithValue("@nome_professor", nome);
+
+            object result = cmd.ExecuteScalar();
+
+            return result.ToString();
+        }
+    }
+
+    public String BuscarTitulacaoProfessorPorNome(String nome)
+    {
+        using (MySqlConnection conn = GetConnection())
+        {
+            conn.Open();
+            string query = "SELECT titulacao FROM tb_professor WHERE nome_professor = @nome_professor";
+            MySqlCommand cmd = new MySqlCommand(query, conn);
+            cmd.Parameters.AddWithValue("@nome_professor", nome);
+
+            object result = cmd.ExecuteScalar();
+
+            return result.ToString();
+        }
+    }
 }

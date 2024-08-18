@@ -160,13 +160,14 @@ public class Database
     }
     public DataTable BuscarDisciplinaPorNome(String nome)
     {
-        using (MySqlConnection conn = GetConnection()) {
+        using (MySqlConnection conn = GetConnection())
+        {
             conn.Open();
             string query = "SELECT * FROM tb_disciplina WHERE disciplina LIKE @nome_disciplina";
-            MySqlCommand cmd= new MySqlCommand(query, conn);
+            MySqlCommand cmd = new MySqlCommand(query, conn);
             cmd.Parameters.AddWithValue("@nome_disciplina", "%" + nome + "%");
 
-            MySqlDataAdapter adapter= new MySqlDataAdapter(cmd);
+            MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
             DataTable dt = new DataTable();
             adapter.Fill(dt);
 
@@ -330,11 +331,11 @@ public class Database
 
     public void cadastrarAluno(String nome, String email, String senha, String telefone, String data_nasc, String cidade, String endereco)
     {
-        using(MySqlConnection conn = GetConnection())
+        using (MySqlConnection conn = GetConnection())
         {
             conn.Open();
 
-            String query= "INSERT INTO tb_aluno (nome_aluno, email_aluno, senha_aluno, telefone_aluno, data_nasc_aluno, cidade_aluno, endereco) VALUES (@nome, @email, @senha, @telefone, @data_nascimento, @cidade, @endereco)";
+            String query = "INSERT INTO tb_aluno (nome_aluno, email_aluno, senha_aluno, telefone_aluno, data_nasc_aluno, cidade_aluno, endereco) VALUES (@nome, @email, @senha, @telefone, @data_nascimento, @cidade, @endereco)";
             MySqlCommand cmd = new MySqlCommand(query, conn);
             cmd.Parameters.AddWithValue("@nome", nome);
             cmd.Parameters.AddWithValue("@email", email);
@@ -418,7 +419,7 @@ public class Database
             cmd.Parameters.AddWithValue("@nomeCurso", nomeCurso);
 
             object result = cmd.ExecuteScalar();
-      
+
             return Convert.ToInt32(result);
         }
     }
@@ -1001,12 +1002,30 @@ public class Database
 
     public DataTable BuscarCursoDeAlunoPorNome(String nomeCurso, String idAluno)
     {
-        using(MySqlConnection conn = GetConnection())
+        using (MySqlConnection conn = GetConnection())
         {
             conn.Open();
             string query = @"SELECT tb_curso.* FROM tb_curso_aluno INNER JOIN tb_curso ON tb_curso_aluno.id_curso = tb_curso.id_curso WHERE tb_curso.nome_curso LIKE @nome_curso AND tb_curso_aluno.matricula_aluno = @id_aluno";
             MySqlCommand cmd = new MySqlCommand(query, conn);
             cmd.Parameters.AddWithValue("@nome_curso", nomeCurso);
+            cmd.Parameters.AddWithValue("@id_aluno", idAluno);
+
+            MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
+            DataTable dt = new DataTable();
+            adapter.Fill(dt);
+
+            return dt;
+        }
+    }
+
+    public DataTable BuscarDisciplinaDeAlunoPorId(String nomeDisciplina, String idAluno)
+    {
+        using (MySqlConnection conn = GetConnection())
+        {
+            conn.Open();
+            string query = @"SELECT tb_disciplina.* FROM tb_disciplina_aluno INNER JOIN tb_disciplina ON tb_disciplina_aluno.id_disciplina = tb_disciplina.id_disciplina WHERE tb_disciplina.id_disciplina = @id_disciplina AND tb_disciplina_aluno.matricula_aluno = @id_aluno";
+            MySqlCommand cmd = new MySqlCommand(query, conn);
+            cmd.Parameters.AddWithValue("@id_disciplina", nomeDisciplina);
             cmd.Parameters.AddWithValue("@id_aluno", idAluno);
 
             MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);

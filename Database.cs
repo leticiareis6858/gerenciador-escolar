@@ -890,4 +890,18 @@ public class Database
             cmd.ExecuteNonQuery();
         }
     }
+
+    public void AtualizarTelefoneAluno(String nome, String telefone)
+    {
+        using (MySqlConnection conn = GetConnection())
+        {
+            conn.Open();
+            string query = "UPDATE tb_aluno SET telefone_aluno = @telefone WHERE nome_aluno = @nome";
+            MySqlCommand cmd = new MySqlCommand(query, conn);
+            cmd.Parameters.AddWithValue("@telefone", telefone);
+            cmd.Parameters.AddWithValue("@nome", nome);
+
+            cmd.ExecuteNonQuery();
+        }
+    }
 }

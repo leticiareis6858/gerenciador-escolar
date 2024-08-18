@@ -802,4 +802,19 @@ public class Database
             return result.ToString();
         }
     }
+
+    public String BuscarTelefoneAlunoPorNome(String nome)
+    {
+        using (MySqlConnection conn = GetConnection())
+        {
+            conn.Open();
+            string query = "SELECT telefone_aluno FROM tb_aluno WHERE nome_aluno = @nome_aluno";
+            MySqlCommand cmd = new MySqlCommand(query, conn);
+            cmd.Parameters.AddWithValue("@nome_aluno", nome);
+
+            object result = cmd.ExecuteScalar();
+
+            return result.ToString();
+        }
+    }
 }

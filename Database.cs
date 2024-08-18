@@ -876,4 +876,18 @@ public class Database
             cmd.ExecuteNonQuery();
         }
     }
+
+    public void AtualizarSenhaAluno(String nome, String senha)
+    {
+        using (MySqlConnection conn = GetConnection())
+        {
+            conn.Open();
+            string query = "UPDATE tb_aluno SET senha_aluno = @senha WHERE nome_aluno = @nome";
+            MySqlCommand cmd = new MySqlCommand(query, conn);
+            cmd.Parameters.AddWithValue("@senha", senha);
+            cmd.Parameters.AddWithValue("@nome", nome);
+
+            cmd.ExecuteNonQuery();
+        }
+    }
 }

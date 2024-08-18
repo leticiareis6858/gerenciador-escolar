@@ -932,4 +932,18 @@ public class Database
             cmd.ExecuteNonQuery();
         }
     }
+
+    public void AtualizarDataNascAluno(String nome, String dataNasc)
+    {
+        using (MySqlConnection conn = GetConnection())
+        {
+            conn.Open();
+            string query = "UPDATE tb_aluno SET data_nasc_aluno = @data_nasc WHERE nome_aluno = @nome";
+            MySqlCommand cmd = new MySqlCommand(query, conn);
+            cmd.Parameters.AddWithValue("@data_nasc", dataNasc);
+            cmd.Parameters.AddWithValue("@nome", nome);
+
+            cmd.ExecuteNonQuery();
+        }
+    }
 }

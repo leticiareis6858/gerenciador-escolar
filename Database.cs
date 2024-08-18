@@ -1035,4 +1035,22 @@ public class Database
             return dt;
         }
     }
+
+    public DataTable BuscarDisciplinaDeAlunoPorNome(String nomeDisciplina, String idAluno)
+    {
+        using (MySqlConnection conn = GetConnection())
+        {
+            conn.Open();
+            string query = @"SELECT tb_disciplina.* FROM tb_disciplina_aluno INNER JOIN tb_disciplina ON tb_disciplina_aluno.id_disciplina = tb_disciplina.id_disciplina WHERE tb_disciplina.disciplina LIKE @nome_disciplina AND tb_disciplina_aluno.matricula_aluno = @id_aluno";
+            MySqlCommand cmd = new MySqlCommand(query, conn);
+            cmd.Parameters.AddWithValue("@nome_disciplina", nomeDisciplina);
+            cmd.Parameters.AddWithValue("@id_aluno", idAluno);
+
+            MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
+            DataTable dt = new DataTable();
+            adapter.Fill(dt);
+
+            return dt;
+        }
+    }
 }

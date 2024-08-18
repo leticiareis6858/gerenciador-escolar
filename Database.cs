@@ -1073,7 +1073,7 @@ public class Database
 
     public DataTable BuscarCursosAluno(String idAluno)
     {
-        using(MySqlConnection conn = GetConnection())
+        using (MySqlConnection conn = GetConnection())
         {
             conn.Open();
             string query = @"SELECT tb_curso.* FROM tb_curso_aluno INNER JOIN tb_curso ON tb_curso_aluno.id_curso = tb_curso.id_curso WHERE tb_curso_aluno.matricula_aluno = @id_aluno";
@@ -1090,10 +1090,10 @@ public class Database
 
     public DataTable BuscarProfessoresDeAluno(String idAluno)
     {
-        using( MySqlConnection conn = GetConnection())
+        using (MySqlConnection conn = GetConnection())
         {
             conn.Open();
-           string query= @"
+            string query = @"
             SELECT tb_professor.nome_professor, tb_professor.formacao, tb_professor.titulacao, tb_professor.email_professor
             FROM tb_curso_aluno
             INNER JOIN tb_curso_professor ON tb_curso_aluno.id_curso = tb_curso_professor.id_curso
@@ -1102,6 +1102,30 @@ public class Database
 
             MySqlCommand cmd = new MySqlCommand(query, conn);
             cmd.Parameters.AddWithValue("@id_aluno", idAluno);
+
+            MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
+            DataTable dt = new DataTable();
+            adapter.Fill(dt);
+
+            return dt;
+        }
+    }
+
+    public DataTable BuscarProfessorDeAlunoPorNome(String idAluno, String nomeProfessor)
+    {
+        using (MySqlConnection conn = GetConnection())
+        {
+            conn.Open();
+            string query = @"
+            SELECT tb_professor.nome_professor, tb_professor.formacao, tb_professor.titulacao, tb_professor.email_professor
+            FROM tb_curso_aluno
+            INNER JOIN tb_curso_professor ON tb_curso_aluno.id_curso = tb_curso_professor.id_curso
+            INNER JOIN tb_professor ON tb_curso_professor.id_professor = tb_professor.id_professor
+            WHERE tb_curso_aluno.matricula_aluno = @id_aluno AND tb_professor.nome_professor LIKE @nome_professor";
+
+            MySqlCommand cmd = new MySqlCommand(query, conn);
+            cmd.Parameters.AddWithValue("@id_aluno", idAluno);
+            cmd.Parameters.AddWithValue("@nome_professor", "%" + nomeProfessor + "%");
 
             MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
             DataTable dt = new DataTable();

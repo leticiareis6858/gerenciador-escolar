@@ -1087,4 +1087,27 @@ public class Database
             return dt;
         }
     }
+
+    public DataTable BuscarProfessoresDeAluno(String idAluno)
+    {
+        using( MySqlConnection conn = GetConnection())
+        {
+            conn.Open();
+           string query= @"
+            SELECT tb_professor.nome_professor, tb_professor.formacao, tb_professor.titulacao, tb_professor.email_professor
+            FROM tb_curso_aluno
+            INNER JOIN tb_curso_professor ON tb_curso_aluno.id_curso = tb_curso_professor.id_curso
+            INNER JOIN tb_professor ON tb_curso_professor.id_professor = tb_professor.id_professor
+            WHERE tb_curso_aluno.matricula_aluno = @id_aluno";
+
+            MySqlCommand cmd = new MySqlCommand(query, conn);
+            cmd.Parameters.AddWithValue("@id_aluno", idAluno);
+
+            MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
+            DataTable dt = new DataTable();
+            adapter.Fill(dt);
+
+            return dt;
+        }
+    }
 }

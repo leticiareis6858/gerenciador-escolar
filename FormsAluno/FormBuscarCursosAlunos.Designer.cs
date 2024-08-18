@@ -151,7 +151,7 @@
             this.txt_nome.Name = "txt_nome";
             this.txt_nome.Size = new System.Drawing.Size(35, 13);
             this.txt_nome.TabIndex = 39;
-            this.txt_nome.Text = "label5";
+            this.txt_nome.Text = "Nome";
             // 
             // FormBuscarCursosAlunos
             // 

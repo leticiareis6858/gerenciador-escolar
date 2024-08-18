@@ -1070,4 +1070,21 @@ public class Database
             return dt;
         }
     }
+
+    public DataTable BuscarCursosAluno(String idAluno)
+    {
+        using(MySqlConnection conn = GetConnection())
+        {
+            conn.Open();
+            string query = @"SELECT tb_curso.* FROM tb_curso_aluno INNER JOIN tb_curso ON tb_curso_aluno.id_curso = tb_curso.id_curso WHERE tb_curso_aluno.matricula_aluno = @id_aluno";
+            MySqlCommand cmd = new MySqlCommand(query, conn);
+            cmd.Parameters.AddWithValue("@id_aluno", idAluno);
+
+            MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
+            DataTable dt = new DataTable();
+            adapter.Fill(dt);
+
+            return dt;
+        }
+    }
 }

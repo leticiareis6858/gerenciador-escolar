@@ -817,4 +817,19 @@ public class Database
             return result.ToString();
         }
     }
+
+    public String BuscarCidadeAlunoPorNome(String nome)
+    {
+        using (MySqlConnection conn = GetConnection())
+        {
+            conn.Open();
+            string query = "SELECT cidade_aluno FROM tb_aluno WHERE nome_aluno = @nome_aluno";
+            MySqlCommand cmd = new MySqlCommand(query, conn);
+            cmd.Parameters.AddWithValue("@nome_aluno", nome);
+
+            object result = cmd.ExecuteScalar();
+
+            return result.ToString();
+        }
+    }
 }

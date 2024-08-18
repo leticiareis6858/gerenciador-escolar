@@ -965,4 +965,20 @@ public class Database
             cmd.ExecuteNonQuery();
         }
     }
+
+    public String BuscarIdAlunoPorNome(String nome)
+    {
+        using (MySqlConnection conn = GetConnection())
+        {
+            conn.Open();
+            string query = "SELECT matricula_aluno FROM tb_aluno WHERE nome_aluno = @nome_aluno";
+            MySqlCommand cmd = new MySqlCommand(query, conn);
+            cmd.Parameters.AddWithValue("@nome_aluno", nome);
+
+            object result = cmd.ExecuteScalar();
+
+            return result.ToString();
+        }
+    }
+
 }

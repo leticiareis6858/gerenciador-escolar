@@ -999,4 +999,21 @@ public class Database
         }
     }
 
+    public DataTable BuscarCursoDeAlunoPorNome(String nomeCurso, String idAluno)
+    {
+        using(MySqlConnection conn = GetConnection())
+        {
+            conn.Open();
+            string query = @"SELECT tb_curso.* FROM tb_curso_aluno INNER JOIN tb_curso ON tb_curso_aluno.id_curso = tb_curso.id_curso WHERE tb_curso.nome_curso LIKE @nome_curso AND tb_curso_aluno.matricula_aluno = @id_aluno";
+            MySqlCommand cmd = new MySqlCommand(query, conn);
+            cmd.Parameters.AddWithValue("@nome_curso", nomeCurso);
+            cmd.Parameters.AddWithValue("@id_aluno", idAluno);
+
+            MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
+            DataTable dt = new DataTable();
+            adapter.Fill(dt);
+
+            return dt;
+        }
+    }
 }

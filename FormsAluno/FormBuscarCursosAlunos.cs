@@ -16,24 +16,28 @@ namespace GerenciadorDeTurmas.FormsAluno
         private Database db;
         public FormBuscarCursosAlunos()
         {
+            String idAluno = db.BuscarIdAlunoPorNome(txt_nome.Text);
             InitializeComponent();
             db = new Database();
+            DataTable cursos = db.BuscarCursosAluno(idAluno);
+
+            dataGridView_cursos.DataSource = cursos;
         }
 
         private void btn_buscar_Click(object sender, EventArgs e)
         {
             String idAluno = db.BuscarIdAlunoPorNome(txt_nome.Text);
-            if (txt_id_curso!=null)
-            {
-                int idCurso = int.Parse(txt_id_curso.Text);
-                DataTable resultado = db.BuscarCursoDeAlunoPorId(idCurso, idAluno);
-
-                dataGridView_cursos.DataSource = resultado;
-            }
-            else if (txt_curso != null)
+            if (txt_curso!=null)
             {
                 String nomeCurso = txt_curso.Text;
                 DataTable resultado = db.BuscarCursoDeAlunoPorNome(nomeCurso, idAluno);
+
+                dataGridView_cursos.DataSource = resultado;
+            }
+            else if (txt_id_curso != null)
+            {
+                int idCurso = int.Parse(txt_id_curso.Text);
+                DataTable resultado = db.BuscarCursoDeAlunoPorId(idCurso, idAluno);
 
                 dataGridView_cursos.DataSource = resultado;
             }
@@ -56,18 +60,18 @@ namespace GerenciadorDeTurmas.FormsAluno
 
             if (result == DialogResult.Yes)
             {
-                form_login form_login = new form_login();
-                form_login.Show();
+                form_login formLogin = new form_login();
+                formLogin.Show();
                 this.Close();
             }
         }
 
         private void btn_limpar_Click(object sender, EventArgs e)
         {
-            txt_id_curso.Text = string.Empty;
             txt_curso.Text = string.Empty;
+            txt_id_curso.Text = string.Empty;
 
-            DataTable dt = db.BuscarDisciplinas();
+            DataTable dt = db.BuscarCursos();
             dataGridView_cursos.DataSource = dt;
         }
 

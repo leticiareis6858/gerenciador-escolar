@@ -28,13 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.txt_curso = new System.Windows.Forms.TextBox();
+            this.txt_id_curso = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.btn_sair = new System.Windows.Forms.Button();
             this.btn_voltar = new System.Windows.Forms.Button();
             this.btn_limpar = new System.Windows.Forms.Button();
             this.btn_buscar = new System.Windows.Forms.Button();
-            this.txt_id_curso = new System.Windows.Forms.TextBox();
+            this.txt_curso = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.dataGridView_cursos = new System.Windows.Forms.DataGridView();
@@ -43,13 +43,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_cursos)).BeginInit();
             this.SuspendLayout();
             // 
-            // txt_curso
+            // txt_id_curso
             // 
-            this.txt_curso.Location = new System.Drawing.Point(188, 77);
-            this.txt_curso.Multiline = true;
-            this.txt_curso.Name = "txt_curso";
-            this.txt_curso.Size = new System.Drawing.Size(132, 69);
-            this.txt_curso.TabIndex = 34;
+            this.txt_id_curso.Location = new System.Drawing.Point(188, 77);
+            this.txt_id_curso.Multiline = true;
+            this.txt_id_curso.Name = "txt_id_curso";
+            this.txt_id_curso.Size = new System.Drawing.Size(132, 69);
+            this.txt_id_curso.TabIndex = 34;
             // 
             // label3
             // 
@@ -100,13 +100,13 @@
             this.btn_buscar.UseVisualStyleBackColor = true;
             this.btn_buscar.Click += new System.EventHandler(this.btn_buscar_Click);
             // 
-            // txt_id_curso
+            // txt_curso
             // 
-            this.txt_id_curso.Location = new System.Drawing.Point(35, 77);
-            this.txt_id_curso.Multiline = true;
-            this.txt_id_curso.Name = "txt_id_curso";
-            this.txt_id_curso.Size = new System.Drawing.Size(132, 69);
-            this.txt_id_curso.TabIndex = 27;
+            this.txt_curso.Location = new System.Drawing.Point(35, 77);
+            this.txt_curso.Multiline = true;
+            this.txt_curso.Name = "txt_curso";
+            this.txt_curso.Size = new System.Drawing.Size(132, 69);
+            this.txt_curso.TabIndex = 27;
             // 
             // label2
             // 
@@ -162,13 +162,13 @@
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dataGridView_cursos);
-            this.Controls.Add(this.txt_curso);
+            this.Controls.Add(this.txt_id_curso);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.btn_sair);
             this.Controls.Add(this.btn_voltar);
             this.Controls.Add(this.btn_limpar);
             this.Controls.Add(this.btn_buscar);
-            this.Controls.Add(this.txt_id_curso);
+            this.Controls.Add(this.txt_curso);
             this.Controls.Add(this.label2);
             this.Name = "FormBuscarCursosAlunos";
             this.Text = "Buscar matriculas - Cursos";
@@ -179,13 +179,13 @@
         }
 
         #endregion
-        private System.Windows.Forms.TextBox txt_curso;
+        private System.Windows.Forms.TextBox txt_id_curso;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button btn_sair;
         private System.Windows.Forms.Button btn_voltar;
         private System.Windows.Forms.Button btn_limpar;
         private System.Windows.Forms.Button btn_buscar;
-        private System.Windows.Forms.TextBox txt_id_curso;
+        private System.Windows.Forms.TextBox txt_curso;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridView dataGridView_cursos;

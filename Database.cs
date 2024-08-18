@@ -848,7 +848,7 @@ public class Database
         }
     }
 
-    public String BuscarDataNascAlunoPorNome(String nome)
+    public DateTime BuscarDataNascAlunoPorNome(String nome)
     {
         using (MySqlConnection conn = GetConnection())
         {
@@ -859,7 +859,7 @@ public class Database
 
             object result = cmd.ExecuteScalar();
 
-            return result.ToString();
+            return (DateTime)result;
         }
     }
 }

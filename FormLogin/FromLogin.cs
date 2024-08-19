@@ -49,6 +49,7 @@ namespace GerenciadorEscolar
             {
                 FormTelaInicialProfessor formTelaInicialProfessor = new FormTelaInicialProfessor();
                 formTelaInicialProfessor.txt_nome.Text=db.BuscarNomePorEmailProfessor(email);
+                formTelaInicialProfessor.txt_titulacao.Text = db.BuscarTitulacaoProfessorPorNome(db.BuscarNomePorEmailProfessor(email));
                 this.Hide();
                 formTelaInicialProfessor.ShowDialog();
                 this.Close();

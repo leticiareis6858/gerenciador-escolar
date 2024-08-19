@@ -475,7 +475,7 @@ public class Database
             string query = "INSERT INTO tb_disciplina (disciplina, habilidades) VALUES (@disciplina, @habilidades)";
             MySqlCommand cmd = new MySqlCommand(query, conn);
             cmd.Parameters.AddWithValue("@disciplina", disciplina);
-            cmd.Parameters.AddWithValue("@hbailidades", habilidades);
+            cmd.Parameters.AddWithValue("@habilidades", habilidades);
 
             cmd.ExecuteNonQuery();
         }

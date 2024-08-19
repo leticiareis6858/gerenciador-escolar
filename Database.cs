@@ -217,14 +217,14 @@ public class Database
         }
     }
 
-    public bool verificarLoginAluno(string usuario, string senha)
+    public bool verificarLoginAluno(string email, string senha)
     {
         using (MySqlConnection conn = GetConnection())
         {
             conn.Open();
-            string query = "SELECT COUNT(*) FROM tb_aluno WHERE nome_aluno = @usuario AND senha_aluno = @senha";
+            string query = "SELECT COUNT(*) FROM tb_aluno WHERE email_aluno = @email AND senha_aluno = @senha";
             MySqlCommand cmd = new MySqlCommand(query, conn);
-            cmd.Parameters.AddWithValue("@usuario", usuario);
+            cmd.Parameters.AddWithValue("@email", email);
             cmd.Parameters.AddWithValue("@senha", senha);
 
             int count = Convert.ToInt32(cmd.ExecuteScalar());
@@ -235,14 +235,14 @@ public class Database
         }
     }
 
-    public bool verificarLoginProfessor(string usuario, string senha)
+    public bool verificarLoginProfessor(string email, string senha)
     {
         using (MySqlConnection conn = GetConnection())
         {
             conn.Open();
-            string query = "SELECT COUNT(*) FROM tb_professor WHERE nome_professor = @usuario AND senha_professor = @senha";
+            string query = "SELECT COUNT(*) FROM tb_professor WHERE email_professor = @email AND senha_professor = @senha";
             MySqlCommand cmd = new MySqlCommand(query, conn);
-            cmd.Parameters.AddWithValue("@usuario", usuario);
+            cmd.Parameters.AddWithValue("@email", email);
             cmd.Parameters.AddWithValue("@senha", senha);
 
             int count = Convert.ToInt32(cmd.ExecuteScalar());
@@ -250,6 +250,35 @@ public class Database
             conn.Close();
 
             return count > 0;
+        }
+    }
+
+    public String BuscarNomePorEmailAluno(string email)
+    {
+        using (MySqlConnection conn = GetConnection())
+        {
+            conn.Open();
+            string query = "SELECT nome_aluno FROM tb_aluno WHERE email_aluno = @email";
+            MySqlCommand cmd = new MySqlCommand(query, conn);
+            cmd.Parameters.AddWithValue("@email", email);
+
+            object result = cmd.ExecuteScalar();
+
+            return result.ToString();
+        }
+    }
+    public String BuscarNomePorEmailProfessor(string email)
+    {
+        using (MySqlConnection conn = GetConnection())
+        {
+            conn.Open();
+            string query = "SELECT nome_professor FROM tb_professor WHERE email_professor = @email";
+            MySqlCommand cmd = new MySqlCommand(query, conn);
+            cmd.Parameters.AddWithValue("@email", email);
+
+            object result = cmd.ExecuteScalar();
+
+            return result.ToString();
         }
     }
 

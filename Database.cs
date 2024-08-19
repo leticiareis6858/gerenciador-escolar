@@ -364,7 +364,7 @@ public class Database
         {
             conn.Open();
 
-            String query = "INSERT INTO tb_aluno (nome_aluno, email_aluno, senha_aluno, telefone_aluno, data_nasc_aluno, cidade_aluno, endereco) VALUES (@nome, @email, @senha, @telefone, @data_nascimento, @cidade, @endereco)";
+            String query = "INSERT INTO tb_aluno (nome_aluno, email_aluno, senha_aluno, telefone_aluno, data_nasc_aluno, cidade_aluno, endereco_aluno) VALUES (@nome, @email, @senha, @telefone, @data_nascimento, @cidade, @endereco)";
             MySqlCommand cmd = new MySqlCommand(query, conn);
             cmd.Parameters.AddWithValue("@nome", nome);
             cmd.Parameters.AddWithValue("@email", email);

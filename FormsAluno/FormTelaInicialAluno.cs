@@ -28,6 +28,7 @@ namespace GerenciadorEscolar
         private void btn_inscrever_curso_Click(object sender, EventArgs e)
         {
             FormInscreverseCurso formInscreverCurso= new FormInscreverseCurso();
+            formInscreverCurso.txt_nome.Text = txt_nome.Text; 
             formInscreverCurso.ShowDialog();
             this.Close();
         }

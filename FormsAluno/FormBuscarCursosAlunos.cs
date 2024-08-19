@@ -50,6 +50,7 @@ namespace GerenciadorDeTurmas.FormsAluno
         private void btn_voltar_Click(object sender, EventArgs e)
         {
             FormTelaInicialAluno telaInicial= new FormTelaInicialAluno();
+            telaInicial.txt_nome.Text = txt_nome.Text;
             telaInicial.Show();
             this.Close();
         }

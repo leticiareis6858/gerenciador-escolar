@@ -26,6 +26,7 @@ namespace GerenciadorEscolar
         private void btn_disciplinas_Click(object sender, EventArgs e)
         {
             FormBuscarDisciplinasProfessores formDisciplinas = new FormBuscarDisciplinasProfessores();
+            formDisciplinas.txt_nome.Text = txt_nome.Text;
             formDisciplinas.ShowDialog();
             this.Close();
         }
@@ -33,6 +34,7 @@ namespace GerenciadorEscolar
         private void btn_cursos_Click(object sender, EventArgs e)
         {
             FormBuscarCursosProfessores formCursos = new FormBuscarCursosProfessores();
+            formCursos.txt_nome.Text = txt_nome.Text;
             formCursos.ShowDialog();
             this.Close();
         }

@@ -36,6 +36,7 @@ namespace GerenciadorDeTurmas.FormsProfessor
         private void btn_voltar_Click(object sender, EventArgs e)
         {
             FormTelaInicialProfessor formTelaInicial = new FormTelaInicialProfessor();
+            formTelaInicial.txt_nome.Text = txt_nome.Text;
             formTelaInicial.ShowDialog();
             this.Close();
         }

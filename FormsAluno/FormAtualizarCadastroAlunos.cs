@@ -41,6 +41,7 @@ namespace GerenciadorDeTurmas.FormsAluno
         private void btn_voltar_Click(object sender, EventArgs e)
         {
             FormTelaInicialAluno formTelaInicial = new FormTelaInicialAluno();
+            formTelaInicial.txt_nome.Text = txt_nome.Text;
             formTelaInicial.ShowDialog();
             this.Close();
         }

@@ -45,6 +45,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.txt_disciplina = new System.Windows.Forms.TextBox();
             this.txt_habilidades = new System.Windows.Forms.TextBox();
+            this.txt_nome = new System.Windows.Forms.Label();
             this.contextMenuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_disciplinas)).BeginInit();
             this.SuspendLayout();
@@ -77,7 +78,7 @@
             // dataGridView_disciplinas
             // 
             this.dataGridView_disciplinas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView_disciplinas.Location = new System.Drawing.Point(39, 182);
+            this.dataGridView_disciplinas.Location = new System.Drawing.Point(39, 194);
             this.dataGridView_disciplinas.Name = "dataGridView_disciplinas";
             this.dataGridView_disciplinas.Size = new System.Drawing.Size(388, 223);
             this.dataGridView_disciplinas.TabIndex = 2;
@@ -85,7 +86,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(36, 167);
+            this.label1.Location = new System.Drawing.Point(36, 178);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(119, 13);
             this.label1.TabIndex = 3;
@@ -94,7 +95,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(36, 117);
+            this.label2.Location = new System.Drawing.Point(36, 130);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(84, 13);
             this.label2.TabIndex = 4;
@@ -102,14 +103,14 @@
             // 
             // txt_id_disciplina
             // 
-            this.txt_id_disciplina.Location = new System.Drawing.Point(39, 133);
+            this.txt_id_disciplina.Location = new System.Drawing.Point(39, 146);
             this.txt_id_disciplina.Name = "txt_id_disciplina";
             this.txt_id_disciplina.Size = new System.Drawing.Size(100, 20);
             this.txt_id_disciplina.TabIndex = 5;
             // 
             // btn_buscar
             // 
-            this.btn_buscar.Location = new System.Drawing.Point(192, 130);
+            this.btn_buscar.Location = new System.Drawing.Point(183, 146);
             this.btn_buscar.Name = "btn_buscar";
             this.btn_buscar.Size = new System.Drawing.Size(75, 23);
             this.btn_buscar.TabIndex = 6;
@@ -119,7 +120,7 @@
             // 
             // btn_limpar
             // 
-            this.btn_limpar.Location = new System.Drawing.Point(273, 130);
+            this.btn_limpar.Location = new System.Drawing.Point(274, 146);
             this.btn_limpar.Name = "btn_limpar";
             this.btn_limpar.Size = new System.Drawing.Size(75, 23);
             this.btn_limpar.TabIndex = 7;
@@ -150,7 +151,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(36, 22);
+            this.label3.Location = new System.Drawing.Point(36, 41);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(99, 13);
             this.label3.TabIndex = 10;
@@ -159,7 +160,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(201, 22);
+            this.label4.Location = new System.Drawing.Point(201, 41);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(71, 13);
             this.label4.TabIndex = 11;
@@ -167,7 +168,7 @@
             // 
             // txt_disciplina
             // 
-            this.txt_disciplina.Location = new System.Drawing.Point(39, 38);
+            this.txt_disciplina.Location = new System.Drawing.Point(39, 57);
             this.txt_disciplina.Multiline = true;
             this.txt_disciplina.Name = "txt_disciplina";
             this.txt_disciplina.Size = new System.Drawing.Size(132, 69);
@@ -175,17 +176,29 @@
             // 
             // txt_habilidades
             // 
-            this.txt_habilidades.Location = new System.Drawing.Point(204, 38);
+            this.txt_habilidades.Location = new System.Drawing.Point(204, 57);
             this.txt_habilidades.Multiline = true;
             this.txt_habilidades.Name = "txt_habilidades";
             this.txt_habilidades.Size = new System.Drawing.Size(132, 69);
             this.txt_habilidades.TabIndex = 13;
             // 
-            // FormBuscarDisciplinas
+            // txt_nome
+            // 
+            this.txt_nome.AutoSize = true;
+            this.txt_nome.ForeColor = System.Drawing.Color.DarkOrange;
+            this.txt_nome.Location = new System.Drawing.Point(36, 22);
+            this.txt_nome.Name = "txt_nome";
+            this.txt_nome.Size = new System.Drawing.Size(35, 13);
+            this.txt_nome.TabIndex = 14;
+            this.txt_nome.Text = "Nome";
+            this.txt_nome.Visible = false;
+            // 
+            // FormBuscarDisciplinasProfessores
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(463, 450);
+            this.ClientSize = new System.Drawing.Size(463, 433);
+            this.Controls.Add(this.txt_nome);
             this.Controls.Add(this.txt_habilidades);
             this.Controls.Add(this.txt_disciplina);
             this.Controls.Add(this.label4);
@@ -198,7 +211,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dataGridView_disciplinas);
-            this.Name = "FormBuscarDisciplinas";
+            this.Name = "FormBuscarDisciplinasProfessores";
             this.Text = "Buscar disciplinas - Professores ";
             this.contextMenuStrip1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_disciplinas)).EndInit();
@@ -225,5 +238,6 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txt_disciplina;
         private System.Windows.Forms.TextBox txt_habilidades;
+        public System.Windows.Forms.Label txt_nome;
     }
 }

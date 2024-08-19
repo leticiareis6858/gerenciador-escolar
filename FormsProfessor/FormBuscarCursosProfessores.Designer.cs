@@ -40,12 +40,13 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.dataGridView_cursos = new System.Windows.Forms.DataGridView();
+            this.txt_nome = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_cursos)).BeginInit();
             this.SuspendLayout();
             // 
             // txt_disciplina
             // 
-            this.txt_disciplina.Location = new System.Drawing.Point(204, 55);
+            this.txt_disciplina.Location = new System.Drawing.Point(207, 53);
             this.txt_disciplina.Multiline = true;
             this.txt_disciplina.Name = "txt_disciplina";
             this.txt_disciplina.Size = new System.Drawing.Size(132, 69);
@@ -53,7 +54,7 @@
             // 
             // txt_curso
             // 
-            this.txt_curso.Location = new System.Drawing.Point(39, 55);
+            this.txt_curso.Location = new System.Drawing.Point(42, 53);
             this.txt_curso.Multiline = true;
             this.txt_curso.Name = "txt_curso";
             this.txt_curso.Size = new System.Drawing.Size(132, 69);
@@ -62,7 +63,7 @@
             // txt_disciplinas
             // 
             this.txt_disciplinas.AutoSize = true;
-            this.txt_disciplinas.Location = new System.Drawing.Point(201, 39);
+            this.txt_disciplinas.Location = new System.Drawing.Point(204, 37);
             this.txt_disciplinas.Name = "txt_disciplinas";
             this.txt_disciplinas.Size = new System.Drawing.Size(66, 13);
             this.txt_disciplinas.TabIndex = 23;
@@ -71,7 +72,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(36, 39);
+            this.label3.Location = new System.Drawing.Point(39, 37);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(82, 13);
             this.label3.TabIndex = 22;
@@ -79,7 +80,7 @@
             // 
             // btn_sair
             // 
-            this.btn_sair.Location = new System.Drawing.Point(352, 58);
+            this.btn_sair.Location = new System.Drawing.Point(355, 56);
             this.btn_sair.Name = "btn_sair";
             this.btn_sair.Size = new System.Drawing.Size(75, 23);
             this.btn_sair.TabIndex = 21;
@@ -89,7 +90,7 @@
             // 
             // btn_voltar
             // 
-            this.btn_voltar.Location = new System.Drawing.Point(352, 29);
+            this.btn_voltar.Location = new System.Drawing.Point(355, 27);
             this.btn_voltar.Name = "btn_voltar";
             this.btn_voltar.Size = new System.Drawing.Size(75, 23);
             this.btn_voltar.TabIndex = 20;
@@ -99,7 +100,7 @@
             // 
             // btn_limpar
             // 
-            this.btn_limpar.Location = new System.Drawing.Point(273, 147);
+            this.btn_limpar.Location = new System.Drawing.Point(276, 145);
             this.btn_limpar.Name = "btn_limpar";
             this.btn_limpar.Size = new System.Drawing.Size(75, 23);
             this.btn_limpar.TabIndex = 19;
@@ -109,7 +110,7 @@
             // 
             // btn_buscar
             // 
-            this.btn_buscar.Location = new System.Drawing.Point(192, 147);
+            this.btn_buscar.Location = new System.Drawing.Point(195, 145);
             this.btn_buscar.Name = "btn_buscar";
             this.btn_buscar.Size = new System.Drawing.Size(75, 23);
             this.btn_buscar.TabIndex = 18;
@@ -119,7 +120,7 @@
             // 
             // txt_id_curso
             // 
-            this.txt_id_curso.Location = new System.Drawing.Point(39, 150);
+            this.txt_id_curso.Location = new System.Drawing.Point(42, 148);
             this.txt_id_curso.Name = "txt_id_curso";
             this.txt_id_curso.Size = new System.Drawing.Size(100, 20);
             this.txt_id_curso.TabIndex = 17;
@@ -127,7 +128,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(36, 134);
+            this.label2.Location = new System.Drawing.Point(39, 132);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(66, 13);
             this.label2.TabIndex = 16;
@@ -136,7 +137,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(36, 184);
+            this.label1.Location = new System.Drawing.Point(39, 182);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(99, 13);
             this.label1.TabIndex = 15;
@@ -145,16 +146,28 @@
             // dataGridView_cursos
             // 
             this.dataGridView_cursos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView_cursos.Location = new System.Drawing.Point(39, 199);
+            this.dataGridView_cursos.Location = new System.Drawing.Point(42, 197);
             this.dataGridView_cursos.Name = "dataGridView_cursos";
             this.dataGridView_cursos.Size = new System.Drawing.Size(388, 223);
             this.dataGridView_cursos.TabIndex = 14;
+            // 
+            // txt_nome
+            // 
+            this.txt_nome.AutoSize = true;
+            this.txt_nome.ForeColor = System.Drawing.Color.DarkOrange;
+            this.txt_nome.Location = new System.Drawing.Point(39, 9);
+            this.txt_nome.Name = "txt_nome";
+            this.txt_nome.Size = new System.Drawing.Size(35, 13);
+            this.txt_nome.TabIndex = 26;
+            this.txt_nome.Text = "Nome";
+            this.txt_nome.Visible = false;
             // 
             // FormBuscarCursosProfessores
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(463, 450);
+            this.ClientSize = new System.Drawing.Size(463, 437);
+            this.Controls.Add(this.txt_nome);
             this.Controls.Add(this.txt_disciplina);
             this.Controls.Add(this.txt_curso);
             this.Controls.Add(this.txt_disciplinas);
@@ -189,5 +202,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridView dataGridView_cursos;
+        public System.Windows.Forms.Label txt_nome;
     }
 }

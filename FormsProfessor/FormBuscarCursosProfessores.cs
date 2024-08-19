@@ -23,6 +23,7 @@ namespace GerenciadorDeTurmas.FormsCursos
         private void btn_voltar_Click(object sender, EventArgs e)
         {
             FormTelaInicialProfessor telaInicial = new FormTelaInicialProfessor();
+            telaInicial.txt_nome.Text = txt_nome.Text;
             telaInicial.Show();
             this.Close();
         }

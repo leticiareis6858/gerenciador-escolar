@@ -57,25 +57,27 @@ namespace GerenciadorDeTurmas.FormsAluno
 
         private void btn_buscar_Click(object sender, EventArgs e)
         {
-            String idAluno = db.BuscarIdAlunoPorNome(txt_nome.Text);
-            if (txt_disciplina != null)
+            String idAluno = db.BuscarIdAlunoPorNome(txt_nome.Text.Trim());
+
+            if (!string.IsNullOrWhiteSpace(txt_disciplina.Text))
             {
-                String nomeDisciplina = txt_disciplina.Text;
+                String nomeDisciplina = txt_disciplina.Text.Trim();
                 DataTable resultado = db.BuscarDisciplinaDeAlunoPorNome(nomeDisciplina, idAluno);
 
                 dataGridView_disciplinas.DataSource = resultado;
             }
-            else if (txt_id_disciplina != null)
+            else if (!string.IsNullOrWhiteSpace(txt_id_disciplina.Text))
             {
-                int idDisciplina = int.Parse(txt_id_disciplina.Text);
+                int idDisciplina = int.Parse(txt_id_disciplina.Text.Trim());
                 DataTable resultado = db.BuscarDisciplinaDeAlunoPorId(idDisciplina, idAluno);
 
                 dataGridView_disciplinas.DataSource = resultado;
             }
             else
             {
-                MessageBox.Show("Por favor, preencha ao menos um dos campos para buscar por um curso.");
+                MessageBox.Show("Por favor, preencha ao menos um dos campos para buscar por uma disciplina.");
             }
         }
+
     }
 }

@@ -26,17 +26,18 @@ namespace GerenciadorDeTurmas.FormsAluno
 
         private void btn_buscar_Click(object sender, EventArgs e)
         {
-            String idAluno = db.BuscarIdAlunoPorNome(txt_nome.Text);
-            if (txt_curso!=null)
+            String idAluno = db.BuscarIdAlunoPorNome(txt_nome.Text.Trim());
+
+            if (!string.IsNullOrWhiteSpace(txt_curso.Text))
             {
-                String nomeCurso = txt_curso.Text;
+                String nomeCurso = txt_curso.Text.Trim();
                 DataTable resultado = db.BuscarCursoDeAlunoPorNome(nomeCurso, idAluno);
 
                 dataGridView_cursos.DataSource = resultado;
             }
-            else if (txt_id_curso != null)
+            else if (!string.IsNullOrWhiteSpace(txt_id_curso.Text))
             {
-                int idCurso = int.Parse(txt_id_curso.Text);
+                int idCurso = int.Parse(txt_id_curso.Text.Trim());
                 DataTable resultado = db.BuscarCursoDeAlunoPorId(idCurso, idAluno);
 
                 dataGridView_cursos.DataSource = resultado;
@@ -46,6 +47,7 @@ namespace GerenciadorDeTurmas.FormsAluno
                 MessageBox.Show("Por favor, preencha ao menos um dos campos para buscar por um curso.");
             }
         }
+
 
         private void btn_voltar_Click(object sender, EventArgs e)
         {

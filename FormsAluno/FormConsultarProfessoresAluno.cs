@@ -58,17 +58,18 @@ namespace GerenciadorDeTurmas.FormsAluno
 
         private void btn_buscar_Click(object sender, EventArgs e)
         {
-            String idAluno = db.BuscarIdAlunoPorNome(txt_nome.Text);
-            if (txt_professor.Text != null)
+            String idAluno = db.BuscarIdAlunoPorNome(txt_nome.Text.Trim());
+
+            if (!string.IsNullOrWhiteSpace(txt_professor.Text))
             {
-                String nomeProfessor = txt_professor.Text;
+                String nomeProfessor = txt_professor.Text.Trim();
                 DataTable resultado = db.BuscarProfessorDeAlunoPorNome(idAluno, nomeProfessor);
 
                 dataGridView_professores.DataSource = resultado;
             }
-            else if (txt_id_professor != null)
+            else if (!string.IsNullOrWhiteSpace(txt_id_professor.Text))
             {
-                String idProfessor = txt_id_professor.Text.ToString();
+                String idProfessor = txt_id_professor.Text.Trim();
                 DataTable resultado = db.BuscarProfessorDeAlunoPorId(idAluno, idProfessor);
 
                 dataGridView_professores.DataSource = resultado;
@@ -78,5 +79,6 @@ namespace GerenciadorDeTurmas.FormsAluno
                 MessageBox.Show("Por favor, preencha ao menos um dos campos para buscar por um professor.");
             }
         }
+
     }
 }

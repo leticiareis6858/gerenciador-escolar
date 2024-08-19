@@ -140,7 +140,7 @@ public class Database
         }
     }
 
-    public DataTable BuscarDisciplinaPorId(int id)
+    public DataTable BuscarDisciplinaPorId(String id)
     {
         using (MySqlConnection conn = GetConnection())
         {

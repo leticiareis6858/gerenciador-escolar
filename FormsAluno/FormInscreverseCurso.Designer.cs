@@ -34,6 +34,8 @@
             this.btn_inscrever = new System.Windows.Forms.Button();
             this.btn_limpar = new System.Windows.Forms.Button();
             this.btn_voltar = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
+            this.txt_nome = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_cursos)).BeginInit();
             this.SuspendLayout();
             // 
@@ -77,9 +79,9 @@
             // btn_limpar
             // 
             this.btn_limpar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_limpar.Location = new System.Drawing.Point(189, 107);
+            this.btn_limpar.Location = new System.Drawing.Point(177, 107);
             this.btn_limpar.Name = "btn_limpar";
-            this.btn_limpar.Size = new System.Drawing.Size(75, 23);
+            this.btn_limpar.Size = new System.Drawing.Size(100, 23);
             this.btn_limpar.TabIndex = 4;
             this.btn_limpar.Text = "Limpar";
             this.btn_limpar.UseVisualStyleBackColor = true;
@@ -96,11 +98,32 @@
             this.btn_voltar.UseVisualStyleBackColor = true;
             this.btn_voltar.Click += new System.EventHandler(this.btn_voltar_Click);
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(326, 65);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(46, 13);
+            this.label2.TabIndex = 6;
+            this.label2.Text = "Aluno(a)";
+            // 
+            // txt_nome
+            // 
+            this.txt_nome.AutoSize = true;
+            this.txt_nome.ForeColor = System.Drawing.Color.DarkOrange;
+            this.txt_nome.Location = new System.Drawing.Point(337, 78);
+            this.txt_nome.Name = "txt_nome";
+            this.txt_nome.Size = new System.Drawing.Size(35, 13);
+            this.txt_nome.TabIndex = 7;
+            this.txt_nome.Text = "Nome";
+            // 
             // FormInscreverseCurso
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(510, 450);
+            this.Controls.Add(this.txt_nome);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.btn_voltar);
             this.Controls.Add(this.btn_limpar);
             this.Controls.Add(this.btn_inscrever);
@@ -108,7 +131,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dataGridView_cursos);
             this.Name = "FormInscreverseCurso";
-            this.Text = "FormInscreverseCurso";
+            this.Text = "Inscrever-se em um curso";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_cursos)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -123,5 +146,7 @@
         private System.Windows.Forms.Button btn_inscrever;
         private System.Windows.Forms.Button btn_limpar;
         private System.Windows.Forms.Button btn_voltar;
+        private System.Windows.Forms.Label label2;
+        public System.Windows.Forms.Label txt_nome;
     }
 }

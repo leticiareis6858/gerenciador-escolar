@@ -46,9 +46,9 @@
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(115, 51);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(133, 20);
+            this.label1.Size = new System.Drawing.Size(55, 20);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Nome de usuário:";
+            this.label1.Text = "Nome:";
             // 
             // txt_nome
             // 
@@ -74,9 +74,9 @@
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(115, 110);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(141, 20);
+            this.label2.Size = new System.Drawing.Size(57, 20);
             this.label2.TabIndex = 3;
-            this.label2.Text = "E-mail cadastrado:";
+            this.label2.Text = "E-mail:";
             // 
             // label3
             // 
@@ -108,10 +108,10 @@
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(12, 314);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(373, 36);
+            this.label4.Size = new System.Drawing.Size(356, 54);
             this.label4.TabIndex = 7;
-            this.label4.Text = "A senha só será alterada se o e-mail informado for o \r\nmesmo cadastrado para o no" +
-    "me de usuário informado.\r\n";
+            this.label4.Text = "A senha só será alterada se o nome informado for o \r\nmesmo cadastrado para email " +
+    "informado.\r\n\r\n";
             // 
             // label5
             // 

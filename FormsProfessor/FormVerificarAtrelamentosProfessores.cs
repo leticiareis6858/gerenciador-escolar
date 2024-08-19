@@ -34,6 +34,7 @@ namespace GerenciadorDeTurmas.FormsProfessor
             FormTelaInicialProfessor formInicial= new FormTelaInicialProfessor();
             formInicial.txt_nome.Text = txt_nome.Text;
             formInicial.txt_titulacao.Text = txt_titulacao.Text;
+            this.Hide();
             formInicial.ShowDialog();
             this.Close();
 

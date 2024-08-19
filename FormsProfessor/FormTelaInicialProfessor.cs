@@ -27,6 +27,7 @@ namespace GerenciadorEscolar
         {
             FormBuscarDisciplinasProfessores formDisciplinas = new FormBuscarDisciplinasProfessores();
             formDisciplinas.txt_nome.Text = txt_nome.Text;
+            this.Hide();
             formDisciplinas.ShowDialog();
             this.Close();
         }
@@ -35,6 +36,7 @@ namespace GerenciadorEscolar
         {
             FormBuscarCursosProfessores formCursos = new FormBuscarCursosProfessores();
             formCursos.txt_nome.Text = txt_nome.Text;
+            this.Hide();
             formCursos.ShowDialog();
             this.Close();
         }
@@ -44,6 +46,7 @@ namespace GerenciadorEscolar
             FormVerificarAtrelamentosProfessores formVerificar= new FormVerificarAtrelamentosProfessores();
             formVerificar.txt_nome.Text = txt_nome.Text;
             formVerificar.txt_titulacao.Text = txt_titulacao.Text;
+            this.Hide();
             formVerificar.ShowDialog();
             this.Close();
         }
@@ -52,6 +55,7 @@ namespace GerenciadorEscolar
         {
             FormAtualizarCadastroProfessores formAtualizar= new FormAtualizarCadastroProfessores();
             formAtualizar.txt_nome.Text = txt_nome.Text;
+            this.Hide();
             formAtualizar.ShowDialog();
             this.Close();
         }
@@ -59,6 +63,7 @@ namespace GerenciadorEscolar
         private void btn_sair_Click(object sender, EventArgs e)
         {
             form_login formLogin=new form_login();
+            this.Hide();
             formLogin.ShowDialog();
             this.Close();
         }

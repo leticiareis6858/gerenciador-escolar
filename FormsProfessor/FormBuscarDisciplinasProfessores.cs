@@ -83,7 +83,8 @@ namespace GerenciadorEscolar.FormsProfessor
         {
             FormTelaInicialProfessor telaInicial=new FormTelaInicialProfessor();
             telaInicial.txt_nome.Text = txt_nome.Text;
-            telaInicial.Show();
+            this.Hide();
+            telaInicial.ShowDialog();
             this.Close();
         }
 
@@ -94,7 +95,8 @@ namespace GerenciadorEscolar.FormsProfessor
             if (result == DialogResult.Yes)
             {
                 form_login form_login = new form_login();
-                form_login.Show();
+                this.Hide();
+                form_login.ShowDialog();
                 this.Close();
             }
         }

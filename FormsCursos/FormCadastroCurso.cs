@@ -32,6 +32,7 @@ namespace GerenciadorEscolar
         private void btn_voltar_Click(object sender, EventArgs e)
         {
             FormCadastro formCadastro = new FormCadastro();
+            this.Hide();
             formCadastro.ShowDialog();
             this.Close();
         }

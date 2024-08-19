@@ -21,6 +21,7 @@ namespace GerenciadorEscolar
         private void btn_sair_Click(object sender, EventArgs e)
         {
             form_login formLogin=new form_login();
+            this.Hide();
             formLogin.ShowDialog();
             this.Close();
         }
@@ -28,7 +29,8 @@ namespace GerenciadorEscolar
         private void btn_inscrever_curso_Click(object sender, EventArgs e)
         {
             FormInscreverseCurso formInscreverCurso= new FormInscreverseCurso();
-            formInscreverCurso.txt_nome.Text = txt_nome.Text; 
+            formInscreverCurso.txt_nome.Text = txt_nome.Text;
+            this.Hide();
             formInscreverCurso.ShowDialog();
             this.Close();
         }
@@ -37,6 +39,7 @@ namespace GerenciadorEscolar
         {
             FormBuscarCursosAlunos formCursosAluno=new FormBuscarCursosAlunos();
             formCursosAluno.txt_nome.Text= txt_nome.Text;
+            this.Hide();
             formCursosAluno.ShowDialog();
             this.Close();
         }
@@ -45,6 +48,7 @@ namespace GerenciadorEscolar
         {
             FormBuscarDisciplinasAlunos formDisciplinasAluno = new FormBuscarDisciplinasAlunos();
             formDisciplinasAluno.txt_nome.Text = txt_nome.Text;
+            this.Hide();
             formDisciplinasAluno.ShowDialog();
             this.Close();
         }
@@ -61,6 +65,7 @@ namespace GerenciadorEscolar
         {
             FormConsultarProfessoresAluno formConsultarProfessores= new FormConsultarProfessoresAluno();
             formConsultarProfessores.txt_nome.Text = txt_nome.Text;
+            this.Hide();
             formConsultarProfessores.ShowDialog();
             this.Close();
         }
@@ -69,6 +74,7 @@ namespace GerenciadorEscolar
         {
             FormInscreverseCurso formInscreverCurso = new FormInscreverseCurso();
             formInscreverCurso.txt_nome.Text = txt_nome.Text;
+            this.Hide();
             formInscreverCurso.ShowDialog();
             this.Close();
         }

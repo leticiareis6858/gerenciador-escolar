@@ -21,6 +21,7 @@ namespace GerenciadorEscolar
         private void btn_voltar_Click(object sender, EventArgs e)
         {
             form_login formLogin=new form_login();
+            this.Hide();
             formLogin.ShowDialog();
             this.Close();
         }
@@ -32,21 +33,25 @@ namespace GerenciadorEscolar
             if(escolha=="professor")
             {
                 FormCadastroProfessor formCadastroProfessor=new FormCadastroProfessor();
+                this.Hide();
                 formCadastroProfessor.ShowDialog();
                 this.Close();
             } else if (escolha == "aluno")
             {
                 FormCadastroAluno formCadastroAluno=new FormCadastroAluno();
+                this.Hide();
                 formCadastroAluno.ShowDialog();
                 this.Close();
             } else if(escolha=="disciplina")
             {
                 FormCadastroDisciplina formCadastroDisciplina=new FormCadastroDisciplina();
+                this.Hide();
                 formCadastroDisciplina.ShowDialog();
                 this.Close();
             } else if (escolha == "curso")
             {
                 FormCadastroCurso formCadastroCurso=new FormCadastroCurso();
+                this.Hide();
                 formCadastroCurso.ShowDialog();
                 this.Close();
             } else

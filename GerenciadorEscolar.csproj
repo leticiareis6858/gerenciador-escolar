@@ -99,17 +99,23 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Database.cs" />
-    <Compile Include="FormsAluno\BuscarCursosAlunos.cs">
+    <Compile Include="FormsAluno\FormAtualizarCadastroAlunos.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormsAluno\BuscarCursosAlunos.Designer.cs">
-      <DependentUpon>BuscarCursosAlunos.cs</DependentUpon>
+    <Compile Include="FormsAluno\FormAtualizarCadastroAlunos.Designer.cs">
+      <DependentUpon>FormAtualizarCadastroAlunos.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormsAluno\BuscarDisciplinasAlunos.cs">
+    <Compile Include="FormsAluno\FormBuscarCursosAlunos.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormsAluno\BuscarDisciplinasAlunos.Designer.cs">
-      <DependentUpon>BuscarDisciplinasAlunos.cs</DependentUpon>
+    <Compile Include="FormsAluno\FormBuscarCursosAlunos.Designer.cs">
+      <DependentUpon>FormBuscarCursosAlunos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormsAluno\FormBuscarDisciplinasAlunos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormsAluno\FormBuscarDisciplinasAlunos.Designer.cs">
+      <DependentUpon>FormBuscarDisciplinasAlunos.cs</DependentUpon>
     </Compile>
     <Compile Include="FormsAluno\FormCadastroAluno.cs">
       <SubType>Form</SubType>
@@ -122,6 +128,12 @@
     </Compile>
     <Compile Include="FormCadastro\FormCadastro.Designer.cs">
       <DependentUpon>FormCadastro.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormsAluno\FormConsultarProfessoresAluno.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormsAluno\FormConsultarProfessoresAluno.Designer.cs">
+      <DependentUpon>FormConsultarProfessoresAluno.cs</DependentUpon>
     </Compile>
     <Compile Include="FormsAluno\FormInscreverseCurso.cs">
       <SubType>Form</SubType>
@@ -171,23 +183,11 @@
     <Compile Include="FormsDisciplinas\FormCadastroDisciplina.Designer.cs">
       <DependentUpon>FormCadastroDisciplina.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormsAluno\FormsOpcoesDisciplinasAlunos.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FormsAluno\FormsOpcoesDisciplinasAlunos.Designer.cs">
-      <DependentUpon>FormsOpcoesDisciplinasAlunos.cs</DependentUpon>
-    </Compile>
     <Compile Include="FormsDisciplinas\FormExcluirDisciplina.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FormsDisciplinas\FormExcluirDisciplina.Designer.cs">
       <DependentUpon>FormExcluirDisciplina.cs</DependentUpon>
-    </Compile>
-    <Compile Include="FormsDisciplinas\FormInscreverDisciplinas.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FormsDisciplinas\FormInscreverDisciplinas.Designer.cs">
-      <DependentUpon>FormInscreverDisciplinas.cs</DependentUpon>
     </Compile>
     <Compile Include="FormsProfessor\FormCadastroProfessor.cs">
       <SubType>Form</SubType>
@@ -227,17 +227,26 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FormsAluno\FormAtualizarCadastroAlunos.resx">
+      <DependentUpon>FormAtualizarCadastroAlunos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormsAluno\FormBuscarCursosAlunos.resx">
+      <DependentUpon>FormBuscarCursosAlunos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormsAluno\FormBuscarDisciplinasAlunos.resx">
+      <DependentUpon>FormBuscarDisciplinasAlunos.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormsAluno\FormCadastroAluno.resx">
       <DependentUpon>FormCadastroAluno.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormCadastro\FormCadastro.resx">
       <DependentUpon>FormCadastro.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormsAluno\FormConsultarProfessoresAluno.resx">
+      <DependentUpon>FormConsultarProfessoresAluno.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormsAluno\FormInscreverseCurso.resx">
       <DependentUpon>FormInscreverseCurso.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FormsAluno\FormsOpcoesDisciplinasAlunos.resx">
-      <DependentUpon>FormsOpcoesDisciplinasAlunos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormsAluno\FormTelaInicialAluno.resx">
       <DependentUpon>FormTelaInicialAluno.cs</DependentUpon>
@@ -259,9 +268,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormsDisciplinas\FormCadastroDisciplina.resx">
       <DependentUpon>FormCadastroDisciplina.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FormsDisciplinas\FormInscreverDisciplinas.resx">
-      <DependentUpon>FormInscreverDisciplinas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormsProfessor\FormCadastroProfessor.resx">
       <DependentUpon>FormCadastroProfessor.cs</DependentUpon>

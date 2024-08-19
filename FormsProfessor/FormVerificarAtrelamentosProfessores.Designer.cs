@@ -42,7 +42,7 @@
             // dataGridView_disciplinas
             // 
             this.dataGridView_disciplinas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView_disciplinas.Location = new System.Drawing.Point(22, 137);
+            this.dataGridView_disciplinas.Location = new System.Drawing.Point(38, 137);
             this.dataGridView_disciplinas.Name = "dataGridView_disciplinas";
             this.dataGridView_disciplinas.Size = new System.Drawing.Size(326, 236);
             this.dataGridView_disciplinas.TabIndex = 0;
@@ -51,7 +51,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(18, 114);
+            this.label1.Location = new System.Drawing.Point(34, 114);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(215, 20);
             this.label1.TabIndex = 1;
@@ -61,7 +61,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(448, 114);
+            this.label2.Location = new System.Drawing.Point(435, 114);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(190, 20);
             this.label2.TabIndex = 2;
@@ -70,7 +70,7 @@
             // dataGridView_cursos
             // 
             this.dataGridView_cursos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView_cursos.Location = new System.Drawing.Point(452, 137);
+            this.dataGridView_cursos.Location = new System.Drawing.Point(439, 137);
             this.dataGridView_cursos.Name = "dataGridView_cursos";
             this.dataGridView_cursos.Size = new System.Drawing.Size(326, 236);
             this.dataGridView_cursos.TabIndex = 3;

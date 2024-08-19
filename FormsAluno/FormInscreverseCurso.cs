@@ -52,6 +52,7 @@ namespace GerenciadorDeTurmas.FormsAluno
         {
             FormTelaInicialAluno formTelaInicialAluno = new FormTelaInicialAluno();
             formTelaInicialAluno.txt_nome.Text = txt_nome.Text;
+            this.Hide();
             formTelaInicialAluno.ShowDialog();
             this.Close();
         }

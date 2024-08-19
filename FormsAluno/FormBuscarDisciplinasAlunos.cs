@@ -31,6 +31,7 @@ namespace GerenciadorDeTurmas.FormsAluno
             if (result == DialogResult.Yes)
             {
                 form_login formLogin = new form_login();
+                this.Hide();
                 formLogin.ShowDialog();
                 this.Close();
             }
@@ -49,6 +50,7 @@ namespace GerenciadorDeTurmas.FormsAluno
         {
             FormTelaInicialAluno telaInicialAluno = new FormTelaInicialAluno();
             telaInicialAluno.txt_nome.Text = txt_nome.Text;
+            this.Hide();
             telaInicialAluno.ShowDialog();
             this.Close();
         }

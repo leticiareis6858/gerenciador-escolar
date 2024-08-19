@@ -41,14 +41,16 @@ namespace GerenciadorEscolar
             {
                 FormTelaInicialAluno formTelaInicialAluno = new FormTelaInicialAluno();
                 formTelaInicialAluno.txt_nome.Text=db.BuscarNomePorEmailAluno(email);
-                formTelaInicialAluno.Show();
+                this.Hide();
+                formTelaInicialAluno.ShowDialog();
                 this.Close();
 
             } else if (professorValido)
             {
                 FormTelaInicialProfessor formTelaInicialProfessor = new FormTelaInicialProfessor();
                 formTelaInicialProfessor.txt_nome.Text=db.BuscarNomePorEmailProfessor(email);
-                formTelaInicialProfessor.Show();
+                this.Hide();
+                formTelaInicialProfessor.ShowDialog();
                 this.Close();
             }
             else
@@ -60,7 +62,8 @@ namespace GerenciadorEscolar
         private void link_cadastrar_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             FormCadastro formCadastro = new FormCadastro();
-            formCadastro.Show();
+            this.Hide();
+            formCadastro.ShowDialog();
             this.Close();
         }
 
@@ -68,7 +71,8 @@ namespace GerenciadorEscolar
         {
             FormRecuperarSenha formRecuperarSenha = new FormRecuperarSenha();
             formRecuperarSenha.txt_email.Text= txt_email.Text;
-            formRecuperarSenha.Show();
+            this.Hide();
+            formRecuperarSenha.ShowDialog();
             this.Close();
         }
     }

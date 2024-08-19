@@ -20,7 +20,6 @@ namespace GerenciadorEscolar
         {
             InitializeComponent();
             db=new Database();
-            txt_titulacao.Text=db.ObterTitulacaoPorNome(txt_nome.Text);
         }
 
         private void btn_disciplinas_Click(object sender, EventArgs e)

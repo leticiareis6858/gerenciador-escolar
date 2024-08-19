@@ -23,29 +23,31 @@ namespace GerenciadorEscolar
 
         private void btn_entrar_Click(object sender, EventArgs e)
         {
-            if (txt_usuario.Text == null)
+            if (txt_email.Text == null)
             {
-                MessageBox.Show("Informe um nome de usuário");
+                MessageBox.Show("Informe um email");
             }
             else if (txt_senha.Text == null) {
                 MessageBox.Show("Informe uma senha");
             }
 
-            string usuario = txt_usuario.Text.Trim();
+            string email = txt_email.Text.Trim();
             string senha = txt_senha.Text.Trim();
 
-            bool alunoValido = db.verificarLoginAluno(usuario, senha);
-            bool professorValido = db.verificarLoginProfessor(usuario, senha);
+            bool alunoValido = db.verificarLoginAluno(email, senha);
+            bool professorValido = db.verificarLoginProfessor(email, senha);
 
             if (alunoValido)
             {
                 FormTelaInicialAluno formTelaInicialAluno = new FormTelaInicialAluno();
+                formTelaInicialAluno.txt_nome.Text=db.BuscarNomePorEmailAluno(email);
                 formTelaInicialAluno.Show();
                 this.Close();
 
             } else if (professorValido)
             {
                 FormTelaInicialProfessor formTelaInicialProfessor = new FormTelaInicialProfessor();
+                formTelaInicialProfessor.txt_nome.Text=db.BuscarNomePorEmailProfessor(email);
                 formTelaInicialProfessor.Show();
                 this.Close();
             }

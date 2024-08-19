@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.txt_usuario = new System.Windows.Forms.TextBox();
+            this.txt_email = new System.Windows.Forms.TextBox();
             this.txt_senha = new System.Windows.Forms.TextBox();
             this.btn_entrar = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
@@ -39,12 +39,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
-            // txt_usuario
+            // txt_email
             // 
-            this.txt_usuario.Location = new System.Drawing.Point(20, 62);
-            this.txt_usuario.Name = "txt_usuario";
-            this.txt_usuario.Size = new System.Drawing.Size(176, 20);
-            this.txt_usuario.TabIndex = 0;
+            this.txt_email.Location = new System.Drawing.Point(20, 62);
+            this.txt_email.Name = "txt_email";
+            this.txt_email.Size = new System.Drawing.Size(176, 20);
+            this.txt_email.TabIndex = 0;
             // 
             // txt_senha
             // 
@@ -71,9 +71,9 @@
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(16, 39);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(68, 20);
+            this.label1.Size = new System.Drawing.Size(57, 20);
             this.label1.TabIndex = 3;
-            this.label1.Text = "Usuário:";
+            this.label1.Text = "E-mail:";
             // 
             // label2
             // 
@@ -129,7 +129,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btn_entrar);
             this.Controls.Add(this.txt_senha);
-            this.Controls.Add(this.txt_usuario);
+            this.Controls.Add(this.txt_email);
             this.Name = "form_login";
             this.Text = "Tela de login";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -140,7 +140,7 @@
 
         #endregion
 
-        private System.Windows.Forms.TextBox txt_usuario;
+        private System.Windows.Forms.TextBox txt_email;
         private System.Windows.Forms.TextBox txt_senha;
         private System.Windows.Forms.Button btn_entrar;
         private System.Windows.Forms.Label label1;

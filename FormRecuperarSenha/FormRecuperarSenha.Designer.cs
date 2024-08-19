@@ -163,10 +163,10 @@
         private System.Windows.Forms.Button btn_mudar;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox txt_email;
         private System.Windows.Forms.TextBox txt_nova_senha;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button btn_voltar;
+        public System.Windows.Forms.TextBox txt_email;
     }
 }

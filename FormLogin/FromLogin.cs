@@ -67,6 +67,7 @@ namespace GerenciadorEscolar
         private void link_mudar_senha_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             FormRecuperarSenha formRecuperarSenha = new FormRecuperarSenha();
+            formRecuperarSenha.txt_email.Text= txt_email.Text;
             formRecuperarSenha.Show();
             this.Close();
         }

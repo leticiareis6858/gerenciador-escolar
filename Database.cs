@@ -452,7 +452,7 @@ public class Database
         }
     }
 
-    public void InscreverSeCurso(int idAluno, int idCurso)
+    public void InscreverSeCurso(String idAluno, String idCurso)
     {
         using (MySqlConnection conn = GetConnection())
         {

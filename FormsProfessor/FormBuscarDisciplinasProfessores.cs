@@ -31,42 +31,34 @@ namespace GerenciadorEscolar.FormsProfessor
 
         private void btn_buscar_Click(object sender, EventArgs e)
         {
-            if (txt_id_disciplina != null)
+            if (!string.IsNullOrWhiteSpace(txt_id_disciplina.Text))
             {
-                int id = int.Parse(txt_id_disciplina.Text);
-                DataTable resultado = db.BuscarDisciplinaPorId(id);
-
+                DataTable resultado = db.BuscarDisciplinaPorId(txt_id_disciplina.Text.Trim());
                 dataGridView_disciplinas.DataSource = resultado;
             }
-            else if (txt_disciplina != null)
+            else if (!string.IsNullOrWhiteSpace(txt_disciplina.Text))
             {
-                String nome = txt_disciplina.Text;
-                DataTable resultado = db.BuscarDisciplinaPorNome(nome);
-
+                DataTable resultado = db.BuscarDisciplinaPorNome(txt_disciplina.Text.Trim());
                 dataGridView_disciplinas.DataSource = resultado;
             }
-            else if (txt_habilidades != null)
+            else if (!string.IsNullOrWhiteSpace(txt_habilidades.Text))
             {
-                String habilidade = txt_habilidades.Text;
-                DataTable resultado = db.BuscarDisciplinaPorHabilidade(habilidade);
-
+                DataTable resultado = db.BuscarDisciplinaPorHabilidade(txt_habilidades.Text.Trim());
                 dataGridView_disciplinas.DataSource = resultado;
             }
-            else if (txt_id_disciplina != null && txt_disciplina != null && txt_habilidades != null)
+            else if (!string.IsNullOrWhiteSpace(txt_id_disciplina.Text) && !string.IsNullOrWhiteSpace(txt_disciplina.Text) && !string.IsNullOrWhiteSpace(txt_habilidades.Text))
             {
-                int id = int.Parse(txt_id_disciplina.Text);
-                String nome = txt_disciplina.Text;
-                String habilidade = txt_habilidades.Text;
+                int id = int.Parse(txt_id_disciplina.Text.Trim());
+                string nome = txt_disciplina.Text.Trim();
+                string habilidade = txt_habilidades.Text.Trim();
 
                 DataTable resultado = db.BuscarDisciplina(nome, id, habilidade);
-
                 dataGridView_disciplinas.DataSource = resultado;
             }
             else
             {
                 MessageBox.Show("Por favor, preencha ao menos um dos campos para buscar por uma disciplina.");
             }
-
         }
 
         private void btn_limpar_Click(object sender, EventArgs e)

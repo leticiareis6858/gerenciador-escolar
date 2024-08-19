@@ -41,32 +41,34 @@ namespace GerenciadorDeTurmas.FormsCursos
 
         private void btn_buscar_Click(object sender, EventArgs e)
         {
-            if (txt_id_curso != null)
+            if (!string.IsNullOrWhiteSpace(txt_id_curso.Text))
             {
-                int id = int.Parse(txt_id_curso.Text);
+                int id = int.Parse(txt_id_curso.Text.Trim());
                 DataTable resultado = db.BuscarCursoPorId(id);
 
                 dataGridView_cursos.DataSource = resultado;
             }
-            else if (txt_curso != null)
+            else if (!string.IsNullOrWhiteSpace(txt_curso.Text))
             {
-                String nome = txt_curso.Text;
+                String nome = txt_curso.Text.Trim();
                 DataTable resultado = db.BuscarCursoPorNome(nome);
 
                 dataGridView_cursos.DataSource = resultado;
             }
-            else if (txt_disciplina != null)
+            else if (!string.IsNullOrWhiteSpace(txt_disciplina.Text))
             {
-                String disciplina = txt_disciplina.Text;
+                String disciplina = txt_disciplina.Text.Trim();
                 DataTable resultado = db.BuscarCursoPorDisciplina(disciplina);
 
                 dataGridView_cursos.DataSource = resultado;
             }
-            else if (txt_id_curso != null && txt_curso != null && txt_disciplina != null)
+            else if (!string.IsNullOrWhiteSpace(txt_id_curso.Text) &&
+                     !string.IsNullOrWhiteSpace(txt_curso.Text) &&
+                     !string.IsNullOrWhiteSpace(txt_disciplina.Text))
             {
-                int id = int.Parse(txt_id_curso.Text);
-                String nome = txt_curso.Text;
-                String disciplina = txt_disciplina.Text;
+                int id = int.Parse(txt_id_curso.Text.Trim());
+                String nome = txt_curso.Text.Trim();
+                String disciplina = txt_disciplina.Text.Trim();
 
                 DataTable resultado = db.BuscarCurso(nome, id, disciplina);
 
@@ -77,6 +79,7 @@ namespace GerenciadorDeTurmas.FormsCursos
                 MessageBox.Show("Por favor, preencha ao menos um dos campos para buscar por um curso.");
             }
         }
+
 
         private void btn_sair_Click(object sender, EventArgs e)
         {

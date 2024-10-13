@@ -42,5 +42,11 @@ namespace GerenciadorEscolar
                 MessageBox.Show("Preencha todos os campos!");
             }
         }
+
+        private void btn_limpar_Click(object sender, EventArgs e)
+        {
+            txt_nome_disciplina.Text = String.Empty;
+            txt_habilidades.Text = String.Empty;
+        }
     }
 }

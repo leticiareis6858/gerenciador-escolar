@@ -51,35 +51,35 @@ namespace GerenciadorDeTurmas.FormsAluno
         {
             String data = DateTime.Now.ToString();
            
-            if (txt_email.Text==null || txt_telefone.Text==null || txt_senha.Text==null || txt_cidade.Text==null || txt_endereco.Text == null || txt_data_nasc.Value==DateTime.Now)
+            if (string.IsNullOrEmpty(txt_email.Text) || string.IsNullOrEmpty(txt_telefone.Text) || string.IsNullOrEmpty(txt_senha.Text) || string.IsNullOrEmpty(txt_cidade.Text) || string.IsNullOrEmpty(txt_endereco.Text) || txt_data_nasc.Value==DateTime.Now)
             {
                 MessageBox.Show("Preencha ao menos um dos campos!");
             }
-            if (txt_data_nasc.Value.ToString() == data)
+            else if (txt_data_nasc.Value.ToString() == data)
             {
                 MessageBox.Show("A data de nascimento não pode ser igual a data atual!");
             }
-            else if (txt_email.Text != null)
+            else if (!string.IsNullOrEmpty(txt_email.Text))
             {
                 db.AtualizarEmailAluno(txt_nome.Text, txt_email.Text);
                 MessageBox.Show("Email atualizado com sucesso!");
             }
-            else if (txt_telefone.Text != null)
+            else if (!string.IsNullOrEmpty(txt_telefone.Text))
             {
                 db.AtualizarTelefoneAluno(txt_nome.Text, txt_telefone.Text);
                 MessageBox.Show("Telefone atualizado com sucesso!");
             }
-            else if (txt_senha.Text != null)
+            else if (!string.IsNullOrEmpty(txt_senha.Text))
             {
                 db.AtualizarSenhaAluno(txt_nome.Text, txt_senha.Text);
                 MessageBox.Show("Senha atualizada com sucesso!");
             }
-            else if (txt_cidade.Text != null)
+            else if (!string.IsNullOrEmpty(txt_cidade.Text))
             {
                 db.AtualizarCidadeAluno(txt_nome.Text, txt_cidade.Text);
                 MessageBox.Show("Cidade atualizada com sucesso!");
             }
-            else if (txt_endereco.Text != null)
+            else if (!string.IsNullOrEmpty(txt_endereco.Text))
             {
                 db.AtualizarEnderecoAluno(txt_nome.Text, txt_endereco.Text);
                 MessageBox.Show("Endereço atualizado com sucesso!");
@@ -90,7 +90,7 @@ namespace GerenciadorDeTurmas.FormsAluno
                 db.AtualizarDataNascAluno(txt_nome.Text, data_nasc);
                 MessageBox.Show("Data de nascimento atualizada com sucesso!");
             }
-            if(txt_email !=null && txt_telefone != null && txt_senha != null && txt_cidade != null && txt_endereco != null && txt_data_nasc.Value != DateTime.Now)
+            else if (!string.IsNullOrEmpty(txt_email.Text) && !string.IsNullOrEmpty(txt_telefone.Text) && !string.IsNullOrEmpty(txt_senha.Text) && !string.IsNullOrEmpty(txt_cidade.Text) && !string.IsNullOrEmpty(txt_endereco.Text) && txt_data_nasc.Value != DateTime.Now)
             {
                 String data_nasc = txt_data_nasc.Value.ToString("dd-MM-yyyy").Trim();
                 db.AtualizarAluno(txt_nome.Text, txt_email.Text, txt_telefone.Text, txt_senha.Text, txt_cidade.Text, txt_endereco.Text, data_nasc);

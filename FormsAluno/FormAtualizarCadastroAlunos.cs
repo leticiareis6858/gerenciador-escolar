@@ -49,9 +49,15 @@ namespace GerenciadorDeTurmas.FormsAluno
 
         private void btn_atualizar_Click(object sender, EventArgs e)
         {
-            if(txt_email.Text==null || txt_telefone.Text==null || txt_senha.Text==null || txt_cidade.Text==null || txt_endereco.Text == null || txt_data_nasc.Value==DateTime.Now)
+            String data = DateTime.Now.ToString();
+           
+            if (txt_email.Text==null || txt_telefone.Text==null || txt_senha.Text==null || txt_cidade.Text==null || txt_endereco.Text == null || txt_data_nasc.Value==DateTime.Now)
             {
                 MessageBox.Show("Preencha ao menos um dos campos!");
+            }
+            if (txt_data_nasc.Value.ToString() == data)
+            {
+                MessageBox.Show("A data de nascimento não pode ser igual a data atual!");
             }
             else if (txt_email.Text != null)
             {

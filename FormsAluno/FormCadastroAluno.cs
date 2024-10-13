@@ -45,8 +45,14 @@ namespace GerenciadorEscolar
             String data_nasc = data_nascimento.Value.ToString("dd-MM-yyyy").Trim();
             String cidade = txt_cidade.Text.Trim();
             String endereco = txt_endereco.Text.Trim();
+            String data = DateTime.Now.ToString();
 
-            if(!nome.Equals("") && !email.Equals("") && !senha.Equals("") && !telefone.Equals("") && !data_nasc.Equals("") && !cidade.Equals("") && !endereco.Equals(""))
+            if(data_nascimento.Value.ToString() == data)
+            {
+                MessageBox.Show("A data de nascimento não pode ser igual a data atual!");
+            }
+
+            else if(!nome.Equals("") && !email.Equals("") && !senha.Equals("") && !telefone.Equals("") && !data_nasc.Equals("") && !cidade.Equals("") && !endereco.Equals(""))
             {
                 Database db = new Database();
                 db.cadastrarAluno(nome, email, senha, telefone, data_nasc, cidade, endereco);

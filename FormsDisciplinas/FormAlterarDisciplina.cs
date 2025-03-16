@@ -65,7 +65,31 @@ namespace GerenciadorEscolar.FormsDisciplinas
 
         private void btn_removerHabilidades_Click(object sender, EventArgs e)
         {
+            if (list_habilidades.SelectedItems.Count == 0)
+            {
+                MessageBox.Show("Selecione pelo menos uma habilidade para remover!");
+                return;
+            }
 
+            List<string> habilidadesARemover = new List<string>();
+
+            foreach (var item in list_habilidades.SelectedItems)
+            {
+                habilidadesARemover.Add(item.ToString());
+            }
+
+            string nomeDisciplina = txt_nomeDisciplina.Text;
+            db.RemoverHabilidadesDisciplina(nomeDisciplina, habilidadesARemover);
+
+            MessageBox.Show("Habilidades removidas com sucesso!");
+
+            list_habilidades.Items.Clear();
+            var habilidadesAtualizadas = db.BuscarHabilidadesPorDisciplina(nomeDisciplina);
+            foreach (DataRow row in habilidadesAtualizadas.Rows)
+            {
+                list_habilidades.Items.Add(row["habilidades"].ToString());
+            }
         }
+
     }
 }

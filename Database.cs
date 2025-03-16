@@ -39,6 +39,7 @@ public class Database
         }
     }
 
+    // Criar tabelas:
     public void CreateTables()
     {
         using (MySqlConnection conn = GetConnection())
@@ -122,6 +123,7 @@ public class Database
         }
     }
 
+    // Buscar Disciplinas
     public DataTable BuscarDisciplinas()
     {
         using (MySqlConnection conn = GetConnection())
@@ -217,6 +219,7 @@ public class Database
         }
     }
 
+    // Login Aluno
     public bool verificarLoginAluno(string email, string senha)
     {
         using (MySqlConnection conn = GetConnection())
@@ -235,6 +238,7 @@ public class Database
         }
     }
 
+    // Login Professor
     public bool verificarLoginProfessor(string email, string senha)
     {
         using (MySqlConnection conn = GetConnection())
@@ -253,6 +257,7 @@ public class Database
         }
     }
 
+    // Buscar e verificar nome por email Aluno e Professor
     public String BuscarNomePorEmailAluno(string email)
     {
         using (MySqlConnection conn = GetConnection())
@@ -318,6 +323,7 @@ public class Database
         }
     }
 
+    // Mudar Senha Aluno e Professor
     public bool mudarSenhaAluno(String email, string novaSenha)
     {
         using (MySqlConnection conn = GetConnection())
@@ -358,6 +364,7 @@ public class Database
         }
     }
 
+    // Cadastrar aluno e professor
     public void cadastrarAluno(String nome, String email, String senha, String telefone, String data_nasc, String cidade, String endereco)
     {
         using (MySqlConnection conn = GetConnection())
@@ -398,6 +405,7 @@ public class Database
         }
     }
 
+    // Buscar nome e id disciplinas
     public List<string> BuscarNomeIdDisciplinas()
     {
         List<string> disciplinas = new List<string>();
@@ -424,6 +432,7 @@ public class Database
         return disciplinas;
     }
 
+    // Cadastrar curso
     public void CadastrarCurso(string nomeCurso, String duracao)
     {
         using (MySqlConnection conn = GetConnection())
@@ -438,6 +447,7 @@ public class Database
         }
     }
 
+    // Buscar id do curso por nome
     public int BuscarIdCursoPorNome(string nomeCurso)
     {
         using (MySqlConnection conn = GetConnection())
@@ -453,6 +463,7 @@ public class Database
         }
     }
 
+    // Atrelar disciplinas a um curso
     public void AtrelarDisciplinasAoCurso(int idCurso, int idDisciplina)
     {
         using (MySqlConnection conn = GetConnection())
@@ -467,6 +478,7 @@ public class Database
         }
     }
 
+    // Cadastrar disciplina
     public void CadastrarDisciplina(String disciplina, String habilidades)
     {
         using (MySqlConnection conn = GetConnection())
@@ -481,6 +493,7 @@ public class Database
         }
     }
 
+    // Atrelar aluno a um curso
     public void InscreverSeCurso(String idAluno, String idCurso)
     {
         using (MySqlConnection conn = GetConnection())
@@ -495,6 +508,7 @@ public class Database
         }
     }
 
+    // Buscar cursos
     public DataTable BuscarCursos()
     {
         using (MySqlConnection conn = GetConnection())
@@ -513,6 +527,7 @@ public class Database
         }
     }
 
+    // Buscar curso por id
     public DataTable BuscarCursoPorId(int id)
     {
         using (MySqlConnection conn = GetConnection())
@@ -532,6 +547,7 @@ public class Database
         }
     }
 
+    // Buscar curso por nome
     public DataTable BuscarCursoPorNome(String nome)
     {
         using (MySqlConnection conn = GetConnection())
@@ -551,6 +567,7 @@ public class Database
         }
     }
 
+    // Buscar curso por disciplina
     public DataTable BuscarCursoPorDisciplina(String disciplina)
     {
         using (MySqlConnection conn = GetConnection())
@@ -570,6 +587,7 @@ public class Database
         }
     }
 
+    // Buscar curso por nome, id e disciplina
     public DataTable BuscarCurso(String nome, int id, String disciplina)
     {
         using (MySqlConnection conn = GetConnection())
@@ -591,6 +609,7 @@ public class Database
         }
     }
 
+    // Buscar id de um professor através do seu nome
     public int BuscarIdProfessorPorNome(String nome)
     {
         using (MySqlConnection conn = GetConnection())
@@ -606,6 +625,7 @@ public class Database
         }
     }
 
+    // Buscar id e nome das disciplinas de um professor através de seu id
     public DataTable BuscarDisciplinasProfessorPorId(int id)
     {
         using (MySqlConnection conn = GetConnection())
@@ -631,6 +651,7 @@ public class Database
         }
     }
 
+    //  Buscar id e nome dos cursos de um professor através de seu id
     public DataTable BuscarCursosProfessorPorId(int id)
     {
         using (MySqlConnection conn = GetConnection())
@@ -655,21 +676,7 @@ public class Database
         }
     }
 
-    public String ObterTitulacaoPorNome(String nome)
-    {
-        using (MySqlConnection conn = GetConnection())
-        {
-            conn.Open();
-            string query = "SELECT titulacao FROM tb_professor WHERE nome_professor = @nome_professor";
-            MySqlCommand cmd = new MySqlCommand(query, conn);
-            cmd.Parameters.AddWithValue("@nome_professor", nome);
-
-            object result = cmd.ExecuteScalar();
-
-            return result.ToString();
-        }
-    }
-
+    // Buscar email de um professor através do seu nome
     public String BuscarEmailProfessorPorNome(String nome)
     {
         using (MySqlConnection conn = GetConnection())
@@ -685,6 +692,7 @@ public class Database
         }
     }
 
+    // Buscar formação de um professor através do seu nome
     public String BuscarFormacaoProfessorPorNome(String nome)
     {
         using (MySqlConnection conn = GetConnection())
@@ -700,6 +708,7 @@ public class Database
         }
     }
 
+    // Buscar senha de um professor pelo seu nome
     public String BuscarSenhaProfessorPorNome(String nome)
     {
         using (MySqlConnection conn = GetConnection())
@@ -715,6 +724,7 @@ public class Database
         }
     }
 
+    // Buscar titulação de um professor pelo seu nome
     public String BuscarTitulacaoProfessorPorNome(String nome)
     {
         using (MySqlConnection conn = GetConnection())
@@ -730,6 +740,7 @@ public class Database
         }
     }
 
+    // Atualizar email de um professor através do seu noem
     public void AtualizarEmailProfessor(String nome, String email)
     {
         using (MySqlConnection conn = GetConnection())
@@ -744,6 +755,7 @@ public class Database
         }
     }
 
+    // Atualizar senha de um professor pelo seu nome
     public void AtualizarSenhaProfessor(String nome, String senha)
     {
         using (MySqlConnection conn = GetConnection())
@@ -758,6 +770,7 @@ public class Database
         }
     }
 
+    // Atualizar formação de um professor pelo seu nome
     public void AtualizarFormacaoProfessor(String nome, String formacao)
     {
         using (MySqlConnection conn = GetConnection())
@@ -772,6 +785,7 @@ public class Database
         }
     }
 
+    // Atualizar titulação de um professor pelo seu nome
     public void AtualizarTitulacaoProfessor(String nome, String titulacao)
     {
         using (MySqlConnection conn = GetConnection())
@@ -786,6 +800,7 @@ public class Database
         }
     }
 
+    // Atualizar cadastro de professor pelo seu nome
     public void AtualizarProfessor(String nome, String email, String senha, String formacao, String titulacao)
     {
         using (MySqlConnection conn = GetConnection())
@@ -803,6 +818,7 @@ public class Database
         }
     }
 
+    // Buscar email de um aluno pelo seu nome
     public String BuscarEmailAlunoPorNome(String nome)
     {
         using (MySqlConnection conn = GetConnection())
@@ -818,6 +834,7 @@ public class Database
         }
     }
 
+    // Buscar senha de um aluno pelo seu nome
     public String BuscarSenhaAlunoPorNome(String nome)
     {
         using (MySqlConnection conn = GetConnection())
@@ -833,6 +850,7 @@ public class Database
         }
     }
 
+    // Buscar telefone de um aluno pelo seu nome
     public String BuscarTelefoneAlunoPorNome(String nome)
     {
         using (MySqlConnection conn = GetConnection())
@@ -848,6 +866,7 @@ public class Database
         }
     }
 
+    // Buscar cidade de um aluno pelo seu nome
     public String BuscarCidadeAlunoPorNome(String nome)
     {
         using (MySqlConnection conn = GetConnection())
@@ -863,6 +882,7 @@ public class Database
         }
     }
 
+    // Buscar endereço de um aluno pelo seu nome
     public String BuscarEnderecoAlunoPorNome(String nome)
     {
         using (MySqlConnection conn = GetConnection())
@@ -878,6 +898,7 @@ public class Database
         }
     }
 
+    // Buscar data de nascimento de um aluno pelo seu nome
     public DateTime BuscarDataNascAlunoPorNome(String nome)
     {
         using (MySqlConnection conn = GetConnection())
@@ -893,6 +914,7 @@ public class Database
         }
     }
 
+    // Atualizar email de um aluno pelo seu nome
     public void AtualizarEmailAluno(String nome, String email)
     {
         using (MySqlConnection conn = GetConnection())
@@ -907,6 +929,7 @@ public class Database
         }
     }
 
+    // Atualizar senha de um aluno pelo seu nome
     public void AtualizarSenhaAluno(String nome, String senha)
     {
         using (MySqlConnection conn = GetConnection())
@@ -921,6 +944,7 @@ public class Database
         }
     }
 
+    // Atualizar telefone de um aluno pelo seu nome
     public void AtualizarTelefoneAluno(String nome, String telefone)
     {
         using (MySqlConnection conn = GetConnection())
@@ -935,6 +959,7 @@ public class Database
         }
     }
 
+    // Atualizar cidade de um aluno pelo seu nome
     public void AtualizarCidadeAluno(String nome, String cidade)
     {
         using (MySqlConnection conn = GetConnection())
@@ -949,6 +974,7 @@ public class Database
         }
     }
 
+    // Atualizar endereço de um aluno pelo seu nome
     public void AtualizarEnderecoAluno(String nome, String endereco)
     {
         using (MySqlConnection conn = GetConnection())
@@ -963,6 +989,7 @@ public class Database
         }
     }
 
+    // Atualizar data de nascimento de um aluno pelo seu nome
     public void AtualizarDataNascAluno(String nome, String dataNasc)
     {
         using (MySqlConnection conn = GetConnection())
@@ -977,6 +1004,7 @@ public class Database
         }
     }
 
+    // Atualizar cadastro de um aluno pelo seu nome
     public void AtualizarAluno(String nome, String email, String senha, String telefone, String cidade, String endereco, String dataNasc)
     {
         using (MySqlConnection conn = GetConnection())
@@ -996,6 +1024,7 @@ public class Database
         }
     }
 
+    // Buscar id de um aluno pelo seu nome
     public String BuscarIdAlunoPorNome(String nome)
     {
         using (MySqlConnection conn = GetConnection())
@@ -1011,12 +1040,13 @@ public class Database
         }
     }
 
+    // Buscar cursos de um aluno pelo seu id
     public DataTable BuscarCursoDeAlunoPorId(int idCurso, String idAluno)
     {
         using (MySqlConnection conn = GetConnection())
         {
             conn.Open();
-            string query = @"SELECT tb_curso.* FROM tb_curso_aluno INNER JOIN tb_curso ON tb_curso_aluno.id_curso = tb_curso.id_curso WHERE tb_curso_aluno.id_curso = @id_curso AND tb_curso_aluno.matricula_aluno = @id_aluno";
+            string query = @"SELECT tb_curso,* FROM tb_curso_aluno INNER JOIN tb_curso ON tb_curso_aluno.id_curso = tb_curso.id_curso WHERE tb_curso_aluno.id_curso = @id_curso AND tb_curso_aluno.matricula_aluno = @id_aluno";
             MySqlCommand cmd = new MySqlCommand(query, conn);
             cmd.Parameters.AddWithValue("@id_curso", idCurso);
             cmd.Parameters.AddWithValue("@id_aluno", idAluno);
@@ -1029,12 +1059,13 @@ public class Database
         }
     }
 
+    // Buscar cursos de um aluno pelo seu nome
     public DataTable BuscarCursoDeAlunoPorNome(String nomeCurso, String idAluno)
     {
         using (MySqlConnection conn = GetConnection())
         {
             conn.Open();
-            string query = @"SELECT tb_curso.* FROM tb_curso_aluno INNER JOIN tb_curso ON tb_curso_aluno.id_curso = tb_curso.id_curso WHERE tb_curso.nome_curso LIKE @nome_curso AND tb_curso_aluno.matricula_aluno = @id_aluno";
+            string query = @"SELECT tb_curso,* FROM tb_curso_aluno INNER JOIN tb_curso ON tb_curso_aluno.id_curso = tb_curso.id_curso WHERE tb_curso.nome_curso LIKE @nome_curso AND tb_curso_aluno.matricula_aluno = @id_aluno";
             MySqlCommand cmd = new MySqlCommand(query, conn);
             cmd.Parameters.AddWithValue("@nome_curso", nomeCurso);
             cmd.Parameters.AddWithValue("@id_aluno", idAluno);
@@ -1047,12 +1078,13 @@ public class Database
         }
     }
 
+    // Buscar disciplinas de um aluno pelo seu id
     public DataTable BuscarDisciplinaDeAlunoPorId(int idDisciplina, String idAluno)
     {
         using (MySqlConnection conn = GetConnection())
         {
             conn.Open();
-            string query = @"SELECT tb_disciplina.* FROM tb_disciplina_aluno INNER JOIN tb_disciplina ON tb_disciplina_aluno.id_disciplina = tb_disciplina.id_disciplina WHERE tb_disciplina.id_disciplina = @id_disciplina AND tb_disciplina_aluno.matricula_aluno = @id_aluno";
+            string query = @"SELECT tb_disciplina,* FROM tb_disciplina_aluno INNER JOIN tb_disciplina ON tb_disciplina_aluno.id_disciplina = tb_disciplina.id_disciplina WHERE tb_disciplina.id_disciplina = @id_disciplina AND tb_disciplina_aluno.matricula_aluno = @id_aluno";
             MySqlCommand cmd = new MySqlCommand(query, conn);
             cmd.Parameters.AddWithValue("@id_disciplina", idDisciplina);
             cmd.Parameters.AddWithValue("@id_aluno", idAluno);
@@ -1065,12 +1097,13 @@ public class Database
         }
     }
 
+    // Buscar disciplinas de um aluno pelo nome da disciplina
     public DataTable BuscarDisciplinaDeAlunoPorNome(String nomeDisciplina, String idAluno)
     {
         using (MySqlConnection conn = GetConnection())
         {
             conn.Open();
-            string query = @"SELECT tb_disciplina.* FROM tb_disciplina_aluno INNER JOIN tb_disciplina ON tb_disciplina_aluno.id_disciplina = tb_disciplina.id_disciplina WHERE tb_disciplina.disciplina LIKE @nome_disciplina AND tb_disciplina_aluno.matricula_aluno = @id_aluno";
+            string query = @"SELECT tb_disciplina,* FROM tb_disciplina_aluno INNER JOIN tb_disciplina ON tb_disciplina_aluno.id_disciplina = tb_disciplina.id_disciplina WHERE tb_disciplina.disciplina LIKE @nome_disciplina AND tb_disciplina_aluno.matricula_aluno = @id_aluno";
             MySqlCommand cmd = new MySqlCommand(query, conn);
             cmd.Parameters.AddWithValue("@nome_disciplina", nomeDisciplina);
             cmd.Parameters.AddWithValue("@id_aluno", idAluno);
@@ -1083,12 +1116,13 @@ public class Database
         }
     }
 
+    // Buscar disciplinas de um aluno pelo id do aluno
     public DataTable BuscarDisciplinasAluno(String idAluno)
     {
         using (MySqlConnection conn = GetConnection())
         {
             conn.Open();
-            string query = @"SELECT tb_disciplina.* FROM tb_disciplina_aluno INNER JOIN tb_disciplina ON tb_disciplina_aluno.id_disciplina = tb_disciplina.id_disciplina WHERE tb_disciplina_aluno.matricula_aluno = @id_aluno";
+            string query = @"SELECT tb_disciplina,* FROM tb_disciplina_aluno INNER JOIN tb_disciplina ON tb_disciplina_aluno.id_disciplina = tb_disciplina.id_disciplina WHERE tb_disciplina_aluno.matricula_aluno = @id_aluno";
             MySqlCommand cmd = new MySqlCommand(query, conn);
             cmd.Parameters.AddWithValue("@id_aluno", idAluno);
 
@@ -1100,12 +1134,13 @@ public class Database
         }
     }
 
+    // Buscar cursos de um aluno pelo seu id
     public DataTable BuscarCursosAluno(String idAluno)
     {
         using (MySqlConnection conn = GetConnection())
         {
             conn.Open();
-            string query = @"SELECT tb_curso.* FROM tb_curso_aluno INNER JOIN tb_curso ON tb_curso_aluno.id_curso = tb_curso.id_curso WHERE tb_curso_aluno.matricula_aluno = @id_aluno";
+            string query = @"SELECT tb_curso,* FROM tb_curso_aluno INNER JOIN tb_curso ON tb_curso_aluno.id_curso = tb_curso.id_curso WHERE tb_curso_aluno.matricula_aluno = @id_aluno";
             MySqlCommand cmd = new MySqlCommand(query, conn);
             cmd.Parameters.AddWithValue("@id_aluno", idAluno);
 
@@ -1117,6 +1152,7 @@ public class Database
         }
     }
 
+    // Buscar professores de um aluno através do seu id
     public DataTable BuscarProfessoresDeAluno(String idAluno)
     {
         using (MySqlConnection conn = GetConnection())
@@ -1140,6 +1176,7 @@ public class Database
         }
     }
 
+    // Buscar professores de um aluno através do id do aluno e nome do professor
     public DataTable BuscarProfessorDeAlunoPorNome(String idAluno, String nomeProfessor)
     {
         using (MySqlConnection conn = GetConnection())
@@ -1164,6 +1201,7 @@ public class Database
         }
     }
 
+    // Buscar professor de um aluno pelo id do aluno e id do professor
     public DataTable BuscarProfessorDeAlunoPorId(String idAluno, String idProfessor)
     {
         using(MySqlConnection conn = GetConnection())

@@ -1204,7 +1204,7 @@ public class Database
     // Buscar professor de um aluno pelo id do aluno e id do professor
     public DataTable BuscarProfessorDeAlunoPorId(String idAluno, String idProfessor)
     {
-        using(MySqlConnection conn = GetConnection())
+        using (MySqlConnection conn = GetConnection())
         {
             conn.Open();
             string query = @"
@@ -1221,6 +1221,39 @@ public class Database
             DataTable dt = new DataTable();
             adapter.Fill(dt);
 
+            return dt;
+        }
+    }
+
+    // Busca habilidades de uma disciplina pelo nome da disciplina
+    public DataTable BuscarHabilidadesPorDisciplina(string nomeDisciplina)
+    {
+        using (MySqlConnection conn = GetConnection())
+        {
+            conn.Open();
+            string query = "SELECT habilidades FROM tb_disciplina WHERE disciplina = @nome_disciplina";
+            MySqlCommand cmd = new MySqlCommand(query, conn);
+            cmd.Parameters.AddWithValue("@nome_disciplina", nomeDisciplina);
+            MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
+            DataTable dt = new DataTable();
+            adapter.Fill(dt);
+            return dt;
+        }
+    }
+
+    // Alterar nome de uma disciplina
+    public DataTable AlterarNomeDisciplina(string nomeDisciplina, string novoNomeDisciplina)
+    {
+        using (MySqlConnection conn = GetConnection())
+        {
+            conn.Open();
+            string query = "UPDATE tb_disciplina SET disciplina = @novoNomeDisciplina WHERE disciplina = @nomeDisciplina";
+            MySqlCommand cmd = new MySqlCommand(query, conn);
+            cmd.Parameters.AddWithValue("@novoNomeDisciplina", novoNomeDisciplina);
+            cmd.Parameters.AddWithValue("@nomeDisciplina", nomeDisciplina);
+            MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
+            DataTable dt = new DataTable();
+            adapter.Fill(dt);
             return dt;
         }
     }

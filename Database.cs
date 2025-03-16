@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Linq;
 
 public class Database
 {
@@ -1257,4 +1258,35 @@ public class Database
             return dt;
         }
     }
+
+    // Remover habilidades de uma disciplina
+    public void RemoverHabilidadesDisciplina(string nomeDisciplina, List<string> habilidadesARemover)
+    {
+        using (MySqlConnection conn = GetConnection())
+        {
+            conn.Open();
+
+            string queryBuscar = "SELECT habilidades FROM tb_disciplina WHERE disciplina = @nomeDisciplina";
+            MySqlCommand cmdBuscar = new MySqlCommand(queryBuscar, conn);
+            cmdBuscar.Parameters.AddWithValue("@nomeDisciplina", nomeDisciplina);
+            string habilidadesAtuais = cmdBuscar.ExecuteScalar()?.ToString();
+
+            if (habilidadesAtuais != null)
+            {
+                List<string> listaHabilidades = habilidadesAtuais.Split(',').Select(h => h.Trim()).ToList();
+                foreach (var habilidade in habilidadesARemover)
+                {
+                    listaHabilidades.Remove(habilidade);
+                }
+
+                string habilidadesAtualizadas = string.Join(", ", listaHabilidades);
+                string queryAtualizar = "UPDATE tb_disciplina SET habilidades = @habilidadesAtualizadas WHERE disciplina = @nomeDisciplina";
+                MySqlCommand cmdAtualizar = new MySqlCommand(queryAtualizar, conn);
+                cmdAtualizar.Parameters.AddWithValue("@habilidadesAtualizadas", habilidadesAtualizadas);
+                cmdAtualizar.Parameters.AddWithValue("@nomeDisciplina", nomeDisciplina);
+                cmdAtualizar.ExecuteNonQuery();
+            }
+        }
+    }
+
 }

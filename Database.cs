@@ -1289,4 +1289,40 @@ public class Database
         }
     }
 
+    // Adicionar novas habilidades a uma disciplina
+    public void AdicionarHabilidadesDisciplina(string nomeDisciplina, List<string> novasHabilidades)
+    {
+        using (MySqlConnection conn = GetConnection())
+        {
+            conn.Open();
+
+            string queryBuscar = "SELECT habilidades FROM tb_disciplina WHERE disciplina = @nomeDisciplina";
+            MySqlCommand cmdBuscar = new MySqlCommand(queryBuscar, conn);
+            cmdBuscar.Parameters.AddWithValue("@nomeDisciplina", nomeDisciplina);
+            string habilidadesAtuais = cmdBuscar.ExecuteScalar()?.ToString();
+
+            List<string> listaHabilidades = new List<string>();
+            if (!string.IsNullOrEmpty(habilidadesAtuais))
+            {
+                listaHabilidades = habilidadesAtuais.Split(',').Select(h => h.Trim()).ToList();
+            }
+
+            foreach (var habilidade in novasHabilidades)
+            {
+                if (!listaHabilidades.Contains(habilidade))
+                {
+                    listaHabilidades.Add(habilidade);
+                }
+            }
+
+            string habilidadesAtualizadas = string.Join(", ", listaHabilidades);
+            string queryAtualizar = "UPDATE tb_disciplina SET habilidades = @habilidadesAtualizadas WHERE disciplina = @nomeDisciplina";
+            MySqlCommand cmdAtualizar = new MySqlCommand(queryAtualizar, conn);
+            cmdAtualizar.Parameters.AddWithValue("@habilidadesAtualizadas", habilidadesAtualizadas);
+            cmdAtualizar.Parameters.AddWithValue("@nomeDisciplina", nomeDisciplina);
+            cmdAtualizar.ExecuteNonQuery();
+        }
+    }
+
+
 }

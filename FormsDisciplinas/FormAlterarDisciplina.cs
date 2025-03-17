@@ -91,5 +91,28 @@ namespace GerenciadorEscolar.FormsDisciplinas
             }
         }
 
+        private void btn_adicionarHabilidades_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(txt_novasHabilidades.Text))
+            {
+                MessageBox.Show("Informe as habilidades a serem adicionadas!");
+            }
+            else
+            {
+                string nomeDisciplina = txt_nomeDisciplina.Text;
+                List<string> novasHabilidades = txt_novasHabilidades.Text.Split(',').Select(h => h.Trim()).ToList();
+                db.AdicionarHabilidadesDisciplina(nomeDisciplina, novasHabilidades);
+                MessageBox.Show("Habilidades adicionadas com sucesso!");
+
+                list_habilidades.Items.Clear();
+                var habilidadesAtualizadas = db.BuscarHabilidadesPorDisciplina(nomeDisciplina);
+                foreach (DataRow row in habilidadesAtualizadas.Rows)
+                {
+                    list_habilidades.Items.Add(row["habilidades"].ToString());
+                }
+                txt_novasHabilidades.Text = String.Empty;
+            }
+        }
+
     }
 }

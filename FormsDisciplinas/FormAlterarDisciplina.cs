@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using GerenciadorDeTurmas.FormsDirecao;
 
 namespace GerenciadorEscolar.FormsDisciplinas
 {
@@ -114,5 +115,12 @@ namespace GerenciadorEscolar.FormsDisciplinas
             }
         }
 
+        private void btn_voltar_Click(object sender, EventArgs e)
+        {
+            FormTelaInicialDirecao formTelaInicialDirecao = new FormTelaInicialDirecao();
+            this.Hide();
+            formTelaInicialDirecao.ShowDialog();
+            this.Close();
+        }
     }
 }

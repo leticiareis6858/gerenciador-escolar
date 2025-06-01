@@ -1324,5 +1324,21 @@ public class Database
         }
     }
 
+    // Excluir disciplina(s)
+    public void ExcluirDisciplinas(List<int> idsDisciplinas)
+    {
+        using (MySqlConnection conn = GetConnection())
+        {
+            conn.Open();
+            foreach (var id in idsDisciplinas)
+            {
+                string query = "DELETE FROM tb_disciplina WHERE id_disciplina = @id_disciplina";
+                MySqlCommand cmd = new MySqlCommand(query, conn);
+                cmd.Parameters.AddWithValue("@id_disciplina", id);
+                cmd.ExecuteNonQuery();
+            }
+        }
+    }
+
 
 }

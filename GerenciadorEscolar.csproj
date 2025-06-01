@@ -251,6 +251,9 @@
     <EmbeddedResource Include="FormsAluno\FormTelaInicialAluno.resx">
       <DependentUpon>FormTelaInicialAluno.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormsDisciplinas\FormAlterarDisciplina.resx">
+      <DependentUpon>FormAlterarDisciplina.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormsProfessor\FormAtualizarCadastroProfessores.resx">
       <DependentUpon>FormAtualizarCadastroProfessores.cs</DependentUpon>
     </EmbeddedResource>

@@ -43,19 +43,21 @@
             this.btn_voltar.TabIndex = 50;
             this.btn_voltar.Text = "Voltar";
             this.btn_voltar.UseVisualStyleBackColor = true;
+            this.btn_voltar.Click += new System.EventHandler(this.btn_voltar_Click);
             // 
             // list_disciplinas
             // 
             this.list_disciplinas.FormattingEnabled = true;
-            this.list_disciplinas.Location = new System.Drawing.Point(33, 91);
+            this.list_disciplinas.Location = new System.Drawing.Point(33, 113);
             this.list_disciplinas.Name = "list_disciplinas";
-            this.list_disciplinas.Size = new System.Drawing.Size(284, 212);
+            this.list_disciplinas.SelectionMode = System.Windows.Forms.SelectionMode.MultiSimple;
+            this.list_disciplinas.Size = new System.Drawing.Size(284, 225);
             this.list_disciplinas.TabIndex = 52;
             // 
             // btn_excluir
             // 
             this.btn_excluir.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_excluir.Location = new System.Drawing.Point(72, 309);
+            this.btn_excluir.Location = new System.Drawing.Point(67, 344);
             this.btn_excluir.Name = "btn_excluir";
             this.btn_excluir.Size = new System.Drawing.Size(206, 30);
             this.btn_excluir.TabIndex = 53;
@@ -67,7 +69,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(30, 45);
+            this.label1.Location = new System.Drawing.Point(30, 55);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(255, 36);
             this.label1.TabIndex = 54;

@@ -273,7 +273,7 @@
             // btn_voltar
             // 
             this.btn_voltar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_voltar.Location = new System.Drawing.Point(12, 9);
+            this.btn_voltar.Location = new System.Drawing.Point(930, 9);
             this.btn_voltar.Name = "btn_voltar";
             this.btn_voltar.Size = new System.Drawing.Size(78, 30);
             this.btn_voltar.TabIndex = 49;

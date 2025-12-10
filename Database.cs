@@ -1,4 +1,5 @@
-﻿using MySql.Data.MySqlClient;
+﻿using Google.Protobuf.Collections;
+using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -1337,6 +1338,24 @@ public class Database
                 cmd.Parameters.AddWithValue("@id_disciplina", id);
                 cmd.ExecuteNonQuery();
             }
+        }
+    }
+
+
+    // Alterar nome de um curso
+    public DataTable AlterarNomeCurso(string nomeCurso, string novoNomeCurso)
+    {
+        using (MySqlConnection conn = GetConnection())
+        {
+            conn.Open();
+            string query = "UPDATE tb_curso SET nome_curso = @novoNomeCurso WHERE nome_curso = @nomeCurso";
+            MySqlCommand cmd = new MySqlCommand(query, conn);
+            cmd.Parameters.AddWithValue("@novoNomeCurso", novoNomeCurso);
+            cmd.Parameters.AddWithValue("@nomeCurso", nomeCurso);
+            MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
+            DataTable dt = new DataTable();
+            adapter.Fill(dt);
+            return dt;
         }
     }
 

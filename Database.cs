@@ -1359,5 +1359,21 @@ public class Database
         }
     }
 
+    // Alterar a quantidade de períodos de um curso
+    public DataTable AlterarPeriodosCurso(string nomeCurso, int quantidade)
+    {
+        using (MySqlConnection conn = GetConnection())
+        {
+            conn.Open();
+            string query = "UPDATE tb_curso SET duracao = @quantidade WHERE nome_curso = @nomeCurso";
+            MySqlCommand cmd = new MySqlCommand(query, conn);
+            cmd.Parameters.AddWithValue("@quantidade", quantidade);
+            cmd.Parameters.AddWithValue("@nomeCurso", nomeCurso);
+            MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
+            DataTable dt = new DataTable();
+            adapter.Fill(dt);
+            return dt;
+        }
+    }
 
 }

@@ -28,195 +28,206 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.toolStripComboBox1 = new System.Windows.Forms.ToolStripComboBox();
-            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.dataGridView_disciplinas = new System.Windows.Forms.DataGridView();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.txt_id_disciplina = new System.Windows.Forms.TextBox();
-            this.btn_buscar = new System.Windows.Forms.Button();
-            this.btn_limpar = new System.Windows.Forms.Button();
-            this.btn_voltar = new System.Windows.Forms.Button();
-            this.btn_sair = new System.Windows.Forms.Button();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.txt_disciplina = new System.Windows.Forms.TextBox();
-            this.txt_habilidades = new System.Windows.Forms.TextBox();
-            this.txt_nome = new System.Windows.Forms.Label();
-            this.contextMenuStrip1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_disciplinas)).BeginInit();
-            this.SuspendLayout();
+            components = new System.ComponentModel.Container();
+            contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(components);
+            toolStripComboBox1 = new System.Windows.Forms.ToolStripComboBox();
+            toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            dataGridView_disciplinas = new System.Windows.Forms.DataGridView();
+            label1 = new System.Windows.Forms.Label();
+            label2 = new System.Windows.Forms.Label();
+            txt_id_disciplina = new System.Windows.Forms.TextBox();
+            btn_buscar = new System.Windows.Forms.Button();
+            btn_limpar = new System.Windows.Forms.Button();
+            btn_voltar = new System.Windows.Forms.Button();
+            btn_sair = new System.Windows.Forms.Button();
+            label3 = new System.Windows.Forms.Label();
+            label4 = new System.Windows.Forms.Label();
+            txt_disciplina = new System.Windows.Forms.TextBox();
+            txt_habilidades = new System.Windows.Forms.TextBox();
+            txt_nome = new System.Windows.Forms.Label();
+            contextMenuStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dataGridView_disciplinas).BeginInit();
+            SuspendLayout();
             // 
             // contextMenuStrip1
             // 
-            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripComboBox1,
-            this.toolStripSeparator1,
-            this.toolStripMenuItem1});
-            this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(182, 59);
+            contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] { toolStripComboBox1, toolStripSeparator1, toolStripMenuItem1 });
+            contextMenuStrip1.Name = "contextMenuStrip1";
+            contextMenuStrip1.Size = new System.Drawing.Size(182, 59);
             // 
             // toolStripComboBox1
             // 
-            this.toolStripComboBox1.Name = "toolStripComboBox1";
-            this.toolStripComboBox1.Size = new System.Drawing.Size(121, 23);
+            toolStripComboBox1.Name = "toolStripComboBox1";
+            toolStripComboBox1.Size = new System.Drawing.Size(121, 23);
             // 
             // toolStripSeparator1
             // 
-            this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(178, 6);
+            toolStripSeparator1.Name = "toolStripSeparator1";
+            toolStripSeparator1.Size = new System.Drawing.Size(178, 6);
             // 
             // toolStripMenuItem1
             // 
-            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(181, 22);
-            this.toolStripMenuItem1.Text = "toolStripMenuItem1";
+            toolStripMenuItem1.Name = "toolStripMenuItem1";
+            toolStripMenuItem1.Size = new System.Drawing.Size(181, 22);
+            toolStripMenuItem1.Text = "toolStripMenuItem1";
             // 
             // dataGridView_disciplinas
             // 
-            this.dataGridView_disciplinas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView_disciplinas.Location = new System.Drawing.Point(39, 194);
-            this.dataGridView_disciplinas.Name = "dataGridView_disciplinas";
-            this.dataGridView_disciplinas.Size = new System.Drawing.Size(388, 223);
-            this.dataGridView_disciplinas.TabIndex = 2;
+            dataGridView_disciplinas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridView_disciplinas.Location = new System.Drawing.Point(46, 224);
+            dataGridView_disciplinas.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            dataGridView_disciplinas.Name = "dataGridView_disciplinas";
+            dataGridView_disciplinas.Size = new System.Drawing.Size(453, 257);
+            dataGridView_disciplinas.TabIndex = 2;
             // 
             // label1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(36, 178);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(119, 13);
-            this.label1.TabIndex = 3;
-            this.label1.Text = "Disciplinas Disponíveis:";
+            label1.AutoSize = true;
+            label1.Location = new System.Drawing.Point(42, 205);
+            label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            label1.Name = "label1";
+            label1.Size = new System.Drawing.Size(129, 15);
+            label1.TabIndex = 3;
+            label1.Text = "Disciplinas Disponíveis:";
             // 
             // label2
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(36, 130);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(84, 13);
-            this.label2.TabIndex = 4;
-            this.label2.Text = "ID da Disciplina:";
+            label2.AutoSize = true;
+            label2.Location = new System.Drawing.Point(42, 150);
+            label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            label2.Name = "label2";
+            label2.Size = new System.Drawing.Size(91, 15);
+            label2.TabIndex = 4;
+            label2.Text = "ID da Disciplina:";
             // 
             // txt_id_disciplina
             // 
-            this.txt_id_disciplina.Location = new System.Drawing.Point(39, 146);
-            this.txt_id_disciplina.Name = "txt_id_disciplina";
-            this.txt_id_disciplina.Size = new System.Drawing.Size(100, 20);
-            this.txt_id_disciplina.TabIndex = 5;
+            txt_id_disciplina.Location = new System.Drawing.Point(46, 168);
+            txt_id_disciplina.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            txt_id_disciplina.Name = "txt_id_disciplina";
+            txt_id_disciplina.Size = new System.Drawing.Size(116, 23);
+            txt_id_disciplina.TabIndex = 5;
             // 
             // btn_buscar
             // 
-            this.btn_buscar.Location = new System.Drawing.Point(183, 146);
-            this.btn_buscar.Name = "btn_buscar";
-            this.btn_buscar.Size = new System.Drawing.Size(75, 23);
-            this.btn_buscar.TabIndex = 6;
-            this.btn_buscar.Text = "Buscar";
-            this.btn_buscar.UseVisualStyleBackColor = true;
-            this.btn_buscar.Click += new System.EventHandler(this.btn_buscar_Click);
+            btn_buscar.Location = new System.Drawing.Point(214, 168);
+            btn_buscar.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            btn_buscar.Name = "btn_buscar";
+            btn_buscar.Size = new System.Drawing.Size(88, 27);
+            btn_buscar.TabIndex = 6;
+            btn_buscar.Text = "Buscar";
+            btn_buscar.UseVisualStyleBackColor = true;
+            btn_buscar.Click += btn_buscar_Click;
             // 
             // btn_limpar
             // 
-            this.btn_limpar.Location = new System.Drawing.Point(274, 146);
-            this.btn_limpar.Name = "btn_limpar";
-            this.btn_limpar.Size = new System.Drawing.Size(75, 23);
-            this.btn_limpar.TabIndex = 7;
-            this.btn_limpar.Text = "Limpar";
-            this.btn_limpar.UseVisualStyleBackColor = true;
-            this.btn_limpar.Click += new System.EventHandler(this.btn_limpar_Click);
+            btn_limpar.Location = new System.Drawing.Point(320, 168);
+            btn_limpar.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            btn_limpar.Name = "btn_limpar";
+            btn_limpar.Size = new System.Drawing.Size(88, 27);
+            btn_limpar.TabIndex = 7;
+            btn_limpar.Text = "Limpar";
+            btn_limpar.UseVisualStyleBackColor = true;
+            btn_limpar.Click += btn_limpar_Click;
             // 
             // btn_voltar
             // 
-            this.btn_voltar.Location = new System.Drawing.Point(352, 12);
-            this.btn_voltar.Name = "btn_voltar";
-            this.btn_voltar.Size = new System.Drawing.Size(75, 23);
-            this.btn_voltar.TabIndex = 8;
-            this.btn_voltar.Text = "Voltar";
-            this.btn_voltar.UseVisualStyleBackColor = true;
-            this.btn_voltar.Click += new System.EventHandler(this.btn_voltar_Click);
+            btn_voltar.Location = new System.Drawing.Point(411, 14);
+            btn_voltar.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            btn_voltar.Name = "btn_voltar";
+            btn_voltar.Size = new System.Drawing.Size(88, 27);
+            btn_voltar.TabIndex = 8;
+            btn_voltar.Text = "Voltar";
+            btn_voltar.UseVisualStyleBackColor = true;
+            btn_voltar.Click += btn_voltar_Click;
             // 
             // btn_sair
             // 
-            this.btn_sair.Location = new System.Drawing.Point(352, 41);
-            this.btn_sair.Name = "btn_sair";
-            this.btn_sair.Size = new System.Drawing.Size(75, 23);
-            this.btn_sair.TabIndex = 9;
-            this.btn_sair.Text = "Sair";
-            this.btn_sair.UseVisualStyleBackColor = true;
-            this.btn_sair.Click += new System.EventHandler(this.btn_sair_Click);
+            btn_sair.Location = new System.Drawing.Point(411, 47);
+            btn_sair.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            btn_sair.Name = "btn_sair";
+            btn_sair.Size = new System.Drawing.Size(88, 27);
+            btn_sair.TabIndex = 9;
+            btn_sair.Text = "Sair";
+            btn_sair.UseVisualStyleBackColor = true;
+            btn_sair.Click += btn_sair_Click;
             // 
             // label3
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(36, 41);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(99, 13);
-            this.label3.TabIndex = 10;
-            this.label3.Text = "Nome da disciplina:";
+            label3.AutoSize = true;
+            label3.Location = new System.Drawing.Point(42, 47);
+            label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            label3.Name = "label3";
+            label3.Size = new System.Drawing.Size(112, 15);
+            label3.TabIndex = 10;
+            label3.Text = "Nome da disciplina:";
             // 
             // label4
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(201, 41);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(71, 13);
-            this.label4.TabIndex = 11;
-            this.label4.Text = "Habilidade(s):";
+            label4.AutoSize = true;
+            label4.Location = new System.Drawing.Point(234, 47);
+            label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            label4.Name = "label4";
+            label4.Size = new System.Drawing.Size(80, 15);
+            label4.TabIndex = 11;
+            label4.Text = "Habilidade(s):";
             // 
             // txt_disciplina
             // 
-            this.txt_disciplina.Location = new System.Drawing.Point(39, 57);
-            this.txt_disciplina.Multiline = true;
-            this.txt_disciplina.Name = "txt_disciplina";
-            this.txt_disciplina.Size = new System.Drawing.Size(132, 69);
-            this.txt_disciplina.TabIndex = 12;
+            txt_disciplina.Location = new System.Drawing.Point(46, 66);
+            txt_disciplina.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            txt_disciplina.Multiline = true;
+            txt_disciplina.Name = "txt_disciplina";
+            txt_disciplina.Size = new System.Drawing.Size(153, 79);
+            txt_disciplina.TabIndex = 12;
             // 
             // txt_habilidades
             // 
-            this.txt_habilidades.Location = new System.Drawing.Point(204, 57);
-            this.txt_habilidades.Multiline = true;
-            this.txt_habilidades.Name = "txt_habilidades";
-            this.txt_habilidades.Size = new System.Drawing.Size(132, 69);
-            this.txt_habilidades.TabIndex = 13;
+            txt_habilidades.Location = new System.Drawing.Point(238, 66);
+            txt_habilidades.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            txt_habilidades.Multiline = true;
+            txt_habilidades.Name = "txt_habilidades";
+            txt_habilidades.Size = new System.Drawing.Size(153, 79);
+            txt_habilidades.TabIndex = 13;
             // 
             // txt_nome
             // 
-            this.txt_nome.AutoSize = true;
-            this.txt_nome.ForeColor = System.Drawing.Color.DarkOrange;
-            this.txt_nome.Location = new System.Drawing.Point(36, 22);
-            this.txt_nome.Name = "txt_nome";
-            this.txt_nome.Size = new System.Drawing.Size(35, 13);
-            this.txt_nome.TabIndex = 14;
-            this.txt_nome.Text = "Nome";
-            this.txt_nome.Visible = false;
+            txt_nome.AutoSize = true;
+            txt_nome.ForeColor = System.Drawing.Color.DarkOrange;
+            txt_nome.Location = new System.Drawing.Point(42, 25);
+            txt_nome.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            txt_nome.Name = "txt_nome";
+            txt_nome.Size = new System.Drawing.Size(40, 15);
+            txt_nome.TabIndex = 14;
+            txt_nome.Text = "Nome";
+            txt_nome.Visible = false;
             // 
             // FormBuscarDisciplinasProfessores
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(463, 433);
-            this.Controls.Add(this.txt_nome);
-            this.Controls.Add(this.txt_habilidades);
-            this.Controls.Add(this.txt_disciplina);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.btn_sair);
-            this.Controls.Add(this.btn_voltar);
-            this.Controls.Add(this.btn_limpar);
-            this.Controls.Add(this.btn_buscar);
-            this.Controls.Add(this.txt_id_disciplina);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.dataGridView_disciplinas);
-            this.Name = "FormBuscarDisciplinasProfessores";
-            this.Text = "Buscar disciplinas - Professores ";
-            this.contextMenuStrip1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_disciplinas)).EndInit();
-            this.ResumeLayout(false);
-            this.PerformLayout();
+            AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            ClientSize = new System.Drawing.Size(540, 500);
+            Controls.Add(txt_nome);
+            Controls.Add(txt_habilidades);
+            Controls.Add(txt_disciplina);
+            Controls.Add(label4);
+            Controls.Add(label3);
+            Controls.Add(btn_sair);
+            Controls.Add(btn_voltar);
+            Controls.Add(btn_limpar);
+            Controls.Add(btn_buscar);
+            Controls.Add(txt_id_disciplina);
+            Controls.Add(label2);
+            Controls.Add(label1);
+            Controls.Add(dataGridView_disciplinas);
+            Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            Name = "FormBuscarDisciplinasProfessores";
+            Text = "Buscar disciplinas";
+            contextMenuStrip1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)dataGridView_disciplinas).EndInit();
+            ResumeLayout(false);
+            PerformLayout();
 
         }
 

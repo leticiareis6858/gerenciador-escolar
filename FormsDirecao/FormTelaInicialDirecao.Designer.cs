@@ -28,128 +28,139 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
-            this.txt_nome = new System.Windows.Forms.Label();
-            this.btn_sair = new System.Windows.Forms.Button();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.btn_alunos = new System.Windows.Forms.Button();
-            this.btn_verificar_professores = new System.Windows.Forms.Button();
-            this.btn_atualizar_informacoes = new System.Windows.Forms.Button();
-            this.btn_disciplinas = new System.Windows.Forms.Button();
-            this.btn_cursos = new System.Windows.Forms.Button();
-            this.groupBox1.SuspendLayout();
-            this.SuspendLayout();
+            label1 = new System.Windows.Forms.Label();
+            txt_nome = new System.Windows.Forms.Label();
+            btn_sair = new System.Windows.Forms.Button();
+            groupBox1 = new System.Windows.Forms.GroupBox();
+            btn_alunos = new System.Windows.Forms.Button();
+            btn_verificar_professores = new System.Windows.Forms.Button();
+            btn_atualizar_informacoes = new System.Windows.Forms.Button();
+            btn_disciplinas = new System.Windows.Forms.Button();
+            btn_cursos = new System.Windows.Forms.Button();
+            groupBox1.SuspendLayout();
+            SuspendLayout();
             // 
             // label1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(53, 75);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(168, 24);
-            this.label1.TabIndex = 12;
-            this.label1.Text = "Seja bem vindo(a),";
+            label1.AutoSize = true;
+            label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            label1.Location = new System.Drawing.Point(62, 87);
+            label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            label1.Name = "label1";
+            label1.Size = new System.Drawing.Size(168, 24);
+            label1.TabIndex = 12;
+            label1.Text = "Seja bem vindo(a),";
             // 
             // txt_nome
             // 
-            this.txt_nome.AutoSize = true;
-            this.txt_nome.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_nome.ForeColor = System.Drawing.Color.OrangeRed;
-            this.txt_nome.Location = new System.Drawing.Point(227, 75);
-            this.txt_nome.Name = "txt_nome";
-            this.txt_nome.Size = new System.Drawing.Size(62, 24);
-            this.txt_nome.TabIndex = 14;
-            this.txt_nome.Text = "Nome";
+            txt_nome.AutoSize = true;
+            txt_nome.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            txt_nome.ForeColor = System.Drawing.Color.OrangeRed;
+            txt_nome.Location = new System.Drawing.Point(265, 87);
+            txt_nome.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            txt_nome.Name = "txt_nome";
+            txt_nome.Size = new System.Drawing.Size(62, 24);
+            txt_nome.TabIndex = 14;
+            txt_nome.Text = "Nome";
             // 
             // btn_sair
             // 
-            this.btn_sair.Location = new System.Drawing.Point(502, 28);
-            this.btn_sair.Name = "btn_sair";
-            this.btn_sair.Size = new System.Drawing.Size(75, 23);
-            this.btn_sair.TabIndex = 15;
-            this.btn_sair.Text = "Sair";
-            this.btn_sair.UseVisualStyleBackColor = true;
-            this.btn_sair.Click += new System.EventHandler(this.btn_sair_Click);
+            btn_sair.Location = new System.Drawing.Point(586, 32);
+            btn_sair.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            btn_sair.Name = "btn_sair";
+            btn_sair.Size = new System.Drawing.Size(88, 27);
+            btn_sair.TabIndex = 15;
+            btn_sair.Text = "Sair";
+            btn_sair.UseVisualStyleBackColor = true;
+            btn_sair.Click += btn_sair_Click;
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.btn_alunos);
-            this.groupBox1.Controls.Add(this.btn_verificar_professores);
-            this.groupBox1.Controls.Add(this.btn_atualizar_informacoes);
-            this.groupBox1.Controls.Add(this.btn_disciplinas);
-            this.groupBox1.Controls.Add(this.btn_cursos);
-            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(57, 112);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(468, 364);
-            this.groupBox1.TabIndex = 16;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "O que deseja fazer?";
+            groupBox1.Controls.Add(btn_alunos);
+            groupBox1.Controls.Add(btn_verificar_professores);
+            groupBox1.Controls.Add(btn_atualizar_informacoes);
+            groupBox1.Controls.Add(btn_disciplinas);
+            groupBox1.Controls.Add(btn_cursos);
+            groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            groupBox1.Location = new System.Drawing.Point(66, 129);
+            groupBox1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            groupBox1.Name = "groupBox1";
+            groupBox1.Padding = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            groupBox1.Size = new System.Drawing.Size(546, 420);
+            groupBox1.TabIndex = 16;
+            groupBox1.TabStop = false;
+            groupBox1.Text = "O que deseja fazer?";
             // 
             // btn_alunos
             // 
-            this.btn_alunos.Location = new System.Drawing.Point(277, 147);
-            this.btn_alunos.Name = "btn_alunos";
-            this.btn_alunos.Size = new System.Drawing.Size(159, 84);
-            this.btn_alunos.TabIndex = 8;
-            this.btn_alunos.Text = "Gerenciar alunos";
-            this.btn_alunos.UseVisualStyleBackColor = true;
-            this.btn_alunos.Click += new System.EventHandler(this.btn_alunos_Click);
+            btn_alunos.Location = new System.Drawing.Point(323, 170);
+            btn_alunos.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            btn_alunos.Name = "btn_alunos";
+            btn_alunos.Size = new System.Drawing.Size(186, 97);
+            btn_alunos.TabIndex = 8;
+            btn_alunos.Text = "Gerenciar alunos";
+            btn_alunos.UseVisualStyleBackColor = true;
+            btn_alunos.Click += btn_alunos_Click;
             // 
             // btn_verificar_professores
             // 
-            this.btn_verificar_professores.Location = new System.Drawing.Point(37, 147);
-            this.btn_verificar_professores.Name = "btn_verificar_professores";
-            this.btn_verificar_professores.Size = new System.Drawing.Size(159, 84);
-            this.btn_verificar_professores.TabIndex = 7;
-            this.btn_verificar_professores.Text = "Gerenciar professores";
-            this.btn_verificar_professores.UseVisualStyleBackColor = true;
-            this.btn_verificar_professores.Click += new System.EventHandler(this.btn_verificar_professores_Click);
+            btn_verificar_professores.Location = new System.Drawing.Point(43, 170);
+            btn_verificar_professores.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            btn_verificar_professores.Name = "btn_verificar_professores";
+            btn_verificar_professores.Size = new System.Drawing.Size(186, 97);
+            btn_verificar_professores.TabIndex = 7;
+            btn_verificar_professores.Text = "Gerenciar professores";
+            btn_verificar_professores.UseVisualStyleBackColor = true;
+            btn_verificar_professores.Click += btn_verificar_professores_Click;
             // 
             // btn_atualizar_informacoes
             // 
-            this.btn_atualizar_informacoes.Location = new System.Drawing.Point(37, 255);
-            this.btn_atualizar_informacoes.Name = "btn_atualizar_informacoes";
-            this.btn_atualizar_informacoes.Size = new System.Drawing.Size(159, 84);
-            this.btn_atualizar_informacoes.TabIndex = 6;
-            this.btn_atualizar_informacoes.Text = "Atualizar suas próprias informações";
-            this.btn_atualizar_informacoes.UseVisualStyleBackColor = true;
-            this.btn_atualizar_informacoes.Click += new System.EventHandler(this.btn_atualizar_informacoes_Click);
+            btn_atualizar_informacoes.Location = new System.Drawing.Point(43, 294);
+            btn_atualizar_informacoes.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            btn_atualizar_informacoes.Name = "btn_atualizar_informacoes";
+            btn_atualizar_informacoes.Size = new System.Drawing.Size(186, 97);
+            btn_atualizar_informacoes.TabIndex = 6;
+            btn_atualizar_informacoes.Text = "Atualizar suas próprias informações";
+            btn_atualizar_informacoes.UseVisualStyleBackColor = true;
+            btn_atualizar_informacoes.Click += btn_atualizar_informacoes_Click;
             // 
             // btn_disciplinas
             // 
-            this.btn_disciplinas.Location = new System.Drawing.Point(37, 34);
-            this.btn_disciplinas.Name = "btn_disciplinas";
-            this.btn_disciplinas.Size = new System.Drawing.Size(159, 84);
-            this.btn_disciplinas.TabIndex = 5;
-            this.btn_disciplinas.Text = "Gerenciar disciplinas";
-            this.btn_disciplinas.UseVisualStyleBackColor = true;
-            this.btn_disciplinas.Click += new System.EventHandler(this.btn_disciplinas_Click);
+            btn_disciplinas.Location = new System.Drawing.Point(43, 39);
+            btn_disciplinas.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            btn_disciplinas.Name = "btn_disciplinas";
+            btn_disciplinas.Size = new System.Drawing.Size(186, 97);
+            btn_disciplinas.TabIndex = 5;
+            btn_disciplinas.Text = "Gerenciar disciplinas";
+            btn_disciplinas.UseVisualStyleBackColor = true;
+            btn_disciplinas.Click += btn_disciplinas_Click;
             // 
             // btn_cursos
             // 
-            this.btn_cursos.Location = new System.Drawing.Point(277, 34);
-            this.btn_cursos.Name = "btn_cursos";
-            this.btn_cursos.Size = new System.Drawing.Size(159, 84);
-            this.btn_cursos.TabIndex = 3;
-            this.btn_cursos.Text = "Gerenciar cursos";
-            this.btn_cursos.UseVisualStyleBackColor = true;
-            this.btn_cursos.Click += new System.EventHandler(this.btn_cursos_Click);
+            btn_cursos.Location = new System.Drawing.Point(323, 39);
+            btn_cursos.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            btn_cursos.Name = "btn_cursos";
+            btn_cursos.Size = new System.Drawing.Size(186, 97);
+            btn_cursos.TabIndex = 3;
+            btn_cursos.Text = "Gerenciar cursos";
+            btn_cursos.UseVisualStyleBackColor = true;
+            btn_cursos.Click += btn_cursos_Click;
             // 
             // FormTelaInicialDirecao
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(600, 548);
-            this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.btn_sair);
-            this.Controls.Add(this.txt_nome);
-            this.Controls.Add(this.label1);
-            this.Name = "FormTelaInicialDirecao";
-            this.Text = "Tela Inicial - Direção";
-            this.groupBox1.ResumeLayout(false);
-            this.ResumeLayout(false);
-            this.PerformLayout();
+            AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            ClientSize = new System.Drawing.Size(700, 632);
+            Controls.Add(groupBox1);
+            Controls.Add(btn_sair);
+            Controls.Add(txt_nome);
+            Controls.Add(label1);
+            Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            Name = "FormTelaInicialDirecao";
+            Text = "Tela Inicial - Direção";
+            groupBox1.ResumeLayout(false);
+            ResumeLayout(false);
+            PerformLayout();
 
         }
 

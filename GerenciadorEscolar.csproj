@@ -1,31 +1,22 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
 
   <PropertyGroup>
-    <!-- Troque para net6.0-windows | net7.0-windows | net8.0-windows -->
     <TargetFramework>net8.0-windows</TargetFramework>
 
-    <!-- Necessário para WinForms -->
     <UseWindowsForms>true</UseWindowsForms>
 
-    <!-- Mesmo OutputType do antigo -->
     <OutputType>WinExe</OutputType>
 
-    <!-- Igual ao antigo -->
     <RootNamespace>GerenciadorDeTurmas</RootNamespace>
     <AssemblyName>GerenciadorDeTurmas</AssemblyName>
 
-    <!-- Você usava .NET Framework 4.7.2. 
-         Se depender de APIs antigas, ative isso: -->
     <EnableWindowsTargeting>true</EnableWindowsTargeting>
 
-    <!-- Para permitir AssemblyInfo.cs -->
     <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
 
   </PropertyGroup>
 
   <ItemGroup>
-    <!-- Suas dependências via NuGet entram aqui automaticamente
-         após usar "dotnet add package" ou o gerenciador do VS -->
     <PackageReference Include="MySql.Data" Version="9.0.0" />
     <PackageReference Include="Google.Protobuf" Version="3.26.1" />
     <PackageReference Include="BouncyCastle.Cryptography" Version="2.3.1" />

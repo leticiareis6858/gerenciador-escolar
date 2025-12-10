@@ -634,7 +634,7 @@ public class Database
         {
             conn.Open();
             string query = @"
-            SELECT d.id_disciplina, d.nome_disciplina
+            SELECT d.id_disciplina, d.disciplina
             FROM tb_curso_disciplina cd
             JOIN tb_disciplina d ON cd.id_disciplina = d.id_disciplina
             JOIN tb_curso_professor cp ON cd.id_curso = cp.id_curso

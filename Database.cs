@@ -1404,5 +1404,21 @@ public class Database
         return cursos;
     }
 
+    // Excluir curso(s)
+    public void ExcluirCursos(List<int> idsCursos)
+    {
+        using (MySqlConnection conn = GetConnection())
+        {
+            conn.Open();
+            foreach (var id in idsCursos)
+            {
+                string query = "DELETE FROM tb_curso WHERE id_curso = @id";
+                MySqlCommand cmd = new MySqlCommand(query, conn);
+                cmd.Parameters.AddWithValue("@id", id);
+                cmd.ExecuteNonQuery();
+            }
+        }
+    }
+
 
 }

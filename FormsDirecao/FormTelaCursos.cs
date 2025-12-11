@@ -55,7 +55,7 @@ namespace GerenciadorDeTurmas.FormsDirecao
 
         private void btn_buscar_Click(object sender, EventArgs e)
         {
-            FormBuscarCurso formBuscar = new FormBuscarCurso();
+            FormBuscarCursosProfessores formBuscar = new FormBuscarCursosProfessores();
             this.Hide();
             formBuscar.ShowDialog();
             this.Close();

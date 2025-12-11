@@ -28,66 +28,72 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.btn_voltar = new System.Windows.Forms.Button();
-            this.list_disciplinas = new System.Windows.Forms.ListBox();
-            this.btn_excluir = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
-            this.SuspendLayout();
+            btn_voltar = new System.Windows.Forms.Button();
+            list_disciplinas = new System.Windows.Forms.ListBox();
+            btn_excluir = new System.Windows.Forms.Button();
+            label1 = new System.Windows.Forms.Label();
+            SuspendLayout();
             // 
             // btn_voltar
             // 
-            this.btn_voltar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_voltar.Location = new System.Drawing.Point(260, 12);
-            this.btn_voltar.Name = "btn_voltar";
-            this.btn_voltar.Size = new System.Drawing.Size(78, 30);
-            this.btn_voltar.TabIndex = 50;
-            this.btn_voltar.Text = "Voltar";
-            this.btn_voltar.UseVisualStyleBackColor = true;
-            this.btn_voltar.Click += new System.EventHandler(this.btn_voltar_Click);
+            btn_voltar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            btn_voltar.Location = new System.Drawing.Point(303, 14);
+            btn_voltar.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            btn_voltar.Name = "btn_voltar";
+            btn_voltar.Size = new System.Drawing.Size(91, 35);
+            btn_voltar.TabIndex = 50;
+            btn_voltar.Text = "Voltar";
+            btn_voltar.UseVisualStyleBackColor = true;
+            btn_voltar.Click += btn_voltar_Click;
             // 
             // list_disciplinas
             // 
-            this.list_disciplinas.FormattingEnabled = true;
-            this.list_disciplinas.Location = new System.Drawing.Point(33, 113);
-            this.list_disciplinas.Name = "list_disciplinas";
-            this.list_disciplinas.SelectionMode = System.Windows.Forms.SelectionMode.MultiSimple;
-            this.list_disciplinas.Size = new System.Drawing.Size(284, 225);
-            this.list_disciplinas.TabIndex = 52;
+            list_disciplinas.FormattingEnabled = true;
+            list_disciplinas.ItemHeight = 15;
+            list_disciplinas.Location = new System.Drawing.Point(35, 115);
+            list_disciplinas.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            list_disciplinas.Name = "list_disciplinas";
+            list_disciplinas.SelectionMode = System.Windows.Forms.SelectionMode.MultiSimple;
+            list_disciplinas.Size = new System.Drawing.Size(331, 259);
+            list_disciplinas.TabIndex = 52;
             // 
             // btn_excluir
             // 
-            this.btn_excluir.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_excluir.Location = new System.Drawing.Point(67, 344);
-            this.btn_excluir.Name = "btn_excluir";
-            this.btn_excluir.Size = new System.Drawing.Size(206, 30);
-            this.btn_excluir.TabIndex = 53;
-            this.btn_excluir.Text = "Excluir selecionada(s)";
-            this.btn_excluir.UseVisualStyleBackColor = true;
-            this.btn_excluir.Click += new System.EventHandler(this.btn_excluir_Click);
+            btn_excluir.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            btn_excluir.Location = new System.Drawing.Point(78, 397);
+            btn_excluir.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            btn_excluir.Name = "btn_excluir";
+            btn_excluir.Size = new System.Drawing.Size(240, 35);
+            btn_excluir.TabIndex = 53;
+            btn_excluir.Text = "Excluir selecionada(s)";
+            btn_excluir.UseVisualStyleBackColor = true;
+            btn_excluir.Click += btn_excluir_Click;
             // 
             // label1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(30, 55);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(255, 36);
-            this.label1.TabIndex = 54;
-            this.label1.Text = "Selecione as disciplinas a serem\r\n excluidas:";
+            label1.AutoSize = true;
+            label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            label1.Location = new System.Drawing.Point(35, 63);
+            label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            label1.Name = "label1";
+            label1.Size = new System.Drawing.Size(255, 36);
+            label1.TabIndex = 54;
+            label1.Text = "Selecione as disciplinas a serem\r\n excluidas:";
             // 
             // FormExcluirDisciplina
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(350, 386);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.btn_excluir);
-            this.Controls.Add(this.list_disciplinas);
-            this.Controls.Add(this.btn_voltar);
-            this.Name = "FormExcluirDisciplina";
-            this.Text = "FormExcluirDisciplina";
-            this.ResumeLayout(false);
-            this.PerformLayout();
+            AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            ClientSize = new System.Drawing.Size(408, 445);
+            Controls.Add(label1);
+            Controls.Add(btn_excluir);
+            Controls.Add(list_disciplinas);
+            Controls.Add(btn_voltar);
+            Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            Name = "FormExcluirDisciplina";
+            Text = "Excluir Disciplina";
+            ResumeLayout(false);
+            PerformLayout();
 
         }
 

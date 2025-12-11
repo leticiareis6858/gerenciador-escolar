@@ -1376,4 +1376,33 @@ public class Database
         }
     }
 
+
+    // Buscar nome e id cursos
+    public List<string> BuscarNomeIdCursos()
+    {
+        List<string> cursos = new List<string>();
+
+        using (MySqlConnection conn = GetConnection())
+        {
+            conn.Open();
+            string query = "SELECT id_curso, nome_curso FROM tb_curso";
+            MySqlCommand cmd = new MySqlCommand(query, conn);
+
+            using (MySqlDataReader reader = cmd.ExecuteReader())
+            {
+                while (reader.Read())
+                {
+                    int id = reader.GetInt32("id_curso");
+                    string nome = reader.GetString("nome_curso");
+                    cursos.Add($"id: {id}, nome: {nome}");
+                }
+            }
+
+            conn.Close();
+        }
+
+        return cursos;
+    }
+
+
 }

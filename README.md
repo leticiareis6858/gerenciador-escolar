@@ -1,5 +1,5 @@
 ﻿# 🏫| Gerenciador Escolar
-Este projeto consiste em uma aplicação para gestão escolar, onde é possível realizar a gestão de alunos, cursos, disciplinas e professores, além de permitir o cadastro de usuários para acesso à aplicação.
+Este projeto consiste em uma aplicação para gestão escolar, onde é possível realizar a gestão de alunos, cursos, disciplinas e professores, além de permitir o cadastro de usuários para acesso à aplicação. É uma versão mais completa do projeto [Alunos](https://github.com/leticiareis6858/alunos).
 
 # ⚙| Tecnologias usadas:
 - C#
@@ -12,16 +12,7 @@ Através dessa aplicação é possível:
 - Cadastrar um usuário para poder acessar a aplicação
 - Recuperar a senha desse usuário
 - Fazer login utilizando o usuário criado
-- Cadastrar alunos
-- Atualizar as informações dos alunos cadastrados
-- Consultar alunos cadastrados através de diversos filtros
-- Excluir alunos cadastrados
-
-
-- Cursos
-- Disciplinas
-- Professores
-- Direção
+- Gerenciar alunos, cursos, disciplinas, professores e a direção.
 
 # 🔧| Instalação:
 1. Clone o repositório ou faça download do arquivo `.zip` do mesmo
@@ -94,6 +85,10 @@ cadastrados no banco de dados, e ao informar um número de matrícula ou
 nome válido e clicar no botão *“Buscar”*, o usuário pode ver na data grid view as
 informações do aluno buscado para ter certeza se é esse o aluno que ele
 deseja excluir, se for basta clicar no botão *“Excluir”*.
+
+# 📋| To-Do:
+- [ ] Revisar esse projeto e verificar o que falta fazer
+- [ ] Ajustar o Readme
 
 # ⚖| Licença:
 Este projeto está licenciado sob a [MIT License](LICENSE).
